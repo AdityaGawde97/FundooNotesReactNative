@@ -1,0 +1,8 @@
+67174968f70890915dae0c7bdd795bbc
+'use strict';
+
+var ansiRegex = require('ansi-regex')();
+
+module.exports = function (str) {
+  return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
+};

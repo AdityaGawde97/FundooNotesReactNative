@@ -1,0 +1,44 @@
+fb9bc8320cc8943056d5948341979eb8
+/* istanbul ignore next */
+var cov_10djtfxbv = function () {
+  var path = "/home/admin10/Desktop/FundooNotes/src/Assets/visible.png";
+  var hash = "6fa0c43536b6a665891f548a865d34451db6c271";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/admin10/Desktop/FundooNotes/src/Assets/visible.png",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 4,
+          column: 6
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
+    hash: "6fa0c43536b6a665891f548a865d34451db6c271"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  return coverage[path] = coverageData;
+}();
+
+cov_10djtfxbv.s[0]++;
+module.exports = {
+  testUri: "../../../src/Assets/visible.png"
+};

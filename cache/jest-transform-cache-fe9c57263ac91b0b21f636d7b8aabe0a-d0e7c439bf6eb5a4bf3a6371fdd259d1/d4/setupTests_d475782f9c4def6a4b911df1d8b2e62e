@@ -1,0 +1,15 @@
+84914befe5d641eedb2b92d292644985
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+require("react-native");
+
+require("jest-enzyme");
+
+var _enzymeAdapterReact = _interopRequireDefault(require("enzyme-adapter-react-16"));
+
+var _enzyme = _interopRequireDefault(require("enzyme"));
+
+_enzyme.default.configure({
+  adapter: new _enzymeAdapterReact.default()
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNldHVwVGVzdHMuanMiXSwibmFtZXMiOlsiRW56eW1lIiwiY29uZmlndXJlIiwiYWRhcHRlciIsIkFkYXB0ZXIiXSwibWFwcGluZ3MiOiI7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBTUFBLGdCQUFPQyxTQUFQLENBQWlCO0FBQUVDLEVBQUFBLE9BQU8sRUFBRSxJQUFJQywyQkFBSjtBQUFYLENBQWpCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICdyZWFjdC1uYXRpdmUnO1xuaW1wb3J0ICdqZXN0LWVuenltZSc7XG5pbXBvcnQgQWRhcHRlciBmcm9tICdlbnp5bWUtYWRhcHRlci1yZWFjdC0xNic7XG5pbXBvcnQgRW56eW1lIGZyb20gJ2VuenltZSc7XG5cbi8qKlxuICogU2V0IHVwIEVuenltZSB0byBtb3VudCB0byBET00sIHNpbXVsYXRlIGV2ZW50cyxcbiAqIGFuZCBpbnNwZWN0IHRoZSBET00gaW4gdGVzdHMuXG4gKi9cbkVuenltZS5jb25maWd1cmUoeyBhZGFwdGVyOiBuZXcgQWRhcHRlcigpIH0pO1xuXG5cbiJdfQ==

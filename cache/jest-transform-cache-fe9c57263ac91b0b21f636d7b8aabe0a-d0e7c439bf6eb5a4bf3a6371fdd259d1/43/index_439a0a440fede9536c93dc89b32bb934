@@ -1,0 +1,83 @@
+637f6feba282d5bef52e8c6774e8a72d
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "getStatusBarHeight", {
+  enumerable: true,
+  get: function get() {
+    return _reactNativeStatusBarHeight.getStatusBarHeight;
+  }
+});
+Object.defineProperty(exports, "BackgroundImage", {
+  enumerable: true,
+  get: function get() {
+    return _BackgroundImage.default;
+  }
+});
+Object.defineProperty(exports, "colors", {
+  enumerable: true,
+  get: function get() {
+    return _colors.default;
+  }
+});
+Object.defineProperty(exports, "ViewPropTypes", {
+  enumerable: true,
+  get: function get() {
+    return _ViewPropTypes.default;
+  }
+});
+Object.defineProperty(exports, "fonts", {
+  enumerable: true,
+  get: function get() {
+    return _fonts.default;
+  }
+});
+Object.defineProperty(exports, "ThemeProvider", {
+  enumerable: true,
+  get: function get() {
+    return _ThemeProvider.default;
+  }
+});
+Object.defineProperty(exports, "ThemeConsumer", {
+  enumerable: true,
+  get: function get() {
+    return _ThemeProvider.ThemeConsumer;
+  }
+});
+Object.defineProperty(exports, "ThemeContext", {
+  enumerable: true,
+  get: function get() {
+    return _ThemeProvider.ThemeContext;
+  }
+});
+Object.defineProperty(exports, "withTheme", {
+  enumerable: true,
+  get: function get() {
+    return _withTheme.default;
+  }
+});
+exports.TextPropTypes = void 0;
+
+var _reactNative = require("react-native");
+
+var _reactNativeStatusBarHeight = require("react-native-status-bar-height");
+
+var _BackgroundImage = _interopRequireDefault(require("./BackgroundImage"));
+
+var _colors = _interopRequireDefault(require("./colors"));
+
+var _ViewPropTypes = _interopRequireDefault(require("./ViewPropTypes"));
+
+var _fonts = _interopRequireDefault(require("./fonts"));
+
+var _ThemeProvider = _interopRequireWildcard(require("./ThemeProvider"));
+
+var _withTheme = _interopRequireDefault(require("./withTheme"));
+
+var TextPropTypes = _reactNative.Text.propTypes;
+exports.TextPropTypes = TextPropTypes;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbIlRleHRQcm9wVHlwZXMiLCJUZXh0IiwicHJvcFR5cGVzIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7QUFDQTs7QUFFQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFFQSxJQUFNQSxhQUFhLEdBQUdDLGtCQUFLQyxTQUEzQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFRleHQgfSBmcm9tICdyZWFjdC1uYXRpdmUnO1xuaW1wb3J0IHsgZ2V0U3RhdHVzQmFySGVpZ2h0IH0gZnJvbSAncmVhY3QtbmF0aXZlLXN0YXR1cy1iYXItaGVpZ2h0JztcblxuaW1wb3J0IEJhY2tncm91bmRJbWFnZSBmcm9tICcuL0JhY2tncm91bmRJbWFnZSc7XG5pbXBvcnQgY29sb3JzIGZyb20gJy4vY29sb3JzJztcbmltcG9ydCBWaWV3UHJvcFR5cGVzIGZyb20gJy4vVmlld1Byb3BUeXBlcyc7XG5pbXBvcnQgZm9udHMgZnJvbSAnLi9mb250cyc7XG5pbXBvcnQgVGhlbWVQcm92aWRlciwgeyBUaGVtZUNvbnN1bWVyLCBUaGVtZUNvbnRleHQgfSBmcm9tICcuL1RoZW1lUHJvdmlkZXInO1xuaW1wb3J0IHdpdGhUaGVtZSBmcm9tICcuL3dpdGhUaGVtZSc7XG5cbmNvbnN0IFRleHRQcm9wVHlwZXMgPSBUZXh0LnByb3BUeXBlcztcblxuZXhwb3J0IHtcbiAgQmFja2dyb3VuZEltYWdlLFxuICBjb2xvcnMsXG4gIGdldFN0YXR1c0JhckhlaWdodCxcbiAgVmlld1Byb3BUeXBlcyxcbiAgVGV4dFByb3BUeXBlcyxcbiAgZm9udHMsXG4gIFRoZW1lUHJvdmlkZXIsXG4gIFRoZW1lQ29uc3VtZXIsXG4gIFRoZW1lQ29udGV4dCxcbiAgd2l0aFRoZW1lLFxufTtcbiJdfQ==

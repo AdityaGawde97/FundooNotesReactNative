@@ -1,0 +1,4 @@
+b95df5af5097fb38a2bf84b96736b52d
+module.exports = {
+  testUri: "../../react-native-ratings/src/images/bell.png"
+};

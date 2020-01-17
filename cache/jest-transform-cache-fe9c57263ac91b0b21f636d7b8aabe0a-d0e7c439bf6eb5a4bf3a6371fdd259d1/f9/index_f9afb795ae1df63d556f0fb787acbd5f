@@ -1,0 +1,49 @@
+d948e6a0dfd9cc8e1a5f18b4241842b2
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _field = _interopRequireDefault(require("../field"));
+
+var _styles = _interopRequireDefault(require("./styles"));
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+var FilledTextField = function (_TextField) {
+  (0, _inherits2.default)(FilledTextField, _TextField);
+
+  function FilledTextField() {
+    (0, _classCallCheck2.default)(this, FilledTextField);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(FilledTextField).apply(this, arguments));
+  }
+
+  return FilledTextField;
+}(_field.default);
+
+exports.default = FilledTextField;
+FilledTextField.contentInset = _objectSpread({}, _field.default.contentInset, {
+  top: 8,
+  left: 12,
+  right: 12
+});
+FilledTextField.labelOffset = _objectSpread({}, _field.default.labelOffset, {
+  y0: -10,
+  y1: -2
+});
+FilledTextField.inputContainerStyle = [_field.default.inputContainerStyle, _styles.default.inputContainer];
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbIkZpbGxlZFRleHRGaWVsZCIsIlRleHRGaWVsZCIsImNvbnRlbnRJbnNldCIsInRvcCIsImxlZnQiLCJyaWdodCIsImxhYmVsT2Zmc2V0IiwieTAiLCJ5MSIsImlucHV0Q29udGFpbmVyU3R5bGUiLCJzdHlsZXMiLCJpbnB1dENvbnRhaW5lciJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7QUFDQTs7Ozs7O0lBRXFCQSxlOzs7Ozs7Ozs7RUFBd0JDLGM7OztBQUF4QkQsZSxDQUNaRSxZLHFCQUNGRCxlQUFVQyxZO0FBRWJDLEVBQUFBLEdBQUcsRUFBRSxDO0FBQ0xDLEVBQUFBLElBQUksRUFBRSxFO0FBQ05DLEVBQUFBLEtBQUssRUFBRTs7QUFOVUwsZSxDQVNaTSxXLHFCQUNGTCxlQUFVSyxXO0FBRWJDLEVBQUFBLEVBQUUsRUFBRSxDQUFDLEU7QUFDTEMsRUFBQUEsRUFBRSxFQUFFLENBQUM7O0FBYllSLGUsQ0FnQlpTLG1CLEdBQXNCLENBQzNCUixlQUFVUSxtQkFEaUIsRUFFM0JDLGdCQUFPQyxjQUZvQixDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFRleHRGaWVsZCBmcm9tICcuLi9maWVsZCc7XG5pbXBvcnQgc3R5bGVzIGZyb20gJy4vc3R5bGVzJztcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgRmlsbGVkVGV4dEZpZWxkIGV4dGVuZHMgVGV4dEZpZWxkIHtcbiAgc3RhdGljIGNvbnRlbnRJbnNldCA9IHtcbiAgICAuLi5UZXh0RmllbGQuY29udGVudEluc2V0LFxuXG4gICAgdG9wOiA4LFxuICAgIGxlZnQ6IDEyLFxuICAgIHJpZ2h0OiAxMixcbiAgfTtcblxuICBzdGF0aWMgbGFiZWxPZmZzZXQgPSB7XG4gICAgLi4uVGV4dEZpZWxkLmxhYmVsT2Zmc2V0LFxuXG4gICAgeTA6IC0xMCxcbiAgICB5MTogLTIsXG4gIH07XG5cbiAgc3RhdGljIGlucHV0Q29udGFpbmVyU3R5bGUgPSBbXG4gICAgVGV4dEZpZWxkLmlucHV0Q29udGFpbmVyU3R5bGUsXG4gICAgc3R5bGVzLmlucHV0Q29udGFpbmVyLFxuICBdO1xufVxuIl19

@@ -1,0 +1,183 @@
+a26ffde00b273db6cec1bbc26bed0b72
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "StackView", {
+  enumerable: true,
+  get: function get() {
+    return _StackView.default;
+  }
+});
+Object.defineProperty(exports, "Header", {
+  enumerable: true,
+  get: function get() {
+    return _Header.default;
+  }
+});
+Object.defineProperty(exports, "HeaderTitle", {
+  enumerable: true,
+  get: function get() {
+    return _HeaderTitle.default;
+  }
+});
+Object.defineProperty(exports, "HeaderBackButton", {
+  enumerable: true,
+  get: function get() {
+    return _HeaderBackButton.default;
+  }
+});
+Object.defineProperty(exports, "CardAnimationContext", {
+  enumerable: true,
+  get: function get() {
+    return _CardAnimationContext.default;
+  }
+});
+Object.defineProperty(exports, "HeaderHeightContext", {
+  enumerable: true,
+  get: function get() {
+    return _HeaderHeightContext.default;
+  }
+});
+Object.defineProperty(exports, "GestureHandlerRefContext", {
+  enumerable: true,
+  get: function get() {
+    return _GestureHandlerRefContext.default;
+  }
+});
+Object.defineProperty(exports, "useCardAnimation", {
+  enumerable: true,
+  get: function get() {
+    return _useCardAnimation.default;
+  }
+});
+Object.defineProperty(exports, "useHeaderHeight", {
+  enumerable: true,
+  get: function get() {
+    return _useHeaderHeight.default;
+  }
+});
+Object.defineProperty(exports, "useGestureHandlerRef", {
+  enumerable: true,
+  get: function get() {
+    return _useGestureHandlerRef.default;
+  }
+});
+Object.defineProperty(exports, "NavigationStackState", {
+  enumerable: true,
+  get: function get() {
+    return _types.NavigationStackState;
+  }
+});
+Object.defineProperty(exports, "NavigationStackProp", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackNavigationProp;
+  }
+});
+Object.defineProperty(exports, "NavigationStackOptions", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackNavigationOptions;
+  }
+});
+Object.defineProperty(exports, "NavigationStackConfig", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackNavigationConfig;
+  }
+});
+Object.defineProperty(exports, "StackHeaderLeftButtonProps", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderLeftButtonProps;
+  }
+});
+Object.defineProperty(exports, "StackHeaderTitleProps", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderTitleProps;
+  }
+});
+Object.defineProperty(exports, "StackCardInterpolatedStyle", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackCardInterpolatedStyle;
+  }
+});
+Object.defineProperty(exports, "StackCardInterpolationProps", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackCardInterpolationProps;
+  }
+});
+Object.defineProperty(exports, "StackCardStyleInterpolator", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackCardStyleInterpolator;
+  }
+});
+Object.defineProperty(exports, "StackHeaderInterpolatedStyle", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderInterpolatedStyle;
+  }
+});
+Object.defineProperty(exports, "StackHeaderInterpolationProps", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderInterpolationProps;
+  }
+});
+Object.defineProperty(exports, "StackHeaderStyleInterpolator", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderStyleInterpolator;
+  }
+});
+exports.TransitionPresets = exports.TransitionSpecs = exports.HeaderStyleInterpolators = exports.CardStyleInterpolators = exports.Assets = void 0;
+
+var CardStyleInterpolators = _interopRequireWildcard(require("./TransitionConfigs/CardStyleInterpolators"));
+
+exports.CardStyleInterpolators = CardStyleInterpolators;
+
+var HeaderStyleInterpolators = _interopRequireWildcard(require("./TransitionConfigs/HeaderStyleInterpolators"));
+
+exports.HeaderStyleInterpolators = HeaderStyleInterpolators;
+
+var TransitionSpecs = _interopRequireWildcard(require("./TransitionConfigs/TransitionSpecs"));
+
+exports.TransitionSpecs = TransitionSpecs;
+
+var TransitionPresets = _interopRequireWildcard(require("./TransitionConfigs/TransitionPresets"));
+
+exports.TransitionPresets = TransitionPresets;
+
+var _StackView = _interopRequireDefault(require("./views/Stack/StackView"));
+
+var _Header = _interopRequireDefault(require("./views/Header/Header"));
+
+var _HeaderTitle = _interopRequireDefault(require("./views/Header/HeaderTitle"));
+
+var _HeaderBackButton = _interopRequireDefault(require("./views/Header/HeaderBackButton"));
+
+var _CardAnimationContext = _interopRequireDefault(require("./utils/CardAnimationContext"));
+
+var _HeaderHeightContext = _interopRequireDefault(require("./utils/HeaderHeightContext"));
+
+var _GestureHandlerRefContext = _interopRequireDefault(require("./utils/GestureHandlerRefContext"));
+
+var _useCardAnimation = _interopRequireDefault(require("./utils/useCardAnimation"));
+
+var _useHeaderHeight = _interopRequireDefault(require("./utils/useHeaderHeight"));
+
+var _useGestureHandlerRef = _interopRequireDefault(require("./utils/useGestureHandlerRef"));
+
+var _types = require("./types");
+
+var Assets = [require('./views/assets/back-icon.png'), require('./views/assets/back-icon-mask.png')];
+exports.Assets = Assets;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LnRzeCJdLCJuYW1lcyI6WyJBc3NldHMiLCJyZXF1aXJlIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxJQUFBLHNCQUFBLEdBQUEsdUJBQUEsQ0FBQSxPQUFBLENBQUEsNENBQUEsQ0FBQSxDQUFBOzs7O0FBQ0EsSUFBQSx3QkFBQSxHQUFBLHVCQUFBLENBQUEsT0FBQSxDQUFBLDhDQUFBLENBQUEsQ0FBQTs7OztBQUNBLElBQUEsZUFBQSxHQUFBLHVCQUFBLENBQUEsT0FBQSxDQUFBLHFDQUFBLENBQUEsQ0FBQTs7OztBQUNBLElBQUEsaUJBQUEsR0FBQSx1QkFBQSxDQUFBLE9BQUEsQ0FBQSx1Q0FBQSxDQUFBLENBQUE7Ozs7QUFZQSxJQUFBLFVBQUEsR0FBQSxzQkFBQSxDQUFBLE9BQUEsQ0FBQSx5QkFBQSxDQUFBLENBQUE7O0FBQ0EsSUFBQSxPQUFBLEdBQUEsc0JBQUEsQ0FBQSxPQUFBLENBQUEsdUJBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsWUFBQSxHQUFBLHNCQUFBLENBQUEsT0FBQSxDQUFBLDRCQUFBLENBQUEsQ0FBQTs7QUFDQSxJQUFBLGlCQUFBLEdBQUEsc0JBQUEsQ0FBQSxPQUFBLENBQUEsaUNBQUEsQ0FBQSxDQUFBOztBQWVBLElBQUEscUJBQUEsR0FBQSxzQkFBQSxDQUFBLE9BQUEsQ0FBQSw4QkFBQSxDQUFBLENBQUE7O0FBQ0EsSUFBQSxvQkFBQSxHQUFBLHNCQUFBLENBQUEsT0FBQSxDQUFBLDZCQUFBLENBQUEsQ0FBQTs7QUFDQSxJQUFBLHlCQUFBLEdBQUEsc0JBQUEsQ0FBQSxPQUFBLENBQUEsa0NBQUEsQ0FBQSxDQUFBOztBQUVBLElBQUEsaUJBQUEsR0FBQSxzQkFBQSxDQUFBLE9BQUEsQ0FBQSwwQkFBQSxDQUFBLENBQUE7O0FBQ0EsSUFBQSxnQkFBQSxHQUFBLHNCQUFBLENBQUEsT0FBQSxDQUFBLHlCQUFBLENBQUEsQ0FBQTs7QUFDQSxJQUFBLHFCQUFBLEdBQUEsc0JBQUEsQ0FBQSxPQUFBLENBQUEsOEJBQUEsQ0FBQSxDQUFBOztBQUtBLElBQUEsTUFBQSxHQUFBLE9BQUEsQ0FBQSxTQUFBLENBQUE7O0FBdkNPLElBQU1BLE1BQU0sR0FBRyxDQUVwQkMsT0FBTyxDQUZhLDhCQUViLENBRmEsRUFJcEJBLE9BQU8sQ0FKRixtQ0FJRSxDQUphLENBQWYiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBDYXJkU3R5bGVJbnRlcnBvbGF0b3JzIGZyb20gJy4vVHJhbnNpdGlvbkNvbmZpZ3MvQ2FyZFN0eWxlSW50ZXJwb2xhdG9ycyc7XG5pbXBvcnQgKiBhcyBIZWFkZXJTdHlsZUludGVycG9sYXRvcnMgZnJvbSAnLi9UcmFuc2l0aW9uQ29uZmlncy9IZWFkZXJTdHlsZUludGVycG9sYXRvcnMnO1xuaW1wb3J0ICogYXMgVHJhbnNpdGlvblNwZWNzIGZyb20gJy4vVHJhbnNpdGlvbkNvbmZpZ3MvVHJhbnNpdGlvblNwZWNzJztcbmltcG9ydCAqIGFzIFRyYW5zaXRpb25QcmVzZXRzIGZyb20gJy4vVHJhbnNpdGlvbkNvbmZpZ3MvVHJhbnNpdGlvblByZXNldHMnO1xuXG5leHBvcnQgY29uc3QgQXNzZXRzID0gW1xuICAvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgaW1wb3J0L25vLWNvbW1vbmpzXG4gIHJlcXVpcmUoJy4vdmlld3MvYXNzZXRzL2JhY2staWNvbi5wbmcnKSxcbiAgLy8gZXNsaW50LWRpc2FibGUtbmV4dC1saW5lIGltcG9ydC9uby1jb21tb25qc1xuICByZXF1aXJlKCcuL3ZpZXdzL2Fzc2V0cy9iYWNrLWljb24tbWFzay5wbmcnKSxcbl07XG5cbi8qKlxuICogVmlld3NcbiAqL1xuZXhwb3J0IHsgZGVmYXVsdCBhcyBTdGFja1ZpZXcgfSBmcm9tICcuL3ZpZXdzL1N0YWNrL1N0YWNrVmlldyc7XG5leHBvcnQgeyBkZWZhdWx0IGFzIEhlYWRlciB9IGZyb20gJy4vdmlld3MvSGVhZGVyL0hlYWRlcic7XG5leHBvcnQgeyBkZWZhdWx0IGFzIEhlYWRlclRpdGxlIH0gZnJvbSAnLi92aWV3cy9IZWFkZXIvSGVhZGVyVGl0bGUnO1xuZXhwb3J0IHsgZGVmYXVsdCBhcyBIZWFkZXJCYWNrQnV0dG9uIH0gZnJvbSAnLi92aWV3cy9IZWFkZXIvSGVhZGVyQmFja0J1dHRvbic7XG5cbi8qKlxuICogVHJhbnNpdGlvbiBwcmVzZXRzXG4gKi9cbmV4cG9ydCB7XG4gIENhcmRTdHlsZUludGVycG9sYXRvcnMsXG4gIEhlYWRlclN0eWxlSW50ZXJwb2xhdG9ycyxcbiAgVHJhbnNpdGlvblNwZWNzLFxuICBUcmFuc2l0aW9uUHJlc2V0cyxcbn07XG5cbi8qKlxuICogVXRpbGl0aWVzXG4gKi9cbmV4cG9ydCB7IGRlZmF1bHQgYXMgQ2FyZEFuaW1hdGlvbkNvbnRleHQgfSBmcm9tICcuL3V0aWxzL0NhcmRBbmltYXRpb25Db250ZXh0JztcbmV4cG9ydCB7IGRlZmF1bHQgYXMgSGVhZGVySGVpZ2h0Q29udGV4dCB9IGZyb20gJy4vdXRpbHMvSGVhZGVySGVpZ2h0Q29udGV4dCc7XG5leHBvcnQgeyBkZWZhdWx0IGFzIEdlc3R1cmVIYW5kbGVyUmVmQ29udGV4dCB9IGZyb20gJy4vdXRpbHMvR2VzdHVyZUhhbmRsZXJSZWZDb250ZXh0JztcblxuZXhwb3J0IHsgZGVmYXVsdCBhcyB1c2VDYXJkQW5pbWF0aW9uIH0gZnJvbSAnLi91dGlscy91c2VDYXJkQW5pbWF0aW9uJztcbmV4cG9ydCB7IGRlZmF1bHQgYXMgdXNlSGVhZGVySGVpZ2h0IH0gZnJvbSAnLi91dGlscy91c2VIZWFkZXJIZWlnaHQnO1xuZXhwb3J0IHsgZGVmYXVsdCBhcyB1c2VHZXN0dXJlSGFuZGxlclJlZiB9IGZyb20gJy4vdXRpbHMvdXNlR2VzdHVyZUhhbmRsZXJSZWYnO1xuXG4vKipcbiAqIFR5cGVzXG4gKi9cbmV4cG9ydCB7XG4gIE5hdmlnYXRpb25TdGFja1N0YXRlLFxuICBTdGFja05hdmlnYXRpb25Qcm9wIGFzIE5hdmlnYXRpb25TdGFja1Byb3AsXG4gIFN0YWNrTmF2aWdhdGlvbk9wdGlvbnMgYXMgTmF2aWdhdGlvblN0YWNrT3B0aW9ucyxcbiAgU3RhY2tOYXZpZ2F0aW9uQ29uZmlnIGFzIE5hdmlnYXRpb25TdGFja0NvbmZpZyxcbiAgU3RhY2tIZWFkZXJMZWZ0QnV0dG9uUHJvcHMsXG4gIFN0YWNrSGVhZGVyVGl0bGVQcm9wcyxcbiAgU3RhY2tDYXJkSW50ZXJwb2xhdGVkU3R5bGUsXG4gIFN0YWNrQ2FyZEludGVycG9sYXRpb25Qcm9wcyxcbiAgU3RhY2tDYXJkU3R5bGVJbnRlcnBvbGF0b3IsXG4gIFN0YWNrSGVhZGVySW50ZXJwb2xhdGVkU3R5bGUsXG4gIFN0YWNrSGVhZGVySW50ZXJwb2xhdGlvblByb3BzLFxuICBTdGFja0hlYWRlclN0eWxlSW50ZXJwb2xhdG9yLFxufSBmcm9tICcuL3R5cGVzJztcbiJdfQ==

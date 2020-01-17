@@ -1,0 +1,77 @@
+87ef71454efb3efe8c71d36ed4dc3d6c
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "color", {
+  enumerable: true,
+  get: function get() {
+    return _color.default;
+  }
+});
+Object.defineProperty(exports, "renderNode", {
+  enumerable: true,
+  get: function get() {
+    return _renderNode.default;
+  }
+});
+Object.defineProperty(exports, "getIconType", {
+  enumerable: true,
+  get: function get() {
+    return _getIconType.default;
+  }
+});
+Object.defineProperty(exports, "normalizeText", {
+  enumerable: true,
+  get: function get() {
+    return _normalizeText.default;
+  }
+});
+Object.defineProperty(exports, "nodeType", {
+  enumerable: true,
+  get: function get() {
+    return _nodeType.default;
+  }
+});
+exports.conditionalStyle = exports.isIOS = exports.ScreenHeight = exports.ScreenWidth = exports.patchWebProps = void 0;
+
+var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));
+
+var _reactNative = require("react-native");
+
+var _color = _interopRequireDefault(require("color"));
+
+var _renderNode = _interopRequireDefault(require("./renderNode"));
+
+var _getIconType = _interopRequireDefault(require("./getIconType"));
+
+var _normalizeText = _interopRequireDefault(require("./normalizeText"));
+
+var _nodeType = _interopRequireDefault(require("./nodeType"));
+
+var Screen = _reactNative.Dimensions.get('window');
+
+var ScreenWidth = Screen.width;
+exports.ScreenWidth = ScreenWidth;
+var ScreenHeight = Screen.height;
+exports.ScreenHeight = ScreenHeight;
+var isIOS = _reactNative.Platform.OS === 'ios';
+exports.isIOS = isIOS;
+
+var conditionalStyle = function conditionalStyle(condition, style) {
+  return condition ? style : {};
+};
+
+exports.conditionalStyle = conditionalStyle;
+
+var patchWebProps = function patchWebProps(_ref) {
+  var updateTheme = _ref.updateTheme,
+      replaceTheme = _ref.replaceTheme,
+      onClear = _ref.onClear,
+      rest = (0, _objectWithoutProperties2.default)(_ref, ["updateTheme", "replaceTheme", "onClear"]);
+  return rest;
+};
+
+exports.patchWebProps = patchWebProps;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbIlNjcmVlbiIsIkRpbWVuc2lvbnMiLCJnZXQiLCJTY3JlZW5XaWR0aCIsIndpZHRoIiwiU2NyZWVuSGVpZ2h0IiwiaGVpZ2h0IiwiaXNJT1MiLCJQbGF0Zm9ybSIsIk9TIiwiY29uZGl0aW9uYWxTdHlsZSIsImNvbmRpdGlvbiIsInN0eWxlIiwicGF0Y2hXZWJQcm9wcyIsInVwZGF0ZVRoZW1lIiwicmVwbGFjZVRoZW1lIiwib25DbGVhciIsInJlc3QiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOztBQUNBOztBQUNBOztBQUNBOztBQUNBOztBQUNBOztBQUVBLElBQU1BLE1BQU0sR0FBR0Msd0JBQVdDLEdBQVgsQ0FBZSxRQUFmLENBQWY7O0FBQ0EsSUFBTUMsV0FBVyxHQUFHSCxNQUFNLENBQUNJLEtBQTNCOztBQUNBLElBQU1DLFlBQVksR0FBR0wsTUFBTSxDQUFDTSxNQUE1Qjs7QUFDQSxJQUFNQyxLQUFLLEdBQUdDLHNCQUFTQyxFQUFULEtBQWdCLEtBQTlCOzs7QUFFQSxJQUFNQyxnQkFBZ0IsR0FBRyxTQUFuQkEsZ0JBQW1CLENBQUNDLFNBQUQsRUFBWUMsS0FBWjtBQUFBLFNBQXVCRCxTQUFTLEdBQUdDLEtBQUgsR0FBVyxFQUEzQztBQUFBLENBQXpCOzs7O0FBRU8sSUFBTUMsYUFBYSxHQUFHLFNBQWhCQSxhQUFnQixPQUt2QjtBQUFBLE1BSkpDLFdBSUksUUFKSkEsV0FJSTtBQUFBLE1BSEpDLFlBR0ksUUFISkEsWUFHSTtBQUFBLE1BRkpDLE9BRUksUUFGSkEsT0FFSTtBQUFBLE1BRERDLElBQ0M7QUFDSixTQUFPQSxJQUFQO0FBQ0QsQ0FQTSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFBsYXRmb3JtLCBEaW1lbnNpb25zIH0gZnJvbSAncmVhY3QtbmF0aXZlJztcbmltcG9ydCBjb2xvciBmcm9tICdjb2xvcic7XG5pbXBvcnQgcmVuZGVyTm9kZSBmcm9tICcuL3JlbmRlck5vZGUnO1xuaW1wb3J0IGdldEljb25UeXBlIGZyb20gJy4vZ2V0SWNvblR5cGUnO1xuaW1wb3J0IG5vcm1hbGl6ZVRleHQgZnJvbSAnLi9ub3JtYWxpemVUZXh0JztcbmltcG9ydCBub2RlVHlwZSBmcm9tICcuL25vZGVUeXBlJztcblxuY29uc3QgU2NyZWVuID0gRGltZW5zaW9ucy5nZXQoJ3dpbmRvdycpO1xuY29uc3QgU2NyZWVuV2lkdGggPSBTY3JlZW4ud2lkdGg7XG5jb25zdCBTY3JlZW5IZWlnaHQgPSBTY3JlZW4uaGVpZ2h0O1xuY29uc3QgaXNJT1MgPSBQbGF0Zm9ybS5PUyA9PT0gJ2lvcyc7XG5cbmNvbnN0IGNvbmRpdGlvbmFsU3R5bGUgPSAoY29uZGl0aW9uLCBzdHlsZSkgPT4gKGNvbmRpdGlvbiA/IHN0eWxlIDoge30pO1xuXG5leHBvcnQgY29uc3QgcGF0Y2hXZWJQcm9wcyA9ICh7XG4gIHVwZGF0ZVRoZW1lLFxuICByZXBsYWNlVGhlbWUsXG4gIG9uQ2xlYXIsXG4gIC4uLnJlc3Rcbn0pID0+IHtcbiAgcmV0dXJuIHJlc3Q7XG59O1xuXG5leHBvcnQge1xuICByZW5kZXJOb2RlLFxuICBnZXRJY29uVHlwZSxcbiAgbm9ybWFsaXplVGV4dCxcbiAgbm9kZVR5cGUsXG4gIFNjcmVlbldpZHRoLFxuICBTY3JlZW5IZWlnaHQsXG4gIGlzSU9TLFxuICBjb25kaXRpb25hbFN0eWxlLFxuICBjb2xvcixcbn07XG4iXX0=

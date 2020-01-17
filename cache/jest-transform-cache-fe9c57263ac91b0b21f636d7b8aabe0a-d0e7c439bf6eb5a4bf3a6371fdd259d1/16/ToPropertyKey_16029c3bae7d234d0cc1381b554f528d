@@ -1,0 +1,16 @@
+03cb81d8be2a57a3bcd04e7e92e55dc0
+'use strict';
+
+var GetIntrinsic = require('../GetIntrinsic');
+
+var $String = GetIntrinsic('%String%');
+
+var ToPrimitive = require('./ToPrimitive');
+
+var ToString = require('./ToString'); // https://www.ecma-international.org/ecma-262/6.0/#sec-topropertykey
+
+
+module.exports = function ToPropertyKey(argument) {
+  var key = ToPrimitive(argument, $String);
+  return typeof key === 'symbol' ? key : ToString(key);
+};

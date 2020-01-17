@@ -1,0 +1,6 @@
+3cea2afc7c7fcb16e20a2bec953116a3
+'use strict'; // http://www.ecma-international.org/ecma-262/5.1/#sec-9.2
+
+module.exports = function ToBoolean(value) {
+  return !!value;
+};

@@ -1,0 +1,7 @@
+8d0116fb5cc9421ccfdebcdd7c0d5db6
+var root = require('./_root');
+/** Built-in value references. */
+
+
+var Uint8Array = root.Uint8Array;
+module.exports = Uint8Array;

@@ -1,0 +1,22 @@
+68fbd7b3aa4bf4a5e85be899833ed4c0
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getDisplayName;
+
+function getDisplayName(Component) {
+  if (typeof Component === 'string') {
+    return Component;
+  }
+
+  if (!Component) {
+    // Should never actually reach here, Function cannot be falsy.
+    return 'undefined';
+  }
+
+  return Component.displayName || Component.name || 'Component';
+}
+
+module.exports = exports.default;

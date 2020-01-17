@@ -1,0 +1,9 @@
+a48b8ce4f264278bab570b26d469f6bf
+'use strict';
+
+var $isNaN = require('../helpers/isNaN'); // https://www.ecma-international.org/ecma-262/6.0/#sec-samevaluezero
+
+
+module.exports = function SameValueZero(x, y) {
+  return x === y || $isNaN(x) && $isNaN(y);
+};

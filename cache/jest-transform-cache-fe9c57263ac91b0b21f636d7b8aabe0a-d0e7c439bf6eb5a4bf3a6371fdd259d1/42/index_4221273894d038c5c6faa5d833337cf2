@@ -1,0 +1,6 @@
+27176c1a9fd87b1ea6bff3da6718d608
+'use strict';
+
+module.exports = Number.isNaN || function (x) {
+  return x !== x;
+};

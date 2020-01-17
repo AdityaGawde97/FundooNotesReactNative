@@ -1,0 +1,7 @@
+822ff4e00f81e8ddcd93318c8e658f04
+var root = require('./_root');
+/** Built-in value references. */
+
+
+var Symbol = root.Symbol;
+module.exports = Symbol;

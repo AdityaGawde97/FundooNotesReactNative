@@ -1,0 +1,10 @@
+9e5d8f03fc56367f060ad48607cf79d5
+'use strict';
+
+var process = require('./process');
+
+try {
+  module.exports = setImmediate;
+} catch (ex) {
+  module.exports = process.nextTick;
+}

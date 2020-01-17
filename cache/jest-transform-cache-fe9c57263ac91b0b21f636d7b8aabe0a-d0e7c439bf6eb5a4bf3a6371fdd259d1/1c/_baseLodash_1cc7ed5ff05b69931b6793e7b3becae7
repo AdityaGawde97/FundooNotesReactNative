@@ -1,0 +1,10 @@
+351c2ee5a263bda627ee35ec7273f1ee
+/**
+ * The function whose prototype chain sequence wrappers inherit from.
+ *
+ * @private
+ */
+function baseLodash() {// No operation performed.
+}
+
+module.exports = baseLodash;

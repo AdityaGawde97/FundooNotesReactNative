@@ -1,0 +1,47 @@
+0376ffd8c4899bcc6db7586824bd1a7c
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.Divider = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _reactNative = require("react-native");
+
+var _config = require("../config");
+
+var Divider = function Divider(_ref) {
+  var style = _ref.style,
+      theme = _ref.theme,
+      rest = (0, _objectWithoutProperties2.default)(_ref, ["style", "theme"]);
+  return _react.default.createElement(_reactNative.View, (0, _extends2.default)({
+    style: _reactNative.StyleSheet.flatten([styles.container(theme), style])
+  }, rest));
+};
+
+exports.Divider = Divider;
+Divider.propTypes = {
+  style: _config.ViewPropTypes.style,
+  theme: _propTypes.default.object
+};
+var styles = {
+  container: function container(theme) {
+    return {
+      backgroundColor: theme.colors.divider,
+      height: _reactNative.StyleSheet.hairlineWidth
+    };
+  }
+};
+
+var _default = (0, _config.withTheme)(Divider, 'Divider');
+
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkRpdmlkZXIuanMiXSwibmFtZXMiOlsiRGl2aWRlciIsInN0eWxlIiwidGhlbWUiLCJyZXN0IiwiU3R5bGVTaGVldCIsImZsYXR0ZW4iLCJzdHlsZXMiLCJjb250YWluZXIiLCJwcm9wVHlwZXMiLCJWaWV3UHJvcFR5cGVzIiwiUHJvcFR5cGVzIiwib2JqZWN0IiwiYmFja2dyb3VuZENvbG9yIiwiY29sb3JzIiwiZGl2aWRlciIsImhlaWdodCIsImhhaXJsaW5lV2lkdGgiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBRUE7O0FBRUEsSUFBTUEsT0FBTyxHQUFHLFNBQVZBLE9BQVU7QUFBQSxNQUFHQyxLQUFILFFBQUdBLEtBQUg7QUFBQSxNQUFVQyxLQUFWLFFBQVVBLEtBQVY7QUFBQSxNQUFvQkMsSUFBcEI7QUFBQSxTQUNkLDZCQUFDLGlCQUFEO0FBQ0UsSUFBQSxLQUFLLEVBQUVDLHdCQUFXQyxPQUFYLENBQW1CLENBQUNDLE1BQU0sQ0FBQ0MsU0FBUCxDQUFpQkwsS0FBakIsQ0FBRCxFQUEwQkQsS0FBMUIsQ0FBbkI7QUFEVCxLQUVNRSxJQUZOLEVBRGM7QUFBQSxDQUFoQjs7O0FBT0FILE9BQU8sQ0FBQ1EsU0FBUixHQUFvQjtBQUNsQlAsRUFBQUEsS0FBSyxFQUFFUSxzQkFBY1IsS0FESDtBQUVsQkMsRUFBQUEsS0FBSyxFQUFFUSxtQkFBVUM7QUFGQyxDQUFwQjtBQUtBLElBQU1MLE1BQU0sR0FBRztBQUNiQyxFQUFBQSxTQUFTLEVBQUUsbUJBQUFMLEtBQUs7QUFBQSxXQUFLO0FBQ25CVSxNQUFBQSxlQUFlLEVBQUVWLEtBQUssQ0FBQ1csTUFBTixDQUFhQyxPQURYO0FBRW5CQyxNQUFBQSxNQUFNLEVBQUVYLHdCQUFXWTtBQUZBLEtBQUw7QUFBQTtBQURILENBQWY7O2VBUWUsdUJBQVVoQixPQUFWLEVBQW1CLFNBQW5CLEMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IFByb3BUeXBlcyBmcm9tICdwcm9wLXR5cGVzJztcbmltcG9ydCB7IFZpZXcsIFN0eWxlU2hlZXQgfSBmcm9tICdyZWFjdC1uYXRpdmUnO1xuXG5pbXBvcnQgeyBWaWV3UHJvcFR5cGVzLCB3aXRoVGhlbWUgfSBmcm9tICcuLi9jb25maWcnO1xuXG5jb25zdCBEaXZpZGVyID0gKHsgc3R5bGUsIHRoZW1lLCAuLi5yZXN0IH0pID0+IChcbiAgPFZpZXdcbiAgICBzdHlsZT17U3R5bGVTaGVldC5mbGF0dGVuKFtzdHlsZXMuY29udGFpbmVyKHRoZW1lKSwgc3R5bGVdKX1cbiAgICB7Li4ucmVzdH1cbiAgLz5cbik7XG5cbkRpdmlkZXIucHJvcFR5cGVzID0ge1xuICBzdHlsZTogVmlld1Byb3BUeXBlcy5zdHlsZSxcbiAgdGhlbWU6IFByb3BUeXBlcy5vYmplY3QsXG59O1xuXG5jb25zdCBzdHlsZXMgPSB7XG4gIGNvbnRhaW5lcjogdGhlbWUgPT4gKHtcbiAgICBiYWNrZ3JvdW5kQ29sb3I6IHRoZW1lLmNvbG9ycy5kaXZpZGVyLFxuICAgIGhlaWdodDogU3R5bGVTaGVldC5oYWlybGluZVdpZHRoLFxuICB9KSxcbn07XG5cbmV4cG9ydCB7IERpdmlkZXIgfTtcbmV4cG9ydCBkZWZhdWx0IHdpdGhUaGVtZShEaXZpZGVyLCAnRGl2aWRlcicpO1xuIl19

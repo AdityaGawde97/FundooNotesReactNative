@@ -1,0 +1,189 @@
+40bc3ca4b7d7ada2d873cf5efdc63ac9
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _exportNames = {
+  createNavigationContainer: true,
+  createStackNavigator: true,
+  createBottomTabNavigator: true,
+  createMaterialTopTabNavigator: true,
+  createDrawerNavigator: true,
+  StackGestureContext: true,
+  DrawerGestureContext: true,
+  DrawerRouter: true,
+  DrawerActions: true,
+  Transitioner: true,
+  StackView: true,
+  StackViewCard: true,
+  StackViewTransitionConfigs: true,
+  Header: true,
+  HeaderTitle: true,
+  HeaderBackButton: true,
+  HeaderStyleInterpolator: true,
+  DrawerView: true,
+  DrawerItems: true,
+  DrawerSidebar: true,
+  BottomTabBar: true,
+  MaterialTopTabBar: true
+};
+Object.defineProperty(exports, "createNavigationContainer", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.createNavigationContainer;
+  }
+});
+Object.defineProperty(exports, "createStackNavigator", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.createStackNavigator;
+  }
+});
+Object.defineProperty(exports, "createBottomTabNavigator", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.createBottomTabNavigator;
+  }
+});
+Object.defineProperty(exports, "createMaterialTopTabNavigator", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.createMaterialTopTabNavigator;
+  }
+});
+Object.defineProperty(exports, "createDrawerNavigator", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.createDrawerNavigator;
+  }
+});
+Object.defineProperty(exports, "StackGestureContext", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.StackGestureContext;
+  }
+});
+Object.defineProperty(exports, "DrawerGestureContext", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.DrawerGestureContext;
+  }
+});
+Object.defineProperty(exports, "DrawerRouter", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.DrawerRouter;
+  }
+});
+Object.defineProperty(exports, "DrawerActions", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.DrawerActions;
+  }
+});
+Object.defineProperty(exports, "Transitioner", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.Transitioner;
+  }
+});
+Object.defineProperty(exports, "StackView", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.StackView;
+  }
+});
+Object.defineProperty(exports, "StackViewCard", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.StackViewCard;
+  }
+});
+Object.defineProperty(exports, "StackViewTransitionConfigs", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.StackViewTransitionConfigs;
+  }
+});
+Object.defineProperty(exports, "Header", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.Header;
+  }
+});
+Object.defineProperty(exports, "HeaderTitle", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.HeaderTitle;
+  }
+});
+Object.defineProperty(exports, "HeaderBackButton", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.HeaderBackButton;
+  }
+});
+Object.defineProperty(exports, "HeaderStyleInterpolator", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.HeaderStyleInterpolator;
+  }
+});
+Object.defineProperty(exports, "DrawerView", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.DrawerView;
+  }
+});
+Object.defineProperty(exports, "DrawerItems", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.DrawerItems;
+  }
+});
+Object.defineProperty(exports, "DrawerSidebar", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.DrawerSidebar;
+  }
+});
+Object.defineProperty(exports, "BottomTabBar", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.BottomTabBar;
+  }
+});
+Object.defineProperty(exports, "MaterialTopTabBar", {
+  enumerable: true,
+  get: function get() {
+    return _deprecations.MaterialTopTabBar;
+  }
+});
+
+var _core = require("@react-navigation/core");
+
+Object.keys(_core).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _core[key];
+    }
+  });
+});
+
+var _native = require("@react-navigation/native");
+
+Object.keys(_native).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _native[key];
+    }
+  });
+});
+
+var _deprecations = require("./deprecations");
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlYWN0LW5hdmlnYXRpb24uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBOztBQUNBOztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBOztBQUlBIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnQHJlYWN0LW5hdmlnYXRpb24vY29yZSc7XG5leHBvcnQgKiBmcm9tICdAcmVhY3QtbmF2aWdhdGlvbi9uYXRpdmUnO1xuXG4vLyBFeHBvcnQgZWFjaCBpdGVtIGluZGl2aWR1YWxseSBzbyB0aGF0IHRoZXkgY2FuIGJlIGV2YWx1YXRlZCBsYXppbHlcbi8vIGh0dHBzOi8vYmFiZWxqcy5pby9kb2NzL2VuL2JhYmVsLXBsdWdpbi10cmFuc2Zvcm0tbW9kdWxlcy1jb21tb25qcyNsYXp5XG5leHBvcnQge1xuICBjcmVhdGVOYXZpZ2F0aW9uQ29udGFpbmVyLFxuICBjcmVhdGVTdGFja05hdmlnYXRvcixcbiAgY3JlYXRlQm90dG9tVGFiTmF2aWdhdG9yLFxuICBjcmVhdGVNYXRlcmlhbFRvcFRhYk5hdmlnYXRvcixcbiAgY3JlYXRlRHJhd2VyTmF2aWdhdG9yLFxuICBTdGFja0dlc3R1cmVDb250ZXh0LFxuICBEcmF3ZXJHZXN0dXJlQ29udGV4dCxcbiAgRHJhd2VyUm91dGVyLFxuICBEcmF3ZXJBY3Rpb25zLFxuICBUcmFuc2l0aW9uZXIsXG4gIFN0YWNrVmlldyxcbiAgU3RhY2tWaWV3Q2FyZCxcbiAgU3RhY2tWaWV3VHJhbnNpdGlvbkNvbmZpZ3MsXG4gIEhlYWRlcixcbiAgSGVhZGVyVGl0bGUsXG4gIEhlYWRlckJhY2tCdXR0b24sXG4gIEhlYWRlclN0eWxlSW50ZXJwb2xhdG9yLFxuICBEcmF3ZXJWaWV3LFxuICBEcmF3ZXJJdGVtcyxcbiAgRHJhd2VyU2lkZWJhcixcbiAgQm90dG9tVGFiQmFyLFxuICBNYXRlcmlhbFRvcFRhYkJhcixcbn0gZnJvbSAnLi9kZXByZWNhdGlvbnMnO1xuIl19

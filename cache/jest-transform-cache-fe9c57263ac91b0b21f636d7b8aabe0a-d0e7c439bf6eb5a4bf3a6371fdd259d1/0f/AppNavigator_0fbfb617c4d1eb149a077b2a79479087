@@ -1,0 +1,107 @@
+30c4a60c9c3723e7e3201941b4a1ee26
+var cov_1nrl5c7lb = function () {
+  var path = "/home/admin10/Desktop/FundooNotes/src/Navigator/AppNavigator.js";
+  var hash = "e66bb04d5a649402ab0ee302444bda6a915f99dd";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/admin10/Desktop/FundooNotes/src/Navigator/AppNavigator.js",
+    statementMap: {
+      "0": {
+        start: {
+          line: 10,
+          column: 18
+        },
+        end: {
+          line: 19,
+          column: 1
+        }
+      },
+      "1": {
+        start: {
+          line: 21,
+          column: 21
+        },
+        end: {
+          line: 21,
+          column: 50
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
+    hash: "e66bb04d5a649402ab0ee302444bda6a915f99dd"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  return coverage[path] = coverageData;
+}();
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _reactNavigation = require("react-navigation");
+
+var _reactNavigationStack = require("react-navigation-stack");
+
+var _SignUpPage = _interopRequireDefault(require("../Component/Login/SignUpPage1"));
+
+var _SignUpPage2 = _interopRequireDefault(require("../Component/Login/SignUpPage2"));
+
+var _SignUpPage3 = _interopRequireDefault(require("../Component/Login/SignUpPage3"));
+
+var _SignIn = _interopRequireDefault(require("../Component/Login/SignIn"));
+
+var _ForgotPassword = _interopRequireDefault(require("../Component/Login/ForgotPassword"));
+
+var Navigator = (cov_1nrl5c7lb.s[0]++, (0, _reactNavigationStack.createStackNavigator)({
+  SignIn: {
+    screen: _SignIn.default,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+  SignUpPage1: {
+    screen: _SignUpPage.default,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+  SignUpPage2: {
+    screen: _SignUpPage2.default,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+  SignUpPage3: {
+    screen: _SignUpPage3.default,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+  ForgotPassword: {
+    screen: _ForgotPassword.default,
+    navigationOptions: {
+      headerShown: false
+    }
+  }
+}));
+var AppNavigator = (cov_1nrl5c7lb.s[1]++, (0, _reactNavigation.createAppContainer)(Navigator));
+var _default = AppNavigator;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkFwcE5hdmlnYXRvci5qcyJdLCJuYW1lcyI6WyJOYXZpZ2F0b3IiLCJTaWduSW4iLCJzY3JlZW4iLCJuYXZpZ2F0aW9uT3B0aW9ucyIsImhlYWRlclNob3duIiwiU2lnblVwUGFnZTEiLCJTaWduVXBQYWdlMiIsIlNpZ25VcFBhZ2UzIiwiRm9yZ290UGFzc3dvcmQiLCJBcHBOYXZpZ2F0b3IiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7O0FBQ0E7O0FBRUE7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBRUEsSUFBTUEsU0FBUywwQkFBRyxnREFDZDtBQUVJQyxFQUFBQSxNQUFNLEVBQUU7QUFBRUMsSUFBQUEsTUFBTSxFQUFFRCxlQUFWO0FBQWtCRSxJQUFBQSxpQkFBaUIsRUFBRTtBQUFFQyxNQUFBQSxXQUFXLEVBQUU7QUFBZjtBQUFyQyxHQUZaO0FBR0lDLEVBQUFBLFdBQVcsRUFBRTtBQUFFSCxJQUFBQSxNQUFNLEVBQUVHLG1CQUFWO0FBQXVCRixJQUFBQSxpQkFBaUIsRUFBRTtBQUFFQyxNQUFBQSxXQUFXLEVBQUU7QUFBZjtBQUExQyxHQUhqQjtBQUlJRSxFQUFBQSxXQUFXLEVBQUU7QUFBRUosSUFBQUEsTUFBTSxFQUFFSSxvQkFBVjtBQUF1QkgsSUFBQUEsaUJBQWlCLEVBQUU7QUFBRUMsTUFBQUEsV0FBVyxFQUFFO0FBQWY7QUFBMUMsR0FKakI7QUFLSUcsRUFBQUEsV0FBVyxFQUFFO0FBQUVMLElBQUFBLE1BQU0sRUFBRUssb0JBQVY7QUFBdUJKLElBQUFBLGlCQUFpQixFQUFFO0FBQUVDLE1BQUFBLFdBQVcsRUFBRTtBQUFmO0FBQTFDLEdBTGpCO0FBTUlJLEVBQUFBLGNBQWMsRUFBRTtBQUFFTixJQUFBQSxNQUFNLEVBQUVNLHVCQUFWO0FBQTBCTCxJQUFBQSxpQkFBaUIsRUFBRTtBQUFFQyxNQUFBQSxXQUFXLEVBQUU7QUFBZjtBQUE3QztBQU5wQixDQURjLENBQUgsQ0FBZjtBQVdBLElBQU1LLFlBQVksMEJBQUcseUNBQW1CVCxTQUFuQixDQUFILENBQWxCO2VBRWVTLFkiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjcmVhdGVBcHBDb250YWluZXIgfSBmcm9tIFwicmVhY3QtbmF2aWdhdGlvblwiO1xuaW1wb3J0IHsgY3JlYXRlU3RhY2tOYXZpZ2F0b3IgfSBmcm9tIFwicmVhY3QtbmF2aWdhdGlvbi1zdGFja1wiO1xuLy9pbXBvcnQgSG9tZVNjcmVlbiBmcm9tICcuLi9Db21wb25lbnQvSG9tZVNjcmVlbidcbmltcG9ydCBTaWduVXBQYWdlMSBmcm9tICcuLi9Db21wb25lbnQvTG9naW4vU2lnblVwUGFnZTEnO1xuaW1wb3J0IFNpZ25VcFBhZ2UyIGZyb20gJy4uL0NvbXBvbmVudC9Mb2dpbi9TaWduVXBQYWdlMic7XG5pbXBvcnQgU2lnblVwUGFnZTMgZnJvbSAnLi4vQ29tcG9uZW50L0xvZ2luL1NpZ25VcFBhZ2UzJztcbmltcG9ydCBTaWduSW4gZnJvbSBcIi4uL0NvbXBvbmVudC9Mb2dpbi9TaWduSW5cIlxuaW1wb3J0IEZvcmdvdFBhc3N3b3JkIGZyb20gXCIuLi9Db21wb25lbnQvTG9naW4vRm9yZ290UGFzc3dvcmRcIjtcblxuY29uc3QgTmF2aWdhdG9yID0gY3JlYXRlU3RhY2tOYXZpZ2F0b3IoXG4gICAge1xuICAgICAgICAvLyBIb21lU2NyZWVuOiB7IHNjcmVlbjogSG9tZVNjcmVlbiwgbmF2aWdhdGlvbk9wdGlvbnM6IHsgaGVhZGVyU2hvd246IGZhbHNlIH0gfSxcbiAgICAgICAgU2lnbkluOiB7IHNjcmVlbjogU2lnbkluLCBuYXZpZ2F0aW9uT3B0aW9uczogeyBoZWFkZXJTaG93bjogZmFsc2UgfSB9LFxuICAgICAgICBTaWduVXBQYWdlMTogeyBzY3JlZW46IFNpZ25VcFBhZ2UxLCBuYXZpZ2F0aW9uT3B0aW9uczogeyBoZWFkZXJTaG93bjogZmFsc2UgfSB9LFxuICAgICAgICBTaWduVXBQYWdlMjogeyBzY3JlZW46IFNpZ25VcFBhZ2UyLCBuYXZpZ2F0aW9uT3B0aW9uczogeyBoZWFkZXJTaG93bjogZmFsc2UgfSB9LFxuICAgICAgICBTaWduVXBQYWdlMzogeyBzY3JlZW46IFNpZ25VcFBhZ2UzLCBuYXZpZ2F0aW9uT3B0aW9uczogeyBoZWFkZXJTaG93bjogZmFsc2UgfSB9LFxuICAgICAgICBGb3Jnb3RQYXNzd29yZDogeyBzY3JlZW46IEZvcmdvdFBhc3N3b3JkLCBuYXZpZ2F0aW9uT3B0aW9uczogeyBoZWFkZXJTaG93bjogZmFsc2UgfSB9LFxuICAgIH0sIFxuKTtcblxuY29uc3QgQXBwTmF2aWdhdG9yID0gY3JlYXRlQXBwQ29udGFpbmVyKE5hdmlnYXRvcik7XG5cbmV4cG9ydCBkZWZhdWx0IEFwcE5hdmlnYXRvciJdfQ==

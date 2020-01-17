@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;AAAA;;AACA","sourcesContent":["import Rating from './SwipeRating';\nimport AirbnbRating from './TapRating';\n\nexport { Rating, AirbnbRating }\n"]}

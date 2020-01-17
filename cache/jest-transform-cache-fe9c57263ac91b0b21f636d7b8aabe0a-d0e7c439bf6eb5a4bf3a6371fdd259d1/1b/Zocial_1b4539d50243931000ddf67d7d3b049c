@@ -1,0 +1,26 @@
+1f6c30f6b10c3ccfc0645deeb54916ad
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getImageSource = exports.ToolbarAndroid = exports.TabBarItemIOS = exports.TabBarItem = exports.Button = exports.default = void 0;
+
+var _createIconSet = _interopRequireDefault(require("./lib/create-icon-set"));
+
+var _Zocial = _interopRequireDefault(require("./glyphmaps/Zocial.json"));
+
+var iconSet = (0, _createIconSet.default)(_Zocial.default, 'zocial', 'Zocial.ttf');
+var _default = iconSet;
+exports.default = _default;
+var Button = iconSet.Button;
+exports.Button = Button;
+var TabBarItem = iconSet.TabBarItem;
+exports.TabBarItem = TabBarItem;
+var TabBarItemIOS = iconSet.TabBarItemIOS;
+exports.TabBarItemIOS = TabBarItemIOS;
+var ToolbarAndroid = iconSet.ToolbarAndroid;
+exports.ToolbarAndroid = ToolbarAndroid;
+var getImageSource = iconSet.getImageSource;
+exports.getImageSource = getImageSource;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlpvY2lhbC5qcyJdLCJuYW1lcyI6WyJpY29uU2V0IiwiZ2x5cGhNYXAiLCJCdXR0b24iLCJUYWJCYXJJdGVtIiwiVGFiQmFySXRlbUlPUyIsIlRvb2xiYXJBbmRyb2lkIiwiZ2V0SW1hZ2VTb3VyY2UiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFLQTs7QUFDQTs7QUFFQSxJQUFNQSxPQUFPLEdBQUcsNEJBQWNDLGVBQWQsRUFBd0IsUUFBeEIsRUFBa0MsWUFBbEMsQ0FBaEI7ZUFFZUQsTzs7QUFFUixJQUFNRSxNQUFNLEdBQUdGLE9BQU8sQ0FBQ0UsTUFBdkI7O0FBQ0EsSUFBTUMsVUFBVSxHQUFHSCxPQUFPLENBQUNHLFVBQTNCOztBQUNBLElBQU1DLGFBQWEsR0FBR0osT0FBTyxDQUFDSSxhQUE5Qjs7QUFDQSxJQUFNQyxjQUFjLEdBQUdMLE9BQU8sQ0FBQ0ssY0FBL0I7O0FBQ0EsSUFBTUMsY0FBYyxHQUFHTixPQUFPLENBQUNNLGNBQS9CIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBab2NpYWwgaWNvbiBzZXQgY29tcG9uZW50LlxuICogVXNhZ2U6IDxab2NpYWwgbmFtZT1cImljb24tbmFtZVwiIHNpemU9ezIwfSBjb2xvcj1cIiM0RjhFRjdcIiAvPlxuICovXG5cbmltcG9ydCBjcmVhdGVJY29uU2V0IGZyb20gJy4vbGliL2NyZWF0ZS1pY29uLXNldCc7XG5pbXBvcnQgZ2x5cGhNYXAgZnJvbSAnLi9nbHlwaG1hcHMvWm9jaWFsLmpzb24nO1xuXG5jb25zdCBpY29uU2V0ID0gY3JlYXRlSWNvblNldChnbHlwaE1hcCwgJ3pvY2lhbCcsICdab2NpYWwudHRmJyk7XG5cbmV4cG9ydCBkZWZhdWx0IGljb25TZXQ7XG5cbmV4cG9ydCBjb25zdCBCdXR0b24gPSBpY29uU2V0LkJ1dHRvbjtcbmV4cG9ydCBjb25zdCBUYWJCYXJJdGVtID0gaWNvblNldC5UYWJCYXJJdGVtO1xuZXhwb3J0IGNvbnN0IFRhYkJhckl0ZW1JT1MgPSBpY29uU2V0LlRhYkJhckl0ZW1JT1M7XG5leHBvcnQgY29uc3QgVG9vbGJhckFuZHJvaWQgPSBpY29uU2V0LlRvb2xiYXJBbmRyb2lkO1xuZXhwb3J0IGNvbnN0IGdldEltYWdlU291cmNlID0gaWNvblNldC5nZXRJbWFnZVNvdXJjZTtcblxuIl19

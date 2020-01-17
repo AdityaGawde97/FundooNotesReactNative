@@ -1,0 +1,6 @@
+04eae012882a3184d5e927c4e7a9c446
+'use strict';
+
+module.exports = function spin(spinstr, spun) {
+  return spinstr[spun % spinstr.length];
+};

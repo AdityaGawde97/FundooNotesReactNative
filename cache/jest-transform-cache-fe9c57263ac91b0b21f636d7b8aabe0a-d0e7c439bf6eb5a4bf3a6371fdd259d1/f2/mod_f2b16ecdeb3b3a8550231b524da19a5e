@@ -1,0 +1,7 @@
+6b38243a0ecab6a7e1893a2ea84c2706
+'use strict';
+
+module.exports = function mod(number, modulo) {
+  var remain = number % modulo;
+  return Math.floor(remain >= 0 ? remain : remain + modulo);
+};

@@ -1,0 +1,14 @@
+5c53492d1eb4dcd5be9e7ada3b362873
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _default = _propTypes.default.oneOfType([_propTypes.default.element, _propTypes.default.object, _propTypes.default.bool, _propTypes.default.func]);
+
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVUeXBlLmpzIl0sIm5hbWVzIjpbIlByb3BUeXBlcyIsIm9uZU9mVHlwZSIsImVsZW1lbnQiLCJvYmplY3QiLCJib29sIiwiZnVuYyJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOztlQUVlQSxtQkFBVUMsU0FBVixDQUFvQixDQUNqQ0QsbUJBQVVFLE9BRHVCLEVBRWpDRixtQkFBVUcsTUFGdUIsRUFHakNILG1CQUFVSSxJQUh1QixFQUlqQ0osbUJBQVVLLElBSnVCLENBQXBCLEMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnO1xuXG5leHBvcnQgZGVmYXVsdCBQcm9wVHlwZXMub25lT2ZUeXBlKFtcbiAgUHJvcFR5cGVzLmVsZW1lbnQsXG4gIFByb3BUeXBlcy5vYmplY3QsXG4gIFByb3BUeXBlcy5ib29sLFxuICBQcm9wVHlwZXMuZnVuYyxcbl0pO1xuIl19

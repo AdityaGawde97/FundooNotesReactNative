@@ -1,0 +1,2 @@
+ee3b0d795d40e6317935c7f99bcf7c8a
+module.exports = require('stream');

@@ -1,0 +1,12 @@
+173dfb736c19fbd7707a2e62bbf3cf6c
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _reactNative = require("react-native");
+
+var ViewPropTypes = _reactNative.ViewPropTypes || _reactNative.View.propTypes;
+var _default = ViewPropTypes;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlZpZXdQcm9wVHlwZXMuanMiXSwibmFtZXMiOlsiVmlld1Byb3BUeXBlcyIsIlJOVmlld1Byb3BUeXBlcyIsIlZpZXciLCJwcm9wVHlwZXMiXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUE7O0FBRUEsSUFBTUEsYUFBYSxHQUFHQyw4QkFBbUJDLGtCQUFLQyxTQUE5QztlQUVlSCxhIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgVmlldywgVmlld1Byb3BUeXBlcyBhcyBSTlZpZXdQcm9wVHlwZXMgfSBmcm9tICdyZWFjdC1uYXRpdmUnO1xuXG5jb25zdCBWaWV3UHJvcFR5cGVzID0gUk5WaWV3UHJvcFR5cGVzIHx8IFZpZXcucHJvcFR5cGVzO1xuXG5leHBvcnQgZGVmYXVsdCBWaWV3UHJvcFR5cGVzO1xuIl19
