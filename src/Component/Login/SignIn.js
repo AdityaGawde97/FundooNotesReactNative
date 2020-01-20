@@ -4,6 +4,7 @@ import { styles } from '../../Css/LoginCss'
 import { OutlinedTextField } from 'react-native-material-textfield'
 import { Button } from 'react-native-elements';
 import { loginUser } from '../../Firebase/FirebaseLoginServices';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class SignIn extends Component {
     constructor(props) {
@@ -50,7 +51,7 @@ export default class SignIn extends Component {
     submitUserSignIn = () => {
         if (this.validateForm()) {
             loginUser(this.state.email, this.state.password, () => {
-                this.setState({animating: true})
+                this.setState({ animating: true })
                 alert('You have login successfully')
                 //this.props.navigation.navigate('HomeScreen')
             }, (errors) => {
@@ -66,10 +67,10 @@ export default class SignIn extends Component {
         return (
             <View style={styles.mainContainer}>
 
-                <ProgressBarAndroid 
+                <ProgressBarAndroid
                     animating={this.state.animating}
-                    styleAttr="Horizontal" 
-                    color="#2196F3" 
+                    styleAttr="Horizontal"
+                    color="#2196F3"
                 />
 
                 <Text style={styles.appTitle}>
@@ -123,20 +124,14 @@ export default class SignIn extends Component {
                         </View>
 
                         <View style={{ padding: '3%' }}>
-                            <TouchableOpacity 
-                            testID="testPassIcon1"
+                            <TouchableOpacity
+                                testID="testPassIcon1"
                                 onPress={() => this.setState({ visibleIcon: !this.state.visibleIcon })}
                             >
                                 {
                                     !this.state.visibleIcon ?
-                                        <Image
-                                            style={styles.passIcon}
-                                            source={require('../../Assets/visible.png')}
-                                        /> :
-                                        <Image
-                                            style={styles.passIcon}
-                                            source={require('../../Assets/off.png')}
-                                        />
+                                        <Icon name="md-eye" size={40} /> :
+                                        <Icon name="md-eye-off" size={40} />
                                 }
                             </TouchableOpacity>
                         </View>
@@ -149,7 +144,7 @@ export default class SignIn extends Component {
                             testID="testForgotPassword"
                             title="forgot password?"
                             type="clear"
-                            onPress={()=>this.props.navigation.navigate('ForgotPassword')}
+                            onPress={() => this.props.navigation.navigate('ForgotPassword')}
                         />
                     </View>
 

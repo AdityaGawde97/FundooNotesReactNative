@@ -12,7 +12,7 @@ export function emailExistance(email, ifCallback, elseCallback) {
                 errors["email"] = 'That username is taken, try another';
                 elseCallback(errors)
             }
-        })
+        }).catch((error) => { })
 }
 
 export function registerUser(firstName, lastName, email, password, thenCallback) {
@@ -24,7 +24,7 @@ export function registerUser(firstName, lastName, email, password, thenCallback)
                 EmailId: email
             })
             thenCallback()
-        })
+        }).catch((error) => { })
 }
 
 export function loginUser(email, password, thenCallback, catchCallback) {
@@ -41,17 +41,17 @@ export function loginUser(email, password, thenCallback, catchCallback) {
         })
 }
 
-export function forgotPassword(email, thenCallback , catchCallback) {
+export function forgotPassword(email, thenCallback, catchCallback) {
 
     firebase.auth().sendPasswordResetEmail(email)
-    .then((error)=>{
-        thenCallback()
-    })
-    .catch(()=>{
-        let errors = {};
-        errors["email"] = 'Couldn\'t find your Fundoo Account'
-        catchCallback(errors)
-    })
+        .then((error) => {
+            thenCallback()
+        })
+        .catch(() => {
+            let errors = {};
+            errors["email"] = 'Couldn\'t find your Fundoo Account'
+            catchCallback(errors)
+        })
 
 }
 
