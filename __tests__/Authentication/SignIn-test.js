@@ -64,7 +64,8 @@ describe('<SignIn/>', () => {
     })
 
     it('testing visible password toggling', () => {
-        const showPasswordBtn = wrapper.findWhere((node)=>node.prop('testId') === 'testPassVisibility')
+        const showPasswordBtn = wrapper.findWhere((node)=>node.prop('testID') === 'testPassVisibility')
+        expect(showPasswordBtn.length).toBe(1)
         expect(wrapper.state('visibleIcon')).toEqual(false)
 
         showPasswordBtn.simulate('press');

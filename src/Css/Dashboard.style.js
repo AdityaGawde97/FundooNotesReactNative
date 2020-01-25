@@ -9,7 +9,7 @@ export const styles2 = StyleSheet.create({
 
     bottomBarContainer: {
         flex: 0,
-        backgroundColor: 'transparent',
+        backgroundColor: '#fff',
         borderTopColor: 'lightgray',
         borderTopWidth: 1,
         flexDirection: 'row',
@@ -41,8 +41,8 @@ export const styles2 = StyleSheet.create({
 
     fabStyle: {
         flex: 1,
-        backgroundColor: 'white',
-        borderColor: '#fff',
+        backgroundColor: 'transparent',
+        borderColor: 'transparent',
         borderWidth: 10,
         borderRadius: 1000,
         borderBottomWidth: 3,

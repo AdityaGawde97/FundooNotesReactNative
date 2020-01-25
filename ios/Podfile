@@ -40,7 +40,6 @@ target 'FundooNotes' do
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
 
-  pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
@@ -51,6 +50,8 @@ target 'FundooNotes' do
   pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
 
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
+  pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
   target 'FundooNotesTests' do
     inherit! :search_paths

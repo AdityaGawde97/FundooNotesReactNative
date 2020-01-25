@@ -6,17 +6,20 @@ import { globalStyle } from '../../Css/GlobalStyle.style';
 import { TextInput } from 'react-native';
 import MoreOption from './MoreOption'
 import moment from 'moment'
-import { createNote } from '../../Firebase/DatabaseServices';
+import { createNote, updateNote } from '../../Firebase/DatabaseServices';
+import SetReminder from './SetReminder';
 
 export default class NoteCreator extends Component {
     constructor(props) {
         super(props);
+        this.Item = this.props.navigation.getParam('noteObj', null)
+
         this.state = {
-            bgColor: '#ffffff',
-            title: '',
-            note: '',
-            pin: false,
-            archive: false
+            bgColor: this.Item === null ? '#ffffff' : this.Item.BgColor,
+            title: this.Item === null ? '' : this.Item.Title,
+            note: this.Item === null ? '' : this.Item.Content,
+            pin: this.Item === null ? false : this.Item.Pin,
+            archive: this.Item === null ? false : this.Item.Archive,
         };
     }
 
@@ -27,15 +30,33 @@ export default class NoteCreator extends Component {
     }
 
     pushNoteData = () => {
-        createNote(this.state.title, this.state.note, this.state.pin,
-            this.state.archive, this.state.bgColor,
-            () => {
+
+        if (this.Item === null) {
+            if (this.state.title !== '' || this.state.note !== '') {
+                createNote(this.state.title, this.state.note, this.state.pin,
+                    this.state.archive, this.state.bgColor,
+                    () => {
+                        this.props.navigation.navigate('Notes')
+                    }
+                )
+            }
+            else {
                 this.props.navigation.navigate('Notes')
             }
-        )
+        }
+        else {
+            updateNote(this.Item.noteId, this.state.title, this.state.note,
+                this.state.pin, this.state.archive, this.state.bgColor,
+                () => {
+                    this.props.navigation.navigate('Notes')
+                }
+            )
+        }
     }
 
     render() {
+        console.log(this.Item);
+
         return (
             <View style={[styles4.noteServiceContainer, { backgroundColor: this.state.bgColor }]}>
 
@@ -52,11 +73,12 @@ export default class NoteCreator extends Component {
                         color={globalStyle.inherit}
                         onPress={() => this.setState({ pin: !this.state.pin })}
                     />
-                    <Appbar.Action
+                    {/* <Appbar.Action
                         icon={require('../../Assets/alert.png')}
                         size={globalStyle.noteIconSize}
                         color={globalStyle.inherit}
-                    />
+                    /> */}
+                    <SetReminder/>
                     <Appbar.Action
                         icon={!this.state.archive ?
                             require('../../Assets/archive.png') :

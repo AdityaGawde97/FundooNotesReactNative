@@ -6,11 +6,11 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import Feather from "react-native-vector-icons/Feather";
 import MaterialIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { globalStyle } from '../../../Css/GlobalStyle.style';
-import { useDeviceOrientation } from "react-native-hooks";
+//import { useDeviceOrientation } from "react-native-hooks";
 
 export default function BottomTabBar(props) {
 
-  const orientation = useDeviceOrientation()
+  //const orientation = useDeviceOrientation()
 
   return (
     <View style={styles2.bottomBarContainer}>
@@ -50,10 +50,10 @@ export default function BottomTabBar(props) {
           />
         </TouchableOpacity>
       </View>
-      <View
+      {/* <View
         style={[styles2.cutOutStyle, { right: !orientation.landscape ? '32%' : '59%' }]}
       >
-      </View>
+      </View> */}
       <View style={styles2.fabStyle}>
         <TouchableOpacity
           style={styles2.fabTouchable}

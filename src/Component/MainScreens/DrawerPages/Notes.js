@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import Topbar from '../Dashboard/TopNavbar';
 import Bottombar from '../Dashboard/BottomTabBar'
 import { styles3 } from '../../../Css/MainScreens.style';
@@ -19,34 +19,32 @@ export default class Notes extends Component {
     }
 
     componentDidMount = () => {
-        getNotes((snapObj) => {
+        getNotes(async (snapObj) => {
             let pinNotes = [];
             let unpinNotes = [];
             if (snapObj !== null && snapObj !== undefined) {
-                Object.getOwnPropertyNames(snapObj).map((key) => {
+                await Object.getOwnPropertyNames(snapObj).map((key) => {
                     snapObj[key].noteId = key
-                    if (snapObj[key].Pin === true && snapObj[key].Trash === false) {
+                    if (snapObj[key].Pin === true) {
                         pinNotes.push(snapObj[key])
                     }
-                    else if (snapObj[key].Pin === false && snapObj[key].Trash === false) {
+                    else if (snapObj[key].Pin === false) {
                         unpinNotes.push(snapObj[key])
                     }
-                })
+                });
                 this.setState({
                     pinNotes: pinNotes.reverse(),
                     unpinNotes: unpinNotes.reverse()
-                })
+                    //load: false
+                }, () => setTimeout(() => this.setState({ load: false }), 3000))
+            }
+            else {
+                setTimeout(() => this.setState({ load: false }), 2000)
             }
         });
     };
 
     render() {
-
-        setInterval(() => {
-            this.setState({
-                load: false
-            });
-        }, 4000);
 
         return (
             <View style={styles3.container}>
@@ -69,7 +67,9 @@ export default class Notes extends Component {
                         this.state.pinNotes.length !== 0 &&
                         <FlatList
                             data={this.state.pinNotes}
-                            renderItem={({ item }) => <NoteCard {...item} />}
+                            renderItem={
+                                ({ item }) => <NoteCard Item={item} Navigate={this.props} />
+                            }
                             keyExtractor={item => item.noteId}
                         />
                     }
@@ -78,7 +78,9 @@ export default class Notes extends Component {
                         this.state.unpinNotes.length !== 0 &&
                         <FlatList
                             data={this.state.unpinNotes}
-                            renderItem={({ item }) => <NoteCard {...item} />}
+                            renderItem={
+                                ({ item }) => <NoteCard Item={item} Navigate={this.props} />
+                            }
                             keyExtractor={item => item.noteId}
                             scrollEnabled
                         />
