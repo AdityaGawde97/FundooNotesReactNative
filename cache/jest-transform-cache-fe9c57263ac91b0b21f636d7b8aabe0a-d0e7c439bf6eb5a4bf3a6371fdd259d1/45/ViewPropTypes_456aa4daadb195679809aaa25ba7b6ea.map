@@ -1,0 +1,1 @@
+{"version":3,"sources":["ViewPropTypes.js"],"names":["ViewPropTypes","RNViewPropTypes","View","propTypes"],"mappings":";;;;;AAAA;;AAEA,IAAMA,aAAa,GAAGC,8BAAmBC,kBAAKC,SAA9C;eAEeH,a","sourcesContent":["import { View, ViewPropTypes as RNViewPropTypes } from 'react-native';\n\nconst ViewPropTypes = RNViewPropTypes || View.propTypes;\n\nexport default ViewPropTypes;\n"]}

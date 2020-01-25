@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignIn/> SignIn Page renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 0,
+        "fontFamily": "Roboto",
+        "fontSize": 26,
+        "top": "4%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#4285F4",
+        }
+      }
+    >
+      F
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#DB4437",
+        }
+      }
+    >
+      u
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#F4B400",
+        }
+      }
+    >
+      n
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#4285F4",
+        }
+      }
+    >
+      d
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#0F9D58",
+        }
+      }
+    >
+      o
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#DB4437",
+        }
+      }
+    >
+      o
+    </Text>
+  </Text>
+  <Text
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 0,
+        "fontSize": 24,
+        "top": "5%",
+      }
+    }
+  >
+    Sign in
+  </Text>
+  <Text
+    style={
+      Object {
+        "flex": 0,
+        "fontSize": 17,
+        "textAlign": "center",
+        "top": "6%",
+      }
+    }
+  >
+    with your Fundoo Account
+  </Text>
+  <View
+    style={
+      Object {
+        "flex": 9,
+        "flexDirection": "column",
+        "margin": "8%",
+        "top": "5%",
+      }
+    }
+  >
+    <View>
+      <OutlinedTextField
+        activeLineWidth={2}
+        animationDuration={225}
+        autoCapitalize="sentences"
+        baseColor="rgba(0, 0, 0, .38)"
+        disableFullscreenUI={true}
+        disabled={false}
+        disabledLineType="dotted"
+        disabledLineWidth={0.5}
+        editable={true}
+        errorColor="red"
+        fontSize={16}
+        label="Email"
+        labelFontSize={12}
+        lineType="solid"
+        lineWidth={1}
+        onChangeText={[Function]}
+        testID="testEmail1"
+        textColor="rgba(0, 0, 0, .87)"
+        tintColor="rgb(0, 145, 234)"
+        underlineColorAndroid="transparent"
+        value=""
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "top": "1.5%",
+        }
+      }
+    >
+      <OutlinedTextField
+        activeLineWidth={2}
+        animationDuration={225}
+        autoCapitalize="sentences"
+        baseColor="rgba(0, 0, 0, .38)"
+        disableFullscreenUI={true}
+        disabled={false}
+        disabledLineType="dotted"
+        disabledLineWidth={0.5}
+        editable={true}
+        errorColor="red"
+        fontSize={16}
+        label="Password"
+        labelFontSize={12}
+        lineType="solid"
+        lineWidth={1}
+        onChangeText={[Function]}
+        secureTextEntry={true}
+        testID="testPassword1"
+        textColor="rgba(0, 0, 0, .87)"
+        tintColor="rgb(0, 145, 234)"
+        underlineColorAndroid="transparent"
+        value=""
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Themed.CheckBox
+        checked={false}
+        containerStyle={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "#fff",
+            "right": 7,
+          }
+        }
+        onPress={[Function]}
+        testID="testPassVisibility"
+        title="Show password"
+      />
+      <ForwardRef(Themed.Button)
+        containerStyle={
+          Object {
+            "top": 5,
+          }
+        }
+        onPress={[Function]}
+        testID="testForgotPassword"
+        title="forgot password?"
+        type="clear"
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1.8,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <ForwardRef(Themed.Button)
+      onPress={[Function]}
+      testID="testCreateAccount"
+      title="Create Account"
+      type="clear"
+    />
+    <View
+      style={
+        Object {
+          "width": 120,
+        }
+      }
+    >
+      <ForwardRef(Themed.Button)
+        loading={false}
+        onPress={[Function]}
+        testID="testSignInButton"
+        title="Next"
+      />
+    </View>
+  </View>
+</View>
+`;

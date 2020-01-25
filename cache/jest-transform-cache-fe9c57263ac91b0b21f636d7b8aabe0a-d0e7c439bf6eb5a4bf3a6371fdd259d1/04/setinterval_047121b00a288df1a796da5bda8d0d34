@@ -1,0 +1,4 @@
+886e919faaacffcbcf535e69e619ed26
+'use strict'; // this exists so we can replace it during testing
+
+module.exports = setInterval;

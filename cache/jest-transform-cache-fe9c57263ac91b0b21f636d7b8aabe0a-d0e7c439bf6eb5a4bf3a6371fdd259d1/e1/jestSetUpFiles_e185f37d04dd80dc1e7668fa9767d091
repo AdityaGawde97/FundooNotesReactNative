@@ -1,0 +1,9 @@
+2d78c7cc7b723b4aac6a187261dcd704
+jest.mock('@react-native-community/async-storage', function () {
+  return _asyncStorageMock.default;
+});
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _asyncStorageMock = _interopRequireDefault(require("@react-native-community/async-storage/jest/async-storage-mock"));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImplc3RTZXRVcEZpbGVzLmpzIl0sIm5hbWVzIjpbImplc3QiLCJtb2NrIiwibW9ja0FzeW5jU3RvcmFnZSJdLCJtYXBwaW5ncyI6IkFBRUFBLElBQUksQ0FBQ0MsSUFBTCxDQUFVLHVDQUFWLEVBQW1EO0FBQUEsU0FBTUMseUJBQU47QUFBQSxDQUFuRDs7OztBQUZBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IG1vY2tBc3luY1N0b3JhZ2UgZnJvbSAnQHJlYWN0LW5hdGl2ZS1jb21tdW5pdHkvYXN5bmMtc3RvcmFnZS9qZXN0L2FzeW5jLXN0b3JhZ2UtbW9jayc7XG5cbmplc3QubW9jaygnQHJlYWN0LW5hdGl2ZS1jb21tdW5pdHkvYXN5bmMtc3RvcmFnZScsICgpID0+IG1vY2tBc3luY1N0b3JhZ2UpOyJdfQ==

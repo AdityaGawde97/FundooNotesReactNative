@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1579240369415" clover="3.2.0">
-  <project timestamp="1579240369415" name="All files">
-    <metrics statements="130" coveredstatements="82" conditionals="46" coveredconditionals="27" methods="42" coveredmethods="22" elements="218" coveredelements="131" complexity="0" loc="130" ncloc="130" packages="4" files="9" classes="9"/>
-    <package name="Assets">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="off.png" path="/home/admin10/Desktop/FundooNotes/src/Assets/off.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-      </file>
-      <file name="visible.png" path="/home/admin10/Desktop/FundooNotes/src/Assets/visible.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-      </file>
-    </package>
-    <package name="Component.Login">
-      <metrics statements="104" coveredstatements="77" conditionals="42" coveredconditionals="27" methods="32" coveredmethods="22"/>
-      <file name="SignIn.js" path="/home/admin10/Desktop/FundooNotes/src/Component/Login/SignIn.js">
-        <metrics statements="30" coveredstatements="22" conditionals="12" coveredconditionals="9" methods="11" coveredmethods="7"/>
+<coverage generated="1579870933935" clover="3.2.0">
+  <project timestamp="1579870933935" name="All files">
+    <metrics statements="136" coveredstatements="80" conditionals="42" coveredconditionals="23" methods="48" coveredmethods="20" elements="226" coveredelements="123" complexity="0" loc="136" ncloc="136" packages="3" files="7" classes="7"/>
+    <package name="Component.Authentication">
+      <metrics statements="106" coveredstatements="77" conditionals="38" coveredconditionals="23" methods="34" coveredmethods="20"/>
+      <file name="SignIn.js" path="/home/admin10/Desktop/FundooNotes/src/Component/Authentication/SignIn.js">
+        <metrics statements="32" coveredstatements="23" conditionals="10" coveredconditionals="7" methods="13" coveredmethods="6"/>
         <line num="10" count="3" type="stmt"/>
         <line num="12" count="3" type="stmt"/>
         <line num="21" count="3" type="stmt"/>
@@ -34,21 +23,23 @@
         <line num="39" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
         <line num="43" count="6" type="stmt"/>
+        <line num="46" count="6" type="stmt"/>
         <line num="47" count="6" type="stmt"/>
         <line num="50" count="3" type="stmt"/>
-        <line num="51" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="53" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="54" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="66" count="18" type="stmt"/>
-        <line num="105" count="3" type="stmt"/>
-        <line num="118" count="3" type="stmt"/>
-        <line num="128" count="2" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="66" count="17" type="stmt"/>
+        <line num="99" count="3" type="stmt"/>
+        <line num="110" count="3" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="135" count="0" type="stmt"/>
         <line num="152" count="0" type="stmt"/>
-        <line num="169" count="0" type="stmt"/>
       </file>
-      <file name="SignUpPage1.js" path="/home/admin10/Desktop/FundooNotes/src/Component/Login/SignUpPage1.js">
+      <file name="SignUpPage1.js" path="/home/admin10/Desktop/FundooNotes/src/Component/Authentication/SignUpPage1.js">
         <metrics statements="19" coveredstatements="17" conditionals="6" coveredconditionals="4" methods="6" coveredmethods="5"/>
         <line num="9" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
@@ -70,7 +61,7 @@
         <line num="77" count="2" type="stmt"/>
         <line num="88" count="2" type="stmt"/>
       </file>
-      <file name="SignUpPage2.js" path="/home/admin10/Desktop/FundooNotes/src/Component/Login/SignUpPage2.js">
+      <file name="SignUpPage2.js" path="/home/admin10/Desktop/FundooNotes/src/Component/Authentication/SignUpPage2.js">
         <metrics statements="25" coveredstatements="16" conditionals="8" coveredconditionals="4" methods="7" coveredmethods="4"/>
         <line num="10" count="3" type="stmt"/>
         <line num="12" count="3" type="stmt"/>
@@ -98,8 +89,8 @@
         <line num="69" count="9" type="stmt"/>
         <line num="96" count="3" type="stmt"/>
       </file>
-      <file name="SignUpPage3.js" path="/home/admin10/Desktop/FundooNotes/src/Component/Login/SignUpPage3.js">
-        <metrics statements="30" coveredstatements="22" conditionals="16" coveredconditionals="10" methods="8" coveredmethods="6"/>
+      <file name="SignUpPage3.js" path="/home/admin10/Desktop/FundooNotes/src/Component/Authentication/SignUpPage3.js">
+        <metrics statements="30" coveredstatements="21" conditionals="14" coveredconditionals="8" methods="8" coveredmethods="5"/>
         <line num="10" count="4" type="stmt"/>
         <line num="12" count="4" type="stmt"/>
         <line num="20" count="4" type="stmt"/>
@@ -126,49 +117,55 @@
         <line num="58" count="0" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
-        <line num="72" count="21" type="stmt"/>
+        <line num="72" count="19" type="stmt"/>
         <line num="109" count="5" type="stmt"/>
-        <line num="123" count="3" type="stmt"/>
-        <line num="132" count="2" type="stmt"/>
+        <line num="121" count="3" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
       </file>
     </package>
     <package name="Css">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="LoginCss.js" path="/home/admin10/Desktop/FundooNotes/src/Css/LoginCss.js">
+      <file name="Authentication.style.js" path="/home/admin10/Desktop/FundooNotes/src/Css/Authentication.style.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="2" type="stmt"/>
       </file>
     </package>
     <package name="Firebase">
-      <metrics statements="23" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="10" coveredmethods="0"/>
+      <metrics statements="29" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="14" coveredmethods="0"/>
+      <file name="AuthServices.js" path="/home/admin10/Desktop/FundooNotes/src/Firebase/AuthServices.js">
+        <metrics statements="27" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="14" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+      </file>
       <file name="Firebase.js" path="/home/admin10/Desktop/FundooNotes/src/Firebase/Firebase.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
-      </file>
-      <file name="FirebaseLoginServices.js" path="/home/admin10/Desktop/FundooNotes/src/Firebase/FirebaseLoginServices.js">
-        <metrics statements="21" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="10" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
       </file>
     </package>
   </project>
