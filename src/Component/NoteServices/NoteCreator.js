@@ -8,18 +8,22 @@ import MoreOption from './MoreOption'
 import moment from 'moment'
 import { createNote, updateNote } from '../../Firebase/DatabaseServices';
 import SetReminder from './SetReminder';
+import { Chip, Icon } from 'material-bread';
 
 export default class NoteCreator extends Component {
     constructor(props) {
         super(props);
         this.Item = this.props.navigation.getParam('noteObj', null)
-
+        this.page = this.props.navigation.getParam('backToPage')
         this.state = {
             bgColor: this.Item === null ? '#ffffff' : this.Item.BgColor,
             title: this.Item === null ? '' : this.Item.Title,
             note: this.Item === null ? '' : this.Item.Content,
             pin: this.Item === null ? false : this.Item.Pin,
             archive: this.Item === null ? false : this.Item.Archive,
+            trash: this.Item === null ? false : this.Item.Trash,
+            dateField: this.Item === null ? null : this.Item.ReminderDate === undefined ? null : this.Item.ReminderDate,
+            timeField: this.Item === null ? null : this.Item.ReminderTime === undefined ? null : this.Item.ReminderTime,
         };
     }
 
@@ -34,29 +38,30 @@ export default class NoteCreator extends Component {
         if (this.Item === null) {
             if (this.state.title !== '' || this.state.note !== '') {
                 createNote(this.state.title, this.state.note, this.state.pin,
-                    this.state.archive, this.state.bgColor,
+                    this.state.archive, this.state.trash, this.state.bgColor,
+                    this.state.dateField, this.state.timeField,
                     () => {
-                        this.props.navigation.navigate('Notes')
+                        this.props.navigation.navigate(this.page)
                     }
                 )
             }
             else {
-                this.props.navigation.navigate('Notes')
+                this.props.navigation.navigate(this.page)
             }
         }
         else {
             updateNote(this.Item.noteId, this.state.title, this.state.note,
-                this.state.pin, this.state.archive, this.state.bgColor,
+                this.state.pin, this.state.archive, this.state.trash,
+                this.state.bgColor, this.state.dateField, this.state.timeField,
                 () => {
-                    this.props.navigation.navigate('Notes')
+                    this.props.navigation.navigate(this.page)
                 }
             )
         }
     }
 
     render() {
-        console.log(this.Item);
-
+        console.log(this.state.trash)
         return (
             <View style={[styles4.noteServiceContainer, { backgroundColor: this.state.bgColor }]}>
 
@@ -73,12 +78,14 @@ export default class NoteCreator extends Component {
                         color={globalStyle.inherit}
                         onPress={() => this.setState({ pin: !this.state.pin })}
                     />
-                    {/* <Appbar.Action
-                        icon={require('../../Assets/alert.png')}
-                        size={globalStyle.noteIconSize}
-                        color={globalStyle.inherit}
-                    /> */}
-                    <SetReminder/>
+                    <SetReminder
+                        getDateTime={
+                            (date, time) => this.setState({
+                                dateField: moment(date).format(),
+                                timeField: time
+                            })
+                        }
+                    />
                     <Appbar.Action
                         icon={!this.state.archive ?
                             require('../../Assets/archive.png') :
@@ -98,6 +105,7 @@ export default class NoteCreator extends Component {
                         placeholderTextColor="#8a8a8a"
                         value={this.state.title}
                         onChangeText={(title) => this.setState({ title })}
+                        multiline
                     />
                     <TextInput
                         style={styles4.textInput2}
@@ -108,6 +116,42 @@ export default class NoteCreator extends Component {
                         onChangeText={(note) => this.setState({ note })}
                         multiline
                     />
+                    <View>
+                        {
+                            this.Item === null ?
+                                this.state.dateField !== null &&
+                                <Chip
+                                    style={styles4.chipStyle}
+                                    text={
+                                        moment(this.state.dateField).format('MMM D')
+                                        + ', ' + this.state.timeField
+                                    }
+                                    chipStyle='outlined'
+                                    leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
+                                    onDelete={() => this.setState({
+                                        dateField: null,
+                                        timeField: null
+                                    })}
+                                />
+                                :
+                                this.state.timeField !== null &&
+                                <Chip
+                                    ref={(refs) => this.chipRef = refs}
+                                    style={styles4.chipStyle}
+                                    text={
+                                        moment(this.state.dateField).format('MMM D')
+                                        + ', ' + this.state.timeField
+                                    }
+                                    chipStyle='outlined'
+                                    leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
+                                    onDelete={() => this.setState({
+                                        dateField: null,
+                                        timeField: null
+                                    })}
+                                    visible={true}
+                                />
+                        }
+                    </View>
                 </View>
                 <Appbar style={{ backgroundColor: this.state.bgColor }}>
                     <Appbar.Action
@@ -130,6 +174,9 @@ export default class NoteCreator extends Component {
                     <MoreOption
                         bgColor={this.state.bgColor}
                         changeColor={this.changeColor}
+                        trash={this.state.trash}
+                        setTrash={() => this.setState({ trash: true })}
+                        pushNoteData={this.pushNoteData}
                     />
                 </Appbar>
             </View>

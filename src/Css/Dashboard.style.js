@@ -82,10 +82,10 @@ export const styles2 = StyleSheet.create({
     topbarContainer: {
         flex: 1,
         backgroundColor: 'white',
-        borderColor: '#CCCCCC',
+        borderColor: '#cccccc',
         borderWidth: 1,
         borderRadius: 10,
-        elevation: 0,
+        elevation: 1,
         margin: 18
     },
 
@@ -110,6 +110,18 @@ export const styles2 = StyleSheet.create({
         flexDirection: 'row',
         paddingVertical: 15,
         paddingLeft: 25
-    }
+    },
+
+    otherContainer: {
+        backgroundColor: '#fff',
+        elevation: 0,
+        top: 10    
+    },
+
+    otherTitle: {
+        fontSize: 20,
+        color: '#484848',
+        fontFamily: 'Roboto',
+    },
 
 })

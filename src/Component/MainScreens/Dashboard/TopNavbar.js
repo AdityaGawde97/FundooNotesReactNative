@@ -32,7 +32,7 @@ export default class TopNavbar extends Component {
               require('../../../Assets/grid_view.png')
             }
             onPress={() => this.setState({ view: !this.state.view })}
-            style={{ right: 12 }}
+            style={{ right: 9 }}
           />
           <Profile {...this.props} />
         </Appbar>

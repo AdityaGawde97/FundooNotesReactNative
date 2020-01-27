@@ -32,6 +32,7 @@ export default class Profile extends Component {
                     size={35}
                     color={'#eb4949'}
                     onPress={() => this.setState({ visible: !this.state.visible })}
+                    style={{marginRight: 10}}
                 />
                 <Dialog
                     visible={this.state.visible}

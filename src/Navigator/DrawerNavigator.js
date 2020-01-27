@@ -16,7 +16,7 @@ export const DrawerNavigator = createDrawerNavigator(
         Trash: { screen: Trash }
     },
     {
-        initialRouteName: 'Notes',
+        initialRouteName: 'Reminder',
         contentComponent: ContentComponent,
         drawerWidth: 330
     }

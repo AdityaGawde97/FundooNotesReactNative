@@ -28,6 +28,11 @@ export const styles4 = StyleSheet.create({
         backgroundColor: 'transparent'
     },
 
+    chipStyle: {
+        top: 35,
+        marginLeft: 25
+    },
+
     moreTouchable: {
         width: 50,
         height: 50,
@@ -42,7 +47,13 @@ export const styles4 = StyleSheet.create({
         borderColor: 'lightgray',
         borderRadius: 10,
         elevation: 0,
+        paddingBottom: 10
         // width: '45%'
+    },
+
+    dateTimeView: {
+        borderBottomColor: 'gray',
+        borderBottomWidth: 1,
     }
 
 });

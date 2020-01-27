@@ -12,15 +12,15 @@ export default class SplashScreen extends Component {
 
     componentDidMount() {
         setTimeout(
-            async()=>{
+            async () => {
                 let auth = await AsyncStorage.getItem('isAuth')
-                if(!auth){
+                if (!auth) {
                     this.props.navigation.navigate('Auth')
                 }
-                else{
+                else {
                     this.props.navigation.navigate('Notes')
                 }
-            },1000
+            }, 1000
         )
     }
 

@@ -11,7 +11,6 @@ import { globalStyle } from '../../../Css/GlobalStyle.style';
 export default function BottomTabBar(props) {
 
   //const orientation = useDeviceOrientation()
-
   return (
     <View style={styles2.bottomBarContainer}>
       <View
@@ -58,7 +57,7 @@ export default function BottomTabBar(props) {
         <TouchableOpacity
           style={styles2.fabTouchable}
           hitSlop={{ top: 200, bottom: 200, left: 200, right: 200 }}
-          onPress={()=>props.navigation.navigate('NoteCreator')}
+          onPress={()=>props.navigation.navigate('NoteCreator',{backToPage: props.page})}
         >
           <Image
             source={require('../../../Assets/add.png')}

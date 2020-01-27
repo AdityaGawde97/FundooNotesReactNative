@@ -15,15 +15,15 @@ export default class MoreOption extends Component {
     constructor(props) {
         super(props);
         this.state = {
-        
+
         };
     }
 
     render() {
 
         const renderMoreOptions = (
-            <View style={{backgroundColor: this.props.bgColor}}>
-                <List style={{backgroundColor: 'transparent',}}>
+            <View style={{ backgroundColor: this.props.bgColor }}>
+                <List style={{ backgroundColor: 'transparent', }}>
                     <ListItem
                         text="Delete"
                         icon={
@@ -33,6 +33,10 @@ export default class MoreOption extends Component {
                                 color={globalStyle.inherit}
                             />
                         }
+                        onPress={async () => {
+                            await this.props.setTrash();
+                            this.props.pushNoteData()
+                        }}
                     />
                     <ListItem
                         text="Make a Copy"
@@ -79,7 +83,7 @@ export default class MoreOption extends Component {
                     <ColorPalette
                         title={null}
                         defaultColor={'#ffffff'}
-                        onChange={ color => this.props.changeColor(color) }
+                        onChange={color => this.props.changeColor(color)}
                         value={this.props.bgColor}
                         colors={
                             [
