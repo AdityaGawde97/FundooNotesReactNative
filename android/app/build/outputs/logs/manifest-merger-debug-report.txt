@@ -5,6 +5,7 @@ INJECTED from /home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidMani
 INJECTED from /home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:1:1-26:12
 MERGED from /home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [hermes-debug.aar] /home/admin10/.gradle/caches/transforms-2/files-2.1/998e77e166c68d5347b73682e2c1e02b/hermes-debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-screens] /home/admin10/Desktop/FundooNotes/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:@react-native-community_async-storage] /home/admin10/Desktop/FundooNotes/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:lottie-react-native] /home/admin10/Desktop/FundooNotes/node_modules/lottie-react-native/src/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -22,7 +23,6 @@ MERGED from [androidx.appcompat:appcompat:1.1.0] /home/admin10/.gradle/caches/tr
 MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/97407aae7cc6662c8ee7a4acb921acd1/recyclerview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/d13615d1d5d3f6b320b3e275ae368f3b/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02] /home/admin10/.gradle/caches/transforms-2/files-2.1/87ed0c8d6417da938b13a82c27cac10c/swiperefreshlayout-1.1.0-alpha02/AndroidManifest.xml:17:1-24:12
-MERGED from [org.webkit:android-jsc:r245459] /home/admin10/.gradle/caches/transforms-2/files-2.1/0f25c7a25a350b1fa744335bb1b06c5e/android-jsc-r245459/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/c8440a3bf373d0d665740cf7dccf1571/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/67e5c17cb122f6b3249340703889616f/transition-1.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.fresco:fresco:2.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/191260325c6c1c753e86af3515e13320/fresco-2.0.0/AndroidManifest.xml:2:1-9:12
@@ -158,6 +158,8 @@ uses-sdk
 INJECTED from /home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml
+MERGED from [hermes-debug.aar] /home/admin10/.gradle/caches/transforms-2/files-2.1/998e77e166c68d5347b73682e2c1e02b/hermes-debug/AndroidManifest.xml:5:5-44
+MERGED from [hermes-debug.aar] /home/admin10/.gradle/caches/transforms-2/files-2.1/998e77e166c68d5347b73682e2c1e02b/hermes-debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-screens] /home/admin10/Desktop/FundooNotes/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-screens] /home/admin10/Desktop/FundooNotes/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:@react-native-community_async-storage] /home/admin10/Desktop/FundooNotes/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -192,8 +194,6 @@ MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/admin10/.gradle
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/d13615d1d5d3f6b320b3e275ae368f3b/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02] /home/admin10/.gradle/caches/transforms-2/files-2.1/87ed0c8d6417da938b13a82c27cac10c/swiperefreshlayout-1.1.0-alpha02/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02] /home/admin10/.gradle/caches/transforms-2/files-2.1/87ed0c8d6417da938b13a82c27cac10c/swiperefreshlayout-1.1.0-alpha02/AndroidManifest.xml:20:5-22:41
-MERGED from [org.webkit:android-jsc:r245459] /home/admin10/.gradle/caches/transforms-2/files-2.1/0f25c7a25a350b1fa744335bb1b06c5e/android-jsc-r245459/AndroidManifest.xml:7:5-9:41
-MERGED from [org.webkit:android-jsc:r245459] /home/admin10/.gradle/caches/transforms-2/files-2.1/0f25c7a25a350b1fa744335bb1b06c5e/android-jsc-r245459/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/c8440a3bf373d0d665740cf7dccf1571/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/c8440a3bf373d0d665740cf7dccf1571/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/67e5c17cb122f6b3249340703889616f/transition-1.1.0/AndroidManifest.xml:20:5-44

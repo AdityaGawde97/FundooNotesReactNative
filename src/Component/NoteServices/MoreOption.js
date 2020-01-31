@@ -33,9 +33,8 @@ export default class MoreOption extends Component {
                                 color={globalStyle.inherit}
                             />
                         }
-                        onPress={async () => {
-                            await this.props.setTrash();
-                            this.props.pushNoteData()
+                        onPress={() => {
+                            this.props.trashAndRestore(true)
                         }}
                     />
                     <ListItem
@@ -77,6 +76,14 @@ export default class MoreOption extends Component {
                                 color={globalStyle.inherit}
                             />
                         }
+                        onPress={() => {
+                            this.RBSheet.close();
+                            this.props.navigation.navigate('AddLabel',
+                                {
+                                    'uid': this.props.uid,
+                                    'Note': this.props.Item
+                                })
+                        }}
                     />
                 </List>
                 <ScrollView horizontal>

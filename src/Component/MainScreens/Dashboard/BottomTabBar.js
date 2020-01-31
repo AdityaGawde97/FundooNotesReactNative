@@ -57,7 +57,12 @@ export default function BottomTabBar(props) {
         <TouchableOpacity
           style={styles2.fabTouchable}
           hitSlop={{ top: 200, bottom: 200, left: 200, right: 200 }}
-          onPress={()=>props.navigation.navigate('NoteCreator',{backToPage: props.page})}
+          onPress={() => props.navigation.navigate('NoteCreator',
+            {
+              'backToPage': props.page,
+              'uid': props.uid
+            }
+          )}
         >
           <Image
             source={require('../../../Assets/add.png')}

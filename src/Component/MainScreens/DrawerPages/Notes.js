@@ -7,41 +7,30 @@ import { getNotes } from '../../../Firebase/DatabaseServices';
 import NoteCard from '../../NoteServices/NoteCard';
 import AnimatedLoader from "react-native-animated-loader";
 import { Title } from 'react-native-paper';
+import { connect } from "react-redux";
+import model from "../../../ModelServices/DashboardModel"
 
-export default class Notes extends Component {
+class Notes extends Component {
     constructor(props) {
         super(props);
         this.state = {
             pinNotes: [],
             unpinNotes: [],
-            load: true
+            load: false
         };
     }
 
     componentDidMount = () => {
-        getNotes(async (snapObj) => {
-            let pinNotes = [];
-            let unpinNotes = [];
-            if (snapObj !== null && snapObj !== undefined) {
-                await Object.getOwnPropertyNames(snapObj).map((key) => {
-                    snapObj[key].noteId = key
-                    if (snapObj[key].Pin === true) {
-                        pinNotes.push(snapObj[key])
-                    }
-                    else if (snapObj[key].Pin === false) {
-                        unpinNotes.push(snapObj[key])
-                    }
-                });
-                this.setState({
-                    pinNotes: pinNotes.reverse(),
-                    unpinNotes: unpinNotes.reverse()
-                    //load: false
-                }, () => setTimeout(() => this.setState({ load: false }), 1000))
-            }
-            else {
-                setTimeout(() => this.setState({ load: false }), 2000)
-            }
-        });
+
+        this.setState({ load: true })
+        model.fetchNotes(this.props.uid, (pinNotes, unpinNotes) => {
+            this.setState({
+                pinNotes: pinNotes,
+                unpinNotes: unpinNotes
+            }, () => setTimeout(() => this.setState({ load: false }), 1000))
+        },()=>{
+            setTimeout(() => this.setState({ load: false }), 1000)
+        })
     };
 
     render() {
@@ -69,7 +58,7 @@ export default class Notes extends Component {
                             <View>
                                 {
                                     this.state.pinNotes.length !== 0 &&
-                                    <Title style={styles3.pinTitle}>PINNED</Title>
+                                    <Title style={[styles3.pinTitle, { marginTop: 0 }]}>PINNED</Title>
                                 }
                                 {
                                     this.state.pinNotes.length !== 0 &&
@@ -80,6 +69,7 @@ export default class Notes extends Component {
                                                 Item={item}
                                                 Navigate={this.props}
                                                 page={'Notes'}
+                                                uid={this.props.uid}
                                             />
                                         }
                                         keyExtractor={item => item.noteId}
@@ -89,7 +79,7 @@ export default class Notes extends Component {
                             <View>
                                 {
                                     this.state.pinNotes.length !== 0 && this.state.unpinNotes.length !== 0 &&
-                                    <Title style={styles3.pinTitle}>OTHERS</Title>
+                                    <Title style={[styles3.pinTitle, { marginTop: 15, }]}>OTHERS</Title>
                                 }
 
                                 {
@@ -101,6 +91,7 @@ export default class Notes extends Component {
                                                 Item={item}
                                                 Navigate={this.props}
                                                 page={'Notes'}
+                                                uid={this.props.uid}
                                             />
                                         }
                                         keyExtractor={item => item.noteId}
@@ -120,3 +111,14 @@ export default class Notes extends Component {
         );
     }
 }
+
+
+function mapStateToProps(state) {
+    return {
+        uid: state.userID.uid
+    };
+}
+
+export default connect(
+    mapStateToProps
+)(Notes);

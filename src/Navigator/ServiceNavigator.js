@@ -1,10 +1,13 @@
 import { createSwitchNavigator } from 'react-navigation'
 import NoteCreator from '../Component/NoteServices/NoteCreator'
-import NoteEditor from '../Component/NoteServices/NoteEditor'
+import EditLabels from '../Component/MainScreens/DrawerPages/EditLabels'
+import AddLabel from '../Component/NoteServices/AddLabel'
+import { createStackNavigator } from 'react-navigation-stack'
 
-export const ServiceNavigator = createSwitchNavigator(
+export const ServiceNavigator = createStackNavigator(
     {
-        NoteCreator: { screen: NoteCreator },
-        NoteEditor: { screen: NoteEditor }
+        NoteCreator: { screen: NoteCreator, navigationOptions: { headerShown: false } },
+        EditLabels: { screen: EditLabels, navigationOptions: { headerShown: false } },
+        AddLabel: { screen: AddLabel, navigationOptions: { headerShown: false } }
     }
 )

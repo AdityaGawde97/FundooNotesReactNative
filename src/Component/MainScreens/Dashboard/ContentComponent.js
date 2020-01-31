@@ -1,20 +1,40 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, TouchableHighlight} from 'react-native';
+import { View, Text, ScrollView, TouchableHighlight } from 'react-native';
 import { styles2 } from '../../../Css/Dashboard.style';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import MaterialIcons2 from 'react-native-vector-icons/MaterialIcons'
 import Feather from 'react-native-vector-icons/Feather'
 import { Divider } from 'react-native-elements';
 import { globalStyle } from '../../../Css/GlobalStyle.style';
+import model from '../../../ModelServices/DashboardModel';
+import { connect } from 'react-redux';
 
-export default class ContentComponent extends Component {
+class ContentComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            tab: "Notes",
+            labelData: []
         };
     }
 
+    changeTab = (tab) => {
+        this.setState(
+            {
+                tab: tab
+            }
+        )
+    }
+
+    componentDidMount = () => {
+        model.getLabel(this.props.uid, (data) => {
+            this.setState({ labelData: data })
+        })
+    };
+
+
     render() {
+        const { tab } = this.state
         return (
             <ScrollView>
                 <View>
@@ -29,28 +49,74 @@ export default class ContentComponent extends Component {
                     </Text>
                 </View>
 
-                <TouchableHighlight underlayColor={'orange'}
-                    onPress={()=>this.props.navigation.navigate('Notes')}
-                >
-                    <View style={styles2.row}>
-                        <MaterialIcons color={globalStyle.inherit} size={globalStyle.drawerIconSize} name="lightbulb-outline" />
-                        <Text style={styles2.drawerItems}>Notes</Text>
-                    </View>
-                </TouchableHighlight>
+                {
+                    (['Notes', 'Reminder']).map((text, index) => (
+                        <TouchableHighlight underlayColor={'lightgray'}
+                            onPress={() => {
+                                this.changeTab(text)
+                                this.props.navigation.navigate(text)
+                            }}
+                            style={[styles2.tab, { backgroundColor: tab === text ? '#feefc3' : '#fff' }]}
+                        >
+                            <View style={styles2.row}>
+                                {
+                                    index % 2 === 0 ?
+                                        <MaterialIcons
+                                            color={globalStyle.inherit}
+                                            size={globalStyle.drawerIconSize}
+                                            name="lightbulb-outline"
+                                        /> :
+                                        <MaterialIcons2
+                                            color={globalStyle.inherit}
+                                            size={globalStyle.drawerIconSize}
+                                            name='notifications-none'
+                                        />
 
-                <TouchableHighlight underlayColor={'orange'}
-                    onPress={()=>this.props.navigation.navigate('Reminder')}
-                >
-                    <View style={styles2.row}>
-                        <MaterialIcons2 color={globalStyle.inherit} size={globalStyle.drawerIconSize} name="notifications-none" />
-                        <Text style={styles2.drawerItems}>Reminder</Text>
-                    </View>
-                </TouchableHighlight>
+                                }
 
-                <Divider/>
+                                <Text style={styles2.drawerItems}>{text}</Text>
+                            </View>
+                        </TouchableHighlight>
+                    ))
+                }
 
-                <TouchableHighlight underlayColor={'orange'}
-                    onPress={()=>this.props.navigation.navigate('Notes')}
+                {this.state.labelData.length === 0 ?
+                    <Divider /> :
+                    <Text
+                        style={{ color: globalStyle.inherit, paddingLeft: 30 }}
+                    >Labels</Text>
+                }
+
+                {
+                    (this.state.labelData).map((text, index) => (
+                        <TouchableHighlight underlayColor={'lightgray'}
+                            onPress={() => {
+                                this.changeTab(text.Label)
+                                this.props.navigation.navigate('Label',
+                                    {
+                                        'page': text.Label,
+                                        'labelId': text.labelId
+                                    })
+                            }}
+                            style={[styles2.tab, { backgroundColor: tab === text.Label ? '#feefc3' : '#fff' }]}
+                        >
+                            <View style={styles2.row}>
+
+                                <MaterialIcons
+                                    color={globalStyle.inherit}
+                                    size={globalStyle.drawerIconSize}
+                                    name="label-outline"
+                                />
+
+                                <Text style={styles2.drawerItems}>{text.Label}</Text>
+                            </View>
+                        </TouchableHighlight>
+                    ))
+                }
+
+                <TouchableHighlight underlayColor={'lightgray'}
+                    onPress={() => this.props.navigation.navigate('EditLabels')}
+                    style={styles2.tab}
                 >
                     <View style={styles2.row}>
                         <MaterialIcons2 color={globalStyle.inherit} size={globalStyle.drawerIconSize} name="add" />
@@ -58,28 +124,45 @@ export default class ContentComponent extends Component {
                     </View>
                 </TouchableHighlight>
 
-                <Divider/>
+                <Divider />
 
-                <TouchableHighlight underlayColor={'orange'}
-                    onPress={()=>this.props.navigation.navigate('Archive')}
-                >
-                    <View style={styles2.row}>
-                        <MaterialIcons2 color={globalStyle.inherit} size={globalStyle.drawerIconSize} name="archive" />
-                        <Text style={styles2.drawerItems}>Archive</Text>
-                    </View>
-                </TouchableHighlight>
+                {
+                    (['Archive', 'Trash']).map((text, index) => (
+                        <TouchableHighlight underlayColor={'lightgray'}
+                            onPress={() => {
+                                this.changeTab(text)
+                                this.props.navigation.navigate(text)
+                            }}
+                            style={[styles2.tab, { backgroundColor: tab === text ? '#feefc3' : '#fff' }]}
+                        >
+                            <View style={styles2.row}>
+                                {
+                                    index % 2 === 0 ?
+                                        <MaterialIcons2
+                                            color={globalStyle.inherit}
+                                            size={globalStyle.drawerIconSize}
+                                            name={'archive'}
+                                        />
 
-                <TouchableHighlight underlayColor={'orange'}
-                    onPress={()=>this.props.navigation.navigate('Trash')}
-                >
-                    <View style={styles2.row}>
-                        <MaterialIcons color={globalStyle.inherit} size={globalStyle.drawerIconSize} name="trash-can-outline" />
-                        <Text style={styles2.drawerItems}>Trash</Text>
-                    </View>
-                </TouchableHighlight>
+                                        :
+                                        <MaterialIcons
+                                            color={globalStyle.inherit}
+                                            size={globalStyle.drawerIconSize}
+                                            name={'trash-can-outline'}
+                                        />
+                                }
 
-                <TouchableHighlight underlayColor={'orange'}
-                    onPress={()=>this.props.navigation.navigate('CountChart')}
+                                <Text style={styles2.drawerItems}>{text}</Text>
+                            </View>
+                        </TouchableHighlight>
+                    ))
+                }
+
+                <Divider />
+
+                <TouchableHighlight underlayColor={'lightgray'}
+                    onPress={() => this.props.navigation.navigate('CountChart')}
+                    style={styles2.tab}
                 >
                     <View style={styles2.row}>
                         <Feather color={globalStyle.inherit} size={globalStyle.drawerIconSize} name="pie-chart" />
@@ -87,25 +170,50 @@ export default class ContentComponent extends Component {
                     </View>
                 </TouchableHighlight>
 
-                <TouchableHighlight underlayColor={'orange'}
-                    onPress={()=>this.props.navigation.navigate('Notes')}
-                >
-                    <View style={styles2.row}>
-                        <MaterialIcons color={globalStyle.inherit} size={globalStyle.drawerIconSize} name="settings-outline" />
-                        <Text style={styles2.drawerItems}>Settings</Text>
-                    </View>
-                </TouchableHighlight>
+                <Divider />
 
-                <TouchableHighlight underlayColor={'orange'}
-                    onPress={()=>this.props.navigation.navigate('Notes')}
-                >
-                    <View style={styles2.row}>
-                        <MaterialIcons2 color={globalStyle.inherit} size={globalStyle.drawerIconSize} name="help-outline" />
-                        <Text style={styles2.drawerItems}>Help & feedback</Text>
-                    </View>
-                </TouchableHighlight>
+                {
+                    (['Settings', 'Help & feedback']).map((text, index) => (
+                        <TouchableHighlight underlayColor={'lightgray'}
+                            onPress={() => {
+                                this.changeTab(text)
+                                this.props.navigation.navigate(text)
+                            }}
+                            style={[styles2.tab, { backgroundColor: tab === text ? '#feefc3' : '#fff' }]}
+                        >
+                            <View style={styles2.row}>
+                                {
+                                    index % 2 === 0 ?
+                                        <MaterialIcons
+                                            color={globalStyle.inherit}
+                                            size={globalStyle.drawerIconSize}
+                                            name={'settings-outline'}
+                                        />
+
+                                        :
+                                        <MaterialIcons2
+                                            color={globalStyle.inherit}
+                                            size={globalStyle.drawerIconSize}
+                                            name={'help-outline'}
+                                        />
+                                }
+                                <Text style={styles2.drawerItems}>{text}</Text>
+                            </View>
+                        </TouchableHighlight>
+                    ))
+                }
 
             </ScrollView>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        uid: state.userID.uid
+    };
+}
+
+export default connect(
+    mapStateToProps
+)(ContentComponent);

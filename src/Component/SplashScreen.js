@@ -2,17 +2,22 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import AsyncStorage from '@react-native-community/async-storage';
+import { connect } from "react-redux";
+import { storeUid } from '../Redux/UidStore/UidAction'
 
-export default class SplashScreen extends Component {
+class SplashScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
         };
     }
 
-    componentDidMount() {
+    componentDidMount = async () => {
+        const uid = await AsyncStorage.getItem('uid')
+        this.props.storeUid(uid)
         setTimeout(
             async () => {
+                const uid = await AsyncStorage.getItem('uid')
                 let auth = await AsyncStorage.getItem('isAuth')
                 if (!auth) {
                     this.props.navigation.navigate('Auth')
@@ -57,3 +62,14 @@ export default class SplashScreen extends Component {
         );
     }
 }
+
+
+
+function mapDispatchToProps(dispatch) {
+    return {
+        storeUid: (uid) => dispatch(storeUid(uid))
+    };
+}
+
+
+export default connect(null, mapDispatchToProps)(SplashScreen)

@@ -81,7 +81,7 @@ export const styles2 = StyleSheet.create({
 
     topbarContainer: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: 'transparent',
         borderColor: '#cccccc',
         borderWidth: 1,
         borderRadius: 10,
@@ -115,7 +115,7 @@ export const styles2 = StyleSheet.create({
     otherContainer: {
         backgroundColor: '#fff',
         elevation: 0,
-        top: 10    
+        top: 10
     },
 
     otherTitle: {
@@ -123,5 +123,10 @@ export const styles2 = StyleSheet.create({
         color: '#484848',
         fontFamily: 'Roboto',
     },
+
+    tab: {
+        borderBottomEndRadius: 50,
+        borderTopEndRadius: 50
+    }
 
 })

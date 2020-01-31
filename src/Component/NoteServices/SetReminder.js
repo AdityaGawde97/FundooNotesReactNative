@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, Dimensions } from 'react-native';
 import { globalStyle } from '../../Css/GlobalStyle.style'
 import { IconButton } from 'react-native-paper';
-import { Dialog, TextField, Icon, Button } from 'material-bread';
+import { Dialog, Icon, Button } from 'material-bread';
 import DateTimePicker from 'react-native-modal-datetime-picker'
 import moment from 'moment';
 import { styles4 } from '../../Css/NoteService.style';
@@ -143,6 +143,7 @@ export default class SetReminder extends Component {
                     size={globalStyle.size25}
                     color={globalStyle.inherit}
                     onPress={() => this.setState({ visible: true })}
+                    style={{display: this.props.page === 'Trash' ? 'none' : 'flex'}}
                 />
                 {renderDialogBox}
                 {renderDateModel}

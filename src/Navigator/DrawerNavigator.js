@@ -6,19 +6,21 @@ import Archive from '../Component/MainScreens/DrawerPages/Archive';
 import CountChart from "../Component/MainScreens/DrawerPages/CountChart";
 import Trash from "../Component/MainScreens/DrawerPages/Trash"
 import ContentComponent from '../Component/MainScreens/Dashboard/ContentComponent';
+import Label from '../Component/MainScreens/DrawerPages/Label';
 
 export const DrawerNavigator = createDrawerNavigator(
     {
         Notes: { screen: Notes },
         Reminder: { screen: Reminder },
+        Label: { screen: Label },
         Archive: { screen: Archive },
         CountChart: { screen: CountChart },
         Trash: { screen: Trash }
     },
     {
-        initialRouteName: 'Reminder',
+        initialRouteName: 'Notes',
         contentComponent: ContentComponent,
-        drawerWidth: 330
+        drawerWidth: 330,
     }
 );
 

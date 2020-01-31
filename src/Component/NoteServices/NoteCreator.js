@@ -5,16 +5,18 @@ import { Appbar } from 'react-native-paper';
 import { globalStyle } from '../../Css/GlobalStyle.style';
 import { TextInput } from 'react-native';
 import MoreOption from './MoreOption'
-import moment from 'moment'
-import { createNote, updateNote } from '../../Firebase/DatabaseServices';
+import moment from 'moment';
 import SetReminder from './SetReminder';
 import { Chip, Icon } from 'material-bread';
+import TrashMoreOption from './TrashMoreOption';
+import model from '../../ModelServices/DashboardModel';
 
 export default class NoteCreator extends Component {
     constructor(props) {
         super(props);
         this.Item = this.props.navigation.getParam('noteObj', null)
         this.page = this.props.navigation.getParam('backToPage')
+        this.uid = props.navigation.getParam('uid')
         this.state = {
             bgColor: this.Item === null ? '#ffffff' : this.Item.BgColor,
             title: this.Item === null ? '' : this.Item.Title,
@@ -34,12 +36,9 @@ export default class NoteCreator extends Component {
     }
 
     pushNoteData = () => {
-
         if (this.Item === null) {
             if (this.state.title !== '' || this.state.note !== '') {
-                createNote(this.state.title, this.state.note, this.state.pin,
-                    this.state.archive, this.state.trash, this.state.bgColor,
-                    this.state.dateField, this.state.timeField,
+                model.createNote(this.uid, this.state,
                     () => {
                         this.props.navigation.navigate(this.page)
                     }
@@ -50,9 +49,7 @@ export default class NoteCreator extends Component {
             }
         }
         else {
-            updateNote(this.Item.noteId, this.state.title, this.state.note,
-                this.state.pin, this.state.archive, this.state.trash,
-                this.state.bgColor, this.state.dateField, this.state.timeField,
+            model.editNote(this.uid, this.Item.noteId, this.state,
                 () => {
                     this.props.navigation.navigate(this.page)
                 }
@@ -60,8 +57,19 @@ export default class NoteCreator extends Component {
         }
     }
 
+    trashAndRestore = (trash) => {
+        if (this.Item !== null) {
+            model.trashOrRestore(this.uid, this.Item.noteId, trash, () => {
+                this.props.navigation.navigate(this.page)
+            })
+        }
+        else {
+            this.props.navigation.navigate(this.page)
+        }
+    }
+
     render() {
-        console.log(this.state.trash)
+
         return (
             <View style={[styles4.noteServiceContainer, { backgroundColor: this.state.bgColor }]}>
 
@@ -77,6 +85,7 @@ export default class NoteCreator extends Component {
                         size={globalStyle.noteIconSize}
                         color={globalStyle.inherit}
                         onPress={() => this.setState({ pin: !this.state.pin })}
+                        style={{ display: this.page === 'Trash' ? 'none' : 'flex' }}
                     />
                     <SetReminder
                         getDateTime={
@@ -85,6 +94,7 @@ export default class NoteCreator extends Component {
                                 timeField: time
                             })
                         }
+                        page={this.page}
                     />
                     <Appbar.Action
                         icon={!this.state.archive ?
@@ -94,28 +104,43 @@ export default class NoteCreator extends Component {
                         size={globalStyle.noteIconSize}
                         color={globalStyle.inherit}
                         onPress={() => this.setState({ archive: !this.state.archive })}
+                        style={{ display: this.page === 'Trash' ? 'none' : 'flex' }}
                     />
                 </Appbar>
 
                 <View style={styles4.noteServiceContainer}>
-                    <TextInput
-                        style={styles4.textInput1}
-                        placeholder="Title"
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#8a8a8a"
-                        value={this.state.title}
-                        onChangeText={(title) => this.setState({ title })}
-                        multiline
-                    />
-                    <TextInput
-                        style={styles4.textInput2}
-                        placeholder="Note"
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#8a8a8a"
-                        value={this.state.note}
-                        onChangeText={(note) => this.setState({ note })}
-                        multiline
-                    />
+                    {
+                        this.page !== 'Trash' ?
+                            <View>
+                                <TextInput
+                                    style={styles4.textInput1}
+                                    placeholder="Title"
+                                    underlineColorAndroid="transparent"
+                                    placeholderTextColor="#8a8a8a"
+                                    value={this.state.title}
+                                    onChangeText={(title) => this.setState({ title })}
+                                    multiline
+                                />
+                                <TextInput
+                                    style={styles4.textInput2}
+                                    placeholder="Note"
+                                    underlineColorAndroid="transparent"
+                                    placeholderTextColor="#8a8a8a"
+                                    value={this.state.note}
+                                    onChangeText={(note) => this.setState({ note })}
+                                    multiline
+                                />
+                            </View> :
+                            <View>
+                                <Text style={styles4.textInput1}>
+                                    {this.state.title}
+                                </Text>
+                                <Text style={styles4.textInput1}>
+                                    {this.state.note}
+                                </Text>
+                            </View>
+                    }
+
                     <View>
                         {
                             this.Item === null ?
@@ -149,6 +174,7 @@ export default class NoteCreator extends Component {
                                         timeField: null
                                     })}
                                     visible={true}
+                                    disabled={this.page === 'Trash'}
                                 />
                         }
                     </View>
@@ -171,13 +197,28 @@ export default class NoteCreator extends Component {
                             }
                         }
                     />
-                    <MoreOption
-                        bgColor={this.state.bgColor}
-                        changeColor={this.changeColor}
-                        trash={this.state.trash}
-                        setTrash={() => this.setState({ trash: true })}
-                        pushNoteData={this.pushNoteData}
-                    />
+                    {
+                        this.page !== 'Trash' ?
+                            <MoreOption
+                                bgColor={this.state.bgColor}
+                                changeColor={this.changeColor}
+                                trashAndRestore={this.trashAndRestore}
+                                uid={this.uid}
+                                Item={this.Item}
+                                {...this.props}
+                            /> :
+                            <TrashMoreOption
+                                bgColor={this.state.bgColor}
+                                noteId={this.Item.noteId}
+                                trashAndRestore={this.trashAndRestore}
+                                deleteForever={() => {
+                                    model.deleteForever(this.uid, this.Item.noteId, () => {
+                                        this.props.navigation.navigate(this.page)
+                                    })
+                                }}
+                            />
+                    }
+
                 </Appbar>
             </View>
         );

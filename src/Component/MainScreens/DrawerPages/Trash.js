@@ -1,42 +1,35 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, FlatList } from 'react-native';
 import { styles3 } from '../../../Css/MainScreens.style';
-import TrashTopbar from '../Dashboard/TrashTopbar';
 import AnimatedLoader from "react-native-animated-loader";
-import { getTrashNotes } from '../../../Firebase/DatabaseServices';
 import NoteCard from '../../NoteServices/NoteCard';
+import { connect } from 'react-redux';
+import model from '../../../ModelServices/DashboardModel';
+import OtherTopbar from '../Dashboard/OtherTopbar'
 
-export default class Trash extends Component {
+class Trash extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            load: false,
+            load: true,
             notes: []
         };
     }
 
     componentDidMount = () => {
-        getTrashNotes(async (snapObj) => {
-            let notes = [];
-            if (snapObj !== null && snapObj !== undefined) {
-                await Object.getOwnPropertyNames(snapObj).map((key) => {
-
-                    snapObj[key].noteId = key;
-                    notes.push(snapObj[key])
-
-                });
-            }
+        this.setState({ load: true })
+        model.fetchArchiveOrTrashNotes(this.props.uid, 'Trash', (notes) => {
             this.setState({
                 notes: notes,
             }, () => setTimeout(() => this.setState({ load: false }), 1000))
-        })
+        }, () => setTimeout(() => this.setState({ load: false }), 1000))
     };
 
     render() {
         return (
             <View style={styles3.container}>
-                <TrashTopbar {...this.props} page={'Trash'} />
+                <OtherTopbar {...this.props} page={'Trash'} />
                 <AnimatedLoader
                     visible={this.state.load}
                     overlayColor="rgba(255,255,255,0.75)"
@@ -59,6 +52,7 @@ export default class Trash extends Component {
                                             page={'Trash'}
                                             Item={item}
                                             Navigate={this.props}
+                                            uid={this.props.uid}
                                         />
                                     }
                                     keyExtractor={item => item.noteId}
@@ -71,3 +65,14 @@ export default class Trash extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        uid: state.userID.uid
+    };
+}
+
+export default connect(
+    mapStateToProps
+)(Trash);
+

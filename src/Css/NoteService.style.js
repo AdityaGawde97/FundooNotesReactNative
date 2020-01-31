@@ -11,6 +11,12 @@ export const styles4 = StyleSheet.create({
         elevation: 0,
     },
 
+    appbarTitle: {
+        fontSize: 20,
+        color: '#484848',
+        fontFamily: 'Roboto',
+    },
+
     textInput1: {
         top: 28,
         paddingLeft: 20,
@@ -54,6 +60,26 @@ export const styles4 = StyleSheet.create({
     dateTimeView: {
         borderBottomColor: 'gray',
         borderBottomWidth: 1,
+    },
+
+    listItem: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 12
+    },
+
+    labelInput: {
+        width: '70%',
+        fontSize: 18
+    },
+
+    label: { fontSize: 18, top: 8, width: '70%' },
+
+    focusLine: {
+        borderBottomColor: 'lightgray',
+        borderTopColor: 'lightgray',
+        borderBottomWidth: 1,
+        borderTopWidth: 1,
     }
 
 });

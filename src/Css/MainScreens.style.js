@@ -10,7 +10,6 @@ export const styles3 = StyleSheet.create({
     pinTitle: {
         fontSize: 12,
         color: 'gray',
-        marginTop: 15,
         marginBottom: -5,
         marginLeft: 25
     }

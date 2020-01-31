@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, FlatList } from 'react-native';
+import { View, ScrollView, FlatList } from 'react-native';
 import { styles3 } from '../../../Css/MainScreens.style';
 import OtherTopbar from '../Dashboard/OtherTopbar';
 import Bottombar from '../Dashboard/BottomTabBar'
 import AnimatedLoader from "react-native-animated-loader";
-import { getNotes } from '../../../Firebase/DatabaseServices';
 import { Title } from 'react-native-paper';
 import NoteCard from '../../NoteServices/NoteCard';
+import { connect } from "react-redux";
+import model from '../../../ModelServices/DashboardModel';
 
-export default class Reminder extends Component {
+class Reminder extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             load: false,
             notes: []
@@ -19,20 +19,13 @@ export default class Reminder extends Component {
     }
 
     componentDidMount = () => {
-        getNotes(async (snapObj) => {
-            let notes = [];
-            if (snapObj !== null && snapObj !== undefined) {
-                await Object.getOwnPropertyNames(snapObj).map((key) => {
-                    if (snapObj[key].ReminderDate !== undefined) {
-                        snapObj[key].noteId = key;
-                        notes.push(snapObj[key])
-                    }
-                });
-            }
+        this.setState({ load: true })
+
+        model.fetchReminderNotes(this.props.uid, (notes) => {
             this.setState({
-                notes: notes,
+                notes: notes
             }, () => setTimeout(() => this.setState({ load: false }), 1000))
-        })
+        }, () => setTimeout(() => this.setState({ load: false }), 1000))
     };
 
     render() {
@@ -49,7 +42,7 @@ export default class Reminder extends Component {
                     }}
                     speed={1}
                 />
-                <View style={{ height: '80%' }}>
+                <View style={{ height: '90%'}}>
                     <ScrollView>
                         <View>
                             {
@@ -65,6 +58,7 @@ export default class Reminder extends Component {
                                             page={'Reminder'}
                                             Item={item}
                                             Navigate={this.props}
+                                            uid={this.props.uid}
                                         />
                                     }
                                     keyExtractor={item => item.noteId}
@@ -78,3 +72,13 @@ export default class Reminder extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        uid: state.userID.uid
+    };
+}
+
+export default connect(
+    mapStateToProps
+)(Reminder);

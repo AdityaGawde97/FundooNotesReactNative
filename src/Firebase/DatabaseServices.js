@@ -1,63 +1,74 @@
 import firebase from './Firebase'
-import AsyncStorage from '@react-native-community/async-storage';
 
-export async function createNote(title, note, pin, archive, trash, color, date, time, callback) {
-    const uid = await AsyncStorage.getItem('uid')
-    console.log(uid)
-    firebase.database().ref('/users/' + uid + '/Notes/').push({
-        Title: title,
-        Content: note,
-        Pin: pin,
-        Archive: archive,
-        Trash: trash,
-        BgColor: color,
-        ReminderDate: date,
-        ReminderTime: time
-    }).then((success) => {
+export function setNote(uid, noteObj, callback) {
+    firebase.database().ref('/users/' + uid + '/Notes/').push(noteObj).then((success) => {
         callback();
     })
+}
+
+export function updateNote(uid, noteId, noteObj, callback) {
+    firebase.database().ref('/users/' + uid + '/Notes/' + noteId + '/').update(noteObj)
+        .then((success) => {
+            console.log('success')
+            callback();
+        })
 
 }
 
-export async function getNotes(callback) {
-    const uid = await AsyncStorage.getItem('uid');
-    firebase.database().ref('/users/' + uid + '/Notes/').orderByChild('Archive').equalTo(false)
+export function getNotes(uid, callback) {
+    firebase.database().ref('/users/' + uid + '/Notes/').orderByChild('Trash').equalTo(false)
         .on('value', (snapshot) => {
-            let ref = snapshot.ref;
-            ref.orderByChild('Trash').equalTo(false).on('value', (snapshot2) => {
-                callback(snapshot2.val())
-            })
+            callback(snapshot.val())
         })
 }
 
-export async function getArchiveNotes(callback) {
-    const uid = await AsyncStorage.getItem('uid');
+export function getArchiveNotes(uid, callback) {
     firebase.database().ref('/users/' + uid + '/Notes/').orderByChild('Archive').equalTo(true)
         .on('value', (snapshot) => {
             callback(snapshot.val())
         })
 }
 
-export async function getTrashNotes(callback) {
-    const uid = await AsyncStorage.getItem('uid');
-    firebase.database().ref('/users/' + uid + '/Notes/').orderByChild('Trash').equalTo(true)
+export function getArchiveOrTrashNotes(uid, child, callback) {
+    firebase.database().ref('/users/' + uid + '/Notes/').orderByChild(child).equalTo(true)
         .on('value', (snapshot) => {
             callback(snapshot.val())
         })
 }
 
-export async function updateNote(noteId, title, note, pin, archive, trash, color, date, time, callback) {
-    const uid = await AsyncStorage.getItem('uid')
+export function trashAndRestoreNotes(uid, noteId, trash, callback) {
     firebase.database().ref('/users/' + uid + '/Notes/' + noteId + '/').update({
-        Title: title,
-        Content: note,
-        Pin: pin,
-        Archive: archive,
         Trash: trash,
-        BgColor: color,
-        ReminderDate: date,
-        ReminderTime: time
     }).then((success) => {
         callback();
     })
+}
+
+export function deleteForeverFromFirebase(uid, noteId, callback) {
+    firebase.database().ref('/users/' + uid + '/Notes/' + noteId + '/').remove()
+        .then((success) => {
+            callback();
+        })
+}
+
+export function addLabelInFirebase(uid, label) {
+    firebase.database().ref('/users/' + uid + '/Labels/').push({
+        Label: label
+    })
+}
+
+export function getLabelsFromFirebase(uid, callback) {
+    firebase.database().ref('/users/' + uid + '/Labels/').on('value', (snapshot) => {
+        callback(snapshot.val())
+    })
+}
+
+export async function updateLabelsInFirebase(uid, labelId, label) {
+    await firebase.database().ref('/users/' + uid + '/Labels/' + labelId + '/').update({
+        Label: label
+    })
+}
+
+export function deleteLabelFromFirebse(uid, labelId) {
+    firebase.database().ref('/users/' + uid + '/Labels/' + labelId + '/').remove()
 }

@@ -3,34 +3,27 @@ import { View, Text, ScrollView, FlatList } from 'react-native';
 import { styles3 } from '../../../Css/MainScreens.style';
 import OtherTopbar from '../Dashboard/OtherTopbar';
 import AnimatedLoader from "react-native-animated-loader";
-import { getArchiveNotes } from '../../../Firebase/DatabaseServices';
 import NoteCard from '../../NoteServices/NoteCard';
+import model from '../../../ModelServices/DashboardModel';
+import { connect } from 'react-redux';
 
-export default class Archive extends Component {
+class Archive extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            load: false,
+            load: true,
             notes: []
         };
     }
 
     componentDidMount = () => {
-        getArchiveNotes(async (snapObj) => {
-            let notes = [];
-            if (snapObj !== null && snapObj !== undefined) {
-                await Object.getOwnPropertyNames(snapObj).map((key) => {
-
-                    snapObj[key].noteId = key;
-                    notes.push(snapObj[key])
-
-                });
-            }
+        this.setState({ load: true })
+        model.fetchArchiveOrTrashNotes(this.props.uid, 'Archive', (notes) => {
             this.setState({
-                notes: notes,
+                notes: notes
             }, () => setTimeout(() => this.setState({ load: false }), 1000))
-        })
+        }, () => setTimeout(() => this.setState({ load: false }), 1000))
     };
 
     render() {
@@ -59,6 +52,7 @@ export default class Archive extends Component {
                                             page={'Archive'}
                                             Item={item}
                                             Navigate={this.props}
+                                            uid={this.props.uid}
                                         />
                                     }
                                     keyExtractor={item => item.noteId}
@@ -71,3 +65,13 @@ export default class Archive extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        uid: state.userID.uid
+    };
+}
+
+export default connect(
+    mapStateToProps
+)(Archive);

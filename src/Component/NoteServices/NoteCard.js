@@ -17,7 +17,13 @@ function NoteCard(props) {
                 }
             ]
         }
-            onPress={() => props.Navigate.navigation.navigate('NoteCreator', { 'noteObj': item, backToPage: props.page })}
+            onPress={() => props.Navigate.navigation.navigate('NoteCreator',
+                {
+                    'noteObj': item,
+                    backToPage: props.page,
+                    'uid': props.uid
+                }
+            )}
         >
             <Card.Content style={{ paddingVertical: 5 }}>
                 {
