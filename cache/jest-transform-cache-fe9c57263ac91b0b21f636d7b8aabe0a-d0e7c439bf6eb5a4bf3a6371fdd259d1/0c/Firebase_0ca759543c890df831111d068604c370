@@ -1,0 +1,75 @@
+6cd9c407d89f5bc485a3eca26067e5c9
+var cov_145c134ek4 = function () {
+  var path = "/home/admin10/Desktop/FundooNotes/src/Firebase/Firebase.js";
+  var hash = "a7771da37f856857635b8d5de9d52133ed0dc2f2";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/admin10/Desktop/FundooNotes/src/Firebase/Firebase.js",
+    statementMap: {
+      "0": {
+        start: {
+          line: 4,
+          column: 23
+        },
+        end: {
+          line: 12,
+          column: 1
+        }
+      },
+      "1": {
+        start: {
+          line: 15,
+          column: 0
+        },
+        end: {
+          line: 15,
+          column: 39
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
+    hash: "a7771da37f856857635b8d5de9d52133ed0dc2f2"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  return coverage[path] = coverageData;
+}();
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _firebase = _interopRequireDefault(require("firebase"));
+
+var firebaseConfig = (cov_145c134ek4.s[0]++, {
+  apiKey: "AIzaSyBDL-wXmvgtMqMlRzRnA9NqClLVCHdeAU8",
+  authDomain: "fundoo-notes-b7e8e.firebaseapp.com",
+  databaseURL: "https://fundoo-notes-b7e8e.firebaseio.com",
+  projectId: "fundoo-notes-b7e8e",
+  storageBucket: "fundoo-notes-b7e8e.appspot.com",
+  messagingSenderId: "440304323539",
+  appId: "1:440304323539:android:8aff7284978a04995d7d26"
+});
+cov_145c134ek4.s[1]++;
+
+_firebase.default.initializeApp(firebaseConfig);
+
+var _default = _firebase.default;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZpcmViYXNlLmpzIl0sIm5hbWVzIjpbImZpcmViYXNlQ29uZmlnIiwiYXBpS2V5IiwiYXV0aERvbWFpbiIsImRhdGFiYXNlVVJMIiwicHJvamVjdElkIiwic3RvcmFnZUJ1Y2tldCIsIm1lc3NhZ2luZ1NlbmRlcklkIiwiYXBwSWQiLCJmaXJlYmFzZSIsImluaXRpYWxpemVBcHAiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7O0FBR0EsSUFBTUEsY0FBYywyQkFBRztBQUN2QkMsRUFBQUEsTUFBTSxFQUFFLHlDQURlO0FBRXZCQyxFQUFBQSxVQUFVLEVBQUUsb0NBRlc7QUFHdkJDLEVBQUFBLFdBQVcsRUFBRSwyQ0FIVTtBQUl2QkMsRUFBQUEsU0FBUyxFQUFFLG9CQUpZO0FBS3ZCQyxFQUFBQSxhQUFhLEVBQUUsZ0NBTFE7QUFNdkJDLEVBQUFBLGlCQUFpQixFQUFFLGNBTkk7QUFPdkJDLEVBQUFBLEtBQUssRUFBRTtBQVBnQixDQUFILENBQXBCOzs7QUFXQUMsa0JBQVNDLGFBQVQsQ0FBdUJULGNBQXZCOztlQUVlUSxpQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBmaXJlYmFzZSBmcm9tICdmaXJlYmFzZSdcblxuXG5jb25zdCBmaXJlYmFzZUNvbmZpZyA9IHtcbmFwaUtleTogXCJBSXphU3lCREwtd1htdmd0TXFNbFJ6Um5BOU5xQ2xMVkNIZGVBVThcIixcbmF1dGhEb21haW46IFwiZnVuZG9vLW5vdGVzLWI3ZThlLmZpcmViYXNlYXBwLmNvbVwiLFxuZGF0YWJhc2VVUkw6IFwiaHR0cHM6Ly9mdW5kb28tbm90ZXMtYjdlOGUuZmlyZWJhc2Vpby5jb21cIixcbnByb2plY3RJZDogXCJmdW5kb28tbm90ZXMtYjdlOGVcIixcbnN0b3JhZ2VCdWNrZXQ6IFwiZnVuZG9vLW5vdGVzLWI3ZThlLmFwcHNwb3QuY29tXCIsXG5tZXNzYWdpbmdTZW5kZXJJZDogXCI0NDAzMDQzMjM1MzlcIixcbmFwcElkOiBcIjE6NDQwMzA0MzIzNTM5OmFuZHJvaWQ6OGFmZjcyODQ5NzhhMDQ5OTVkN2QyNlwiXG59O1xuLy8gd2ViOjNhMjE1ZTdlMjBhYzRjODI1ZDdkMjY6XG4vLyBJbml0aWFsaXplIEZpcmViYXNlXG5maXJlYmFzZS5pbml0aWFsaXplQXBwKGZpcmViYXNlQ29uZmlnKTtcblxuZXhwb3J0IGRlZmF1bHQgZmlyZWJhc2UiXX0=

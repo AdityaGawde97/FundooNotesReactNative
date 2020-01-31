@@ -21,7 +21,7 @@ const LabelList = (props) => {
                         () => setFocus(true)
                         : () => {
                             setFocus(false)
-                            model.removeLabel(props.uid, props.labelId)
+                            model.deleteLabel(props.uid, props.labelId)
                         }
                     }
                 />

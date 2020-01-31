@@ -62,7 +62,7 @@ class EditLabels extends Component {
                             size={25}
                             style={{ opacity: btnState ? 1 : 0 }}
                             onPress={() => {
-                                model.addlabel(this.props.uid, this.state.labelName)
+                                model.createLabel(this.props.uid, this.state.labelName)
                                 this.setState({ labelName: '' })
                             }}
                         />

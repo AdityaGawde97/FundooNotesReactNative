@@ -2,7 +2,7 @@ import firebase from './Firebase'
 
 export function setNote(uid, noteObj, callback) {
     firebase.database().ref('/users/' + uid + '/Notes/').push(noteObj).then((success) => {
-        callback();
+        callback(success.key);
     })
 }
 
@@ -51,7 +51,7 @@ export function deleteForeverFromFirebase(uid, noteId, callback) {
         })
 }
 
-export function addLabelInFirebase(uid, label) {
+export function createLabelInFirebase(uid, label) {
     firebase.database().ref('/users/' + uid + '/Labels/').push({
         Label: label
     })
@@ -72,3 +72,25 @@ export async function updateLabelsInFirebase(uid, labelId, label) {
 export function deleteLabelFromFirebse(uid, labelId) {
     firebase.database().ref('/users/' + uid + '/Labels/' + labelId + '/').remove()
 }
+
+export function addLabelsInNote(uid, noteKey, labelKey, labelName) {
+    firebase.database().ref('/users/' + uid + '/Notes/' + noteKey + '/NoteLabels/' + labelKey + '/').set({
+        LabelName: labelName
+    });
+    firebase.database().ref('/users/' + uid + '/Labels/' + labelKey + '/LabeledNotes/').push({
+        NoteId: noteKey
+    })
+}
+
+export function removeLabelsFromNote(uid, noteKey, labelKey, labeledNoteKey) {
+    firebase.database().ref('/users/' + uid + '/Notes/' + noteKey + '/NoteLabels/' + labelKey + '/').remove();
+    firebase.database().ref('/users/' + uid + '/Labels/' + labelKey + '/LabeledNotes/' + labeledNoteKey + '/').remove()
+}
+
+export function CheckNote(uid, noteId, callback) {
+    firebase.database().ref('/users/' + uid + '/Notes/' + noteId + '/')
+        .on('value', (snapshot) => {
+            callback(snapshot.val())
+        })
+}
+

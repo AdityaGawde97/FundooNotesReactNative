@@ -32,20 +32,39 @@ function NoteCard(props) {
                 {
                     item.Content !== '' && <Paragraph> {item.Content} </Paragraph>
                 }
-
-                {
-                    item.ReminderDate !== undefined &&
-                    <Chip
-                        style={{ margin: 5, }}
-                        text={
-                            moment(item.ReminderDate).format('MMM D')
-                            + ', ' + item.ReminderTime
+                <Card.Content
+                    style={
+                        {
+                            flexDirection: 'row',
+                            flexWrap: 'wrap',
+                            paddingLeft: 0,
+                            paddingTop: 10
                         }
-                        chipStyle='outlined'
-                        leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
-                    />
-                }
-
+                    }
+                >
+                    {
+                        item.ReminderDate !== undefined &&
+                        <Chip
+                            style={styles4.chipStyle}
+                            text={
+                                moment(item.ReminderDate).format('MMM D')
+                                + ', ' + item.ReminderTime
+                            }
+                            chipStyle='outlined'
+                            leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
+                        />
+                    }
+                    {
+                        item.NoteLabels !== undefined &&
+                        Object.getOwnPropertyNames(item.NoteLabels).map((labelId) => (
+                            <Chip
+                                text={item.NoteLabels[labelId].LabelName}
+                                style={styles4.chipStyle}
+                                chipStyle='outlined'
+                            />
+                        ))
+                    }
+                </Card.Content>
             </Card.Content>
         </Card>
     );

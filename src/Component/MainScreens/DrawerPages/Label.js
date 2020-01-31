@@ -33,8 +33,8 @@ class Label extends Component {
         model.fetchReminderNotes(this.props.uid, (notes) => {
             this.setState({
                 notes: notes
-            }, () => setTimeout(() => this.setState({ load: false }), 1000))
-        }, () => setTimeout(() => this.setState({ load: false }), 1000))
+            }, () => setTimeout(() => this.setState({ load: false }), 500))
+        }, () => setTimeout(() => this.setState({ load: false }), 500))
     };
 
     render() {

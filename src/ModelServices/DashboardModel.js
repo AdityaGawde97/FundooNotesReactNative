@@ -108,8 +108,8 @@ class DashboardModel {
         DatabaseServices.deleteForeverFromFirebase(uid, noteId, callback)
     }
 
-    addlabel(uid, label) {
-        DatabaseServices.addLabelInFirebase(uid, label)
+    createLabel(uid, label) {
+        DatabaseServices.createLabelInFirebase(uid, label)
     }
 
     getLabel(uid, callback) {
@@ -126,12 +126,38 @@ class DashboardModel {
         })
     }
 
-    updateLabel(uid, labelId, label) {  
+    updateLabel(uid, labelId, label) {
         DatabaseServices.updateLabelsInFirebase(uid, labelId, label)
     }
 
-    removeLabel(uid, labelId) {
+    deleteLabel(uid, labelId) {
         DatabaseServices.deleteLabelFromFirebse(uid, labelId)
+    }
+
+    addLabel(uid, noteId, labelId, label) {
+        DatabaseServices.addLabelsInNote(uid, noteId, labelId, label)
+    }
+
+    removeLabel(uid, noteId, labelId, labeledNoteId) {
+
+        DatabaseServices.removeLabelsFromNote(uid, noteId, labelId, labeledNoteId)
+    }
+
+    findLabeledNoteId(noteId, LabelProps, callback) {
+        if (LabelProps.LabeledNotes !== null && LabelProps.LabeledNotes !== undefined) {
+            Object.getOwnPropertyNames(LabelProps.LabeledNotes).map((key) => {
+                if (LabelProps.LabeledNotes[key].NoteId === noteId) {
+                    callback(key)
+                }
+            })
+        }
+
+    }
+
+    desireNote(uid, noteId, callback) {
+        DatabaseServices.CheckNote(uid, noteId, (snapObj) => {
+            callback(snapObj)
+        })
     }
 
 }

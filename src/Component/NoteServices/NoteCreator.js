@@ -39,7 +39,13 @@ export default class NoteCreator extends Component {
         if (this.Item === null) {
             if (this.state.title !== '' || this.state.note !== '') {
                 model.createNote(this.uid, this.state,
-                    () => {
+                    (noteId) => {
+                        let labelsArray = this.props.navigation.getParam('selectedLabel', null)
+                        if (labelsArray !== null) {
+                            (labelsArray).map((data) => {
+                                model.addLabel(this.uid, noteId, data.labelId, data.label)
+                            })
+                        }
                         this.props.navigation.navigate(this.page)
                     }
                 )
@@ -69,6 +75,8 @@ export default class NoteCreator extends Component {
     }
 
     render() {
+
+        let labelsArray = this.props.navigation.getParam('selectedLabel', null)
 
         return (
             <View style={[styles4.noteServiceContainer, { backgroundColor: this.state.bgColor }]}>
@@ -144,38 +152,84 @@ export default class NoteCreator extends Component {
                     <View>
                         {
                             this.Item === null ?
-                                this.state.dateField !== null &&
-                                <Chip
-                                    style={styles4.chipStyle}
-                                    text={
-                                        moment(this.state.dateField).format('MMM D')
-                                        + ', ' + this.state.timeField
+                                <View
+                                    style={
+                                        {
+                                            marginTop: 30,
+                                            marginLeft: 15,
+                                            flexDirection: 'row',
+                                            flexWrap: 'wrap'
+                                        }
                                     }
-                                    chipStyle='outlined'
-                                    leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
-                                    onDelete={() => this.setState({
-                                        dateField: null,
-                                        timeField: null
-                                    })}
-                                />
+                                >
+                                    {
+                                        this.state.dateField !== null &&
+                                        <Chip
+                                            style={styles4.chipStyle}
+                                            text={
+                                                moment(this.state.dateField).format('MMM D')
+                                                + ', ' + this.state.timeField
+                                            }
+                                            chipStyle='outlined'
+                                            leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
+                                            onDelete={() => this.setState({
+                                                dateField: null,
+                                                timeField: null
+                                            })}
+                                        />
+                                    }
+                                    {
+                                        labelsArray !== null &&
+                                        (labelsArray).map((data)=>(
+                                            <Chip
+                                                text={data.label}
+                                                style={styles4.chipStyle}
+                                                chipStyle='outlined'
+                                            />
+                                        ))
+                                    }
+                                </View>
                                 :
-                                this.state.timeField !== null &&
-                                <Chip
-                                    ref={(refs) => this.chipRef = refs}
-                                    style={styles4.chipStyle}
-                                    text={
-                                        moment(this.state.dateField).format('MMM D')
-                                        + ', ' + this.state.timeField
+                                <View
+                                    style={
+                                        {
+                                            marginTop: 30,
+                                            marginLeft: 15,
+                                            flexDirection: 'row',
+                                            flexWrap: 'wrap'
+                                        }
                                     }
-                                    chipStyle='outlined'
-                                    leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
-                                    onDelete={() => this.setState({
-                                        dateField: null,
-                                        timeField: null
-                                    })}
-                                    visible={true}
-                                    disabled={this.page === 'Trash'}
-                                />
+                                >
+                                    {
+                                        this.state.timeField !== null &&
+                                        <Chip
+                                            ref={(refs) => this.chipRef = refs}
+                                            style={styles4.chipStyle}
+                                            text={
+                                                moment(this.state.dateField).format('MMM D')
+                                                + ', ' + this.state.timeField
+                                            }
+                                            chipStyle='outlined'
+                                            leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
+                                            onDelete={() => this.setState({
+                                                dateField: null,
+                                                timeField: null
+                                            })}
+                                            visible={true}
+                                            disabled={this.page === 'Trash'}
+                                        />
+                                    }
+                                    {
+                                        this.Item.NoteLabels !== undefined &&
+                                        Object.getOwnPropertyNames(this.Item.NoteLabels).map((labelId) => (
+                                            <Chip
+                                                text={this.Item.NoteLabels[labelId].LabelName}
+                                                style={styles4.chipStyle}
+                                                chipStyle='outlined'
+                                            />
+                                        ))
+                                    }
+                                </View>
                         }
                     </View>
                 </View>
@@ -206,6 +260,8 @@ export default class NoteCreator extends Component {
                                 uid={this.uid}
                                 Item={this.Item}
                                 {...this.props}
+                                labelsData={labelsArray}
+
                             /> :
                             <TrashMoreOption
                                 bgColor={this.state.bgColor}

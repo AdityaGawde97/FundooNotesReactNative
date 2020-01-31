@@ -13,6 +13,25 @@ const AddLabel = (props) => {
     const noteObj = props.navigation.getParam('Note')
     const [search, setSearch] = useState('');
     const [labels, setLabels] = useState([])
+    const [selectedLabel, setSelectedLabels] = useState([]);
+
+    const sendSelectedLabel = (label) => {
+        setSelectedLabels([...selectedLabel, label])
+    }
+
+    const spliceSelectedLabel = (label) => {
+        let labelsArray = [...selectedLabel]
+        let stringifyArray = []
+        labelsArray.map((item)=>(
+            stringifyArray.push(JSON.stringify(item))
+        ))
+        let index = stringifyArray.indexOf(JSON.stringify(label))
+        console.log('index: ' + index)
+        if (index !== -1) {
+            labelsArray.splice(index, 1);
+            setSelectedLabels(labelsArray);
+        }
+    }
 
     useEffect(() => {
         model.getLabel(uid, (data) => {
@@ -20,13 +39,19 @@ const AddLabel = (props) => {
         })
     }, [])
 
+    console.log('labels')
+    console.log(props.navigation.getParam('labelsData'))
+
     return (
         <View style={[styles4.noteServiceContainer, { backgroundColor: '#fff', }]}>
             <Appbar style={{ backgroundColor: '#fff', elevation: 6 }} >
                 <Appbar.BackAction
                     color={globalStyle.inherit}
                     size={globalStyle.size25}
-                    onPress={() => props.navigation.navigate('NoteCreator')}
+                    onPress={() => props.navigation.navigate('NoteCreator',
+                    {
+                        selectedLabel: selectedLabel
+                    })}
                 />
 
                 <TextInput
@@ -39,7 +64,17 @@ const AddLabel = (props) => {
             <View style={{ marginTop: 20 }}>
                 <FlatList
                     data={labels}
-                    renderItem={({ item }) => <CheckList {...item} noteObj={noteObj} />}
+                    renderItem={
+                        ({ item }) =>
+                            <CheckList
+                                {...item}
+                                noteObj={noteObj}
+                                uid={uid}
+                                sendSelectedLabel={sendSelectedLabel}
+                                spliceSelectedLabel={spliceSelectedLabel}
+                            />
+
+                    }
                     keyExtractor={item => item.labelId}
                 />
 
@@ -52,6 +87,51 @@ const AddLabel = (props) => {
 const CheckList = (props) => {
 
     const [check, setCheck] = useState(false)
+
+    useEffect(() => {
+        if (props.noteObj !== null && props.noteObj !== undefined) {
+            model.desireNote(props.uid, props.noteObj.noteId, (note) => {
+                if (note.NoteLabels !== null && note.NoteLabels !== undefined) {
+                    Object.getOwnPropertyNames(note.NoteLabels).map((key) => (
+                        key === props.labelId &&
+                        setCheck(true)
+                    ))
+                }
+                else {
+                    setCheck(false)
+                }
+            })
+        }
+
+    }, [check])
+
+    const checkBoxOnPress = () => {
+        if (!check) {
+            if (props.noteObj !== undefined && props.noteObj !== null) {
+                model.addLabel(props.uid, props.noteObj.noteId, props.labelId, props.Label)
+
+            }
+            else {
+                setCheck(true)
+                props.sendSelectedLabel({ 'labelId': props.labelId, 'label': props.Label })
+            }
+        }
+        else {
+            if (props.noteObj !== undefined && props.noteObj !== null) {
+                model.findLabeledNoteId(props.noteObj.noteId, props,
+                    (labeledNoteId) => {
+                        model.removeLabel(props.uid, props.noteObj.noteId, props.labelId, labeledNoteId)
+                    })
+            }
+            else {
+                setCheck(false)
+                props.spliceSelectedLabel({ 'labelId': props.labelId, 'label': props.Label })
+            }
+        }
+    }
+
+
+
     return (
         <View style={styles4.listItem}>
             <Icon
@@ -70,11 +150,7 @@ const CheckList = (props) => {
                     <Icon name="check-box-outline-blank" size={26} color={globalStyle.inherit} />
                 }
                 checkedColor='red'
-                onPress={
-                    () => {
-                        setCheck(!check)
-                    }
-                }
+                onPress={checkBoxOnPress}
             />
         </View>
     );

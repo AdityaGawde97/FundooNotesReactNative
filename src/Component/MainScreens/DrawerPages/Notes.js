@@ -3,7 +3,6 @@ import { View, FlatList, ScrollView } from 'react-native';
 import Topbar from '../Dashboard/TopNavbar';
 import Bottombar from '../Dashboard/BottomTabBar'
 import { styles3 } from '../../../Css/MainScreens.style';
-import { getNotes } from '../../../Firebase/DatabaseServices';
 import NoteCard from '../../NoteServices/NoteCard';
 import AnimatedLoader from "react-native-animated-loader";
 import { Title } from 'react-native-paper';

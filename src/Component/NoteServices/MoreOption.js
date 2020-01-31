@@ -81,7 +81,8 @@ export default class MoreOption extends Component {
                             this.props.navigation.navigate('AddLabel',
                                 {
                                     'uid': this.props.uid,
-                                    'Note': this.props.Item
+                                    'Note': this.props.Item,
+                                    'labelsData': this.props.labelsData
                                 })
                         }}
                     />

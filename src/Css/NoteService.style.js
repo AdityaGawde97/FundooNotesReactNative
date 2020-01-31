@@ -80,6 +80,12 @@ export const styles4 = StyleSheet.create({
         borderTopColor: 'lightgray',
         borderBottomWidth: 1,
         borderTopWidth: 1,
+    },
+
+    chipStyle: { 
+        marginTop: 10, 
+        marginHorizontal: 5,
+        borderColor: 'gray' 
     }
 
 });
