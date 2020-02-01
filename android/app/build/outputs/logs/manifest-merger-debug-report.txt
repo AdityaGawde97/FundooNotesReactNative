@@ -15,6 +15,7 @@ MERGED from [:react-native-svg] /home/admin10/Desktop/FundooNotes/node_modules/r
 MERGED from [:react-native-vector-icons] /home/admin10/Desktop/FundooNotes/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:@react-native-community_datetimepicker] /home/admin10/Desktop/FundooNotes/node_modules/@react-native-community/datetimepicker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-13:12
 MERGED from [:@react-native-community_masked-view] /home/admin10/Desktop/FundooNotes/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [:react-native-safe-area-context] /home/admin10/Desktop/FundooNotes/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-native:0.61.5] /home/admin10/.gradle/caches/transforms-2/files-2.1/57a2bfbd30f8cedcf3060d98b635a16a/jetified-react-native-0.61.5/AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.material:material:1.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/c192080d7654c49127da3bfcec4b17c3/material-1.0.0/AndroidManifest.xml:17:1-24:12
@@ -92,6 +93,8 @@ MERGED from /home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManife
 MERGED from /home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:6:5-24:19
 MERGED from [:@react-native-community_datetimepicker] /home/admin10/Desktop/FundooNotes/node_modules/@react-native-community/datetimepicker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-20
 MERGED from [:@react-native-community_datetimepicker] /home/admin10/Desktop/FundooNotes/node_modules/@react-native-community/datetimepicker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-20
+MERGED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-19:19
 MERGED from [com.facebook.react:react-native:0.61.5] /home/admin10/.gradle/caches/transforms-2/files-2.1/57a2bfbd30f8cedcf3060d98b635a16a/jetified-react-native-0.61.5/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.react:react-native:0.61.5] /home/admin10/.gradle/caches/transforms-2/files-2.1/57a2bfbd30f8cedcf3060d98b635a16a/jetified-react-native-0.61.5/AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/c192080d7654c49127da3bfcec4b17c3/material-1.0.0/AndroidManifest.xml:22:5-20
@@ -178,6 +181,8 @@ MERGED from [:@react-native-community_datetimepicker] /home/admin10/Desktop/Fund
 MERGED from [:@react-native-community_datetimepicker] /home/admin10/Desktop/FundooNotes/node_modules/@react-native-community/datetimepicker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:@react-native-community_masked-view] /home/admin10/Desktop/FundooNotes/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:@react-native-community_masked-view] /home/admin10/Desktop/FundooNotes/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] /home/admin10/Desktop/FundooNotes/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] /home/admin10/Desktop/FundooNotes/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.61.5] /home/admin10/.gradle/caches/transforms-2/files-2.1/57a2bfbd30f8cedcf3060d98b635a16a/jetified-react-native-0.61.5/AndroidManifest.xml:7:5-9:41
@@ -280,3 +285,19 @@ uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from /home/admin10/Desktop/FundooNotes/android/app/src/debug/AndroidManifest.xml:5:5-77
 	android:name
 		ADDED from /home/admin10/Desktop/FundooNotes/android/app/src/debug/AndroidManifest.xml:5:22-75
+provider#com.imagepicker.FileProvider
+ADDED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-60
+	android:exported
+		ADDED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-56
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-17:58
+	android:resource
+		ADDED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-55
+	android:name
+		ADDED from [:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-67

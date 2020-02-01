@@ -25,11 +25,13 @@ class Notes extends Component {
         model.fetchNotes(this.props.uid, (pinNotes, unpinNotes) => {
             this.setState({
                 pinNotes: pinNotes,
-                unpinNotes: unpinNotes
-            }, () => setTimeout(() => this.setState({ load: false }), 1000))
+                unpinNotes: unpinNotes,
+                load: false
+            })
         },()=>{
             setTimeout(() => this.setState({ load: false }), 1000)
         })
+
     };
 
     render() {

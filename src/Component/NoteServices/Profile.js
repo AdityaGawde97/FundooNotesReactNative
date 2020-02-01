@@ -2,14 +2,48 @@ import React, { Component } from 'react';
 import { View, Text, AsyncStorage } from 'react-native';
 import { Dialog, Avatar, Button } from 'material-bread';
 import { signOut } from '../../Firebase/AuthServices';
+import ImagePicker from 'react-native-image-picker'
+import { requestImagePermission } from '../../Permissions/AndroidPermission'
 
+const options = {
+    title: 'Select Avatar',
+    customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
+    storageOptions: {
+        skipBackup: true,
+        path: 'images',
+    },
+};
 
 export default class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            visible: false
+            visible: false,
+            avatarSource: null
         };
+    }
+
+    selectImage = () => {
+        ImagePicker.showImagePicker(options, (response) => {
+            console.log('Response = ', response);
+
+            if (response.didCancel) {
+                console.log('User cancelled image picker');
+            } else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            } else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            } else {
+                const source = { uri: response.uri };
+
+                // You can also display the image using data:
+                // const source = { uri: 'data:image/jpeg;base64,' + response.data };
+
+                this.setState({
+                    avatarSource: source,
+                });
+            }
+        });
     }
 
     randomColor = () => {
@@ -23,6 +57,7 @@ export default class Profile extends Component {
     }
 
     render() {
+
         return (
             <>
                 <Avatar
@@ -32,7 +67,6 @@ export default class Profile extends Component {
                     size={35}
                     color={'#eb4949'}
                     onPress={() => this.setState({ visible: !this.state.visible })}
-                    style={{marginRight: 10}}
                 />
                 <Dialog
                     visible={this.state.visible}
@@ -45,7 +79,7 @@ export default class Profile extends Component {
                     }
                 >
                     <Avatar
-                        type="text"
+                        type={this.state.avatarSource === null ? "text" : 'image'}
                         content="A"
                         contentColor={'white'}
                         size={80}
@@ -55,6 +89,7 @@ export default class Profile extends Component {
                                 alignSelf: 'center',
                             }
                         }
+                        onPress={requestImagePermission}
                     />
                     <View
                         style={{
@@ -70,8 +105,8 @@ export default class Profile extends Component {
                         <Button
                             text={'Sign out'}
                             onPress={() => {
-                                signOut(async() => {
-                                     console.log( await AsyncStorage.getItem('isAuth'))
+                                signOut(async () => {
+                                    console.log(await AsyncStorage.getItem('isAuth'))
                                     await AsyncStorage.clear()
                                     this.props.navigation.navigate('SignIn')
                                 })

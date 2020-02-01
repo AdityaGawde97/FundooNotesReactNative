@@ -38,7 +38,6 @@ function NoteCard(props) {
                             flexDirection: 'row',
                             flexWrap: 'wrap',
                             paddingLeft: 0,
-                            paddingTop: 10
                         }
                     }
                 >

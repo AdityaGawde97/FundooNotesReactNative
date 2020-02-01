@@ -20,26 +20,37 @@ class Label extends Component {
     }
 
     static getDerivedStateFromProps(props, state) {
-        return{
+        return {
             ...state,
             labelPage: props.navigation.getParam('page'),
             labelId: props.navigation.getParam('labelId')
         }
     }
 
+    displayLabeledNotes = () => {
+        model.getLabeledNotes(this.props.uid, this.state.labelId, (labeledNotes) => {
+            this.setState(
+                {
+                    notes: labeledNotes,
+                    load: false
+                }
+            )
+        })
+    }
+
     componentDidMount = () => {
         this.setState({ load: true })
+        this.displayLabeledNotes()
 
-        model.fetchReminderNotes(this.props.uid, (notes) => {
-            this.setState({
-                notes: notes
-            }, () => setTimeout(() => this.setState({ load: false }), 500))
-        }, () => setTimeout(() => this.setState({ load: false }), 500))
     };
 
+    componentDidUpdate = (prevProps, prevState) => {
+        if (prevState.labelId !== this.state.labelId) {
+            this.displayLabeledNotes()
+        }
+    }
+
     render() {
-        console.log(this.state.labelId);
-        console.log(this.state.labelPage)
         return (
             <View style={styles3.container}>
                 <OtherTopbar {...this.props} page={this.state.labelPage} />
@@ -47,10 +58,6 @@ class Label extends Component {
                 <View style={{ height: '90%' }}>
                     <ScrollView>
                         <View>
-                            {
-                                this.state.notes.length !== 0 &&
-                                <Title style={styles3.pinTitle}>UPCOMING</Title>
-                            }
                             {
                                 this.state.notes.length !== 0 &&
                                 <FlatList

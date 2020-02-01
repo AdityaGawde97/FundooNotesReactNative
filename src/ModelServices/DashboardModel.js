@@ -160,6 +160,33 @@ class DashboardModel {
         })
     }
 
+    async getLabeledNotes(uid, labelId, callback) {
+        let noteIdArray = []
+        let notes = []
+        await DatabaseServices.fetchLabeledNotes(uid, labelId, (noteIds) => {
+            if (noteIds !== null && noteIds !== undefined) {
+                Object.getOwnPropertyNames(noteIds).map((key) => {
+                    noteIdArray.push(noteIds[key].NoteId)
+                })
+            }
+
+        })
+        if (noteIdArray !== null) {
+            DatabaseServices.fetchNotesWithLabels(uid, (snapObj) => {
+                if (snapObj !== null && snapObj !== undefined) {
+                    Object.getOwnPropertyNames(snapObj).map((key) => {
+                        if ((noteIdArray).includes(key)) {
+                            snapObj[key].noteId = key;
+                            notes.push(snapObj[key])
+                        }
+
+                    });
+                }
+            })
+            callback(notes)
+        }
+    }
+
 }
 
 const model = new DashboardModel()

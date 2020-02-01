@@ -24,6 +24,8 @@ import org.reactnative.maskedview.RNCMaskedViewPackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+// react-native-image-picker
+import com.imagepicker.ImagePickerPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -84,6 +86,7 @@ public class PackageList {
       new RNCMaskedViewPackage(),
       new LottiePackage(),
       new RNGestureHandlerPackage(),
+      new ImagePickerPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),

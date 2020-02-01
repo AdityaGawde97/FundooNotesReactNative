@@ -26,7 +26,6 @@ const AddLabel = (props) => {
             stringifyArray.push(JSON.stringify(item))
         ))
         let index = stringifyArray.indexOf(JSON.stringify(label))
-        console.log('index: ' + index)
         if (index !== -1) {
             labelsArray.splice(index, 1);
             setSelectedLabels(labelsArray);
@@ -38,9 +37,6 @@ const AddLabel = (props) => {
             setLabels(data)
         })
     }, [])
-
-    console.log('labels')
-    console.log(props.navigation.getParam('labelsData'))
 
     return (
         <View style={[styles4.noteServiceContainer, { backgroundColor: '#fff', }]}>

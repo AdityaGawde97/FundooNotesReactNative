@@ -9,7 +9,6 @@ export function setNote(uid, noteObj, callback) {
 export function updateNote(uid, noteId, noteObj, callback) {
     firebase.database().ref('/users/' + uid + '/Notes/' + noteId + '/').update(noteObj)
         .then((success) => {
-            console.log('success')
             callback();
         })
 
@@ -89,6 +88,20 @@ export function removeLabelsFromNote(uid, noteKey, labelKey, labeledNoteKey) {
 
 export function CheckNote(uid, noteId, callback) {
     firebase.database().ref('/users/' + uid + '/Notes/' + noteId + '/')
+        .on('value', (snapshot) => {
+            callback(snapshot.val())
+        })
+}
+
+export function fetchLabeledNotes(uid, labelId, callback) {
+    firebase.database().ref('/users/' + uid + '/Labels/' + labelId + '/LabeledNotes/')
+        .on('value', (snapshot) => {
+            callback(snapshot.val())
+        })
+}
+
+export function fetchNotesWithLabels(uid, callback) {
+    firebase.database().ref('/users/' + uid + '/Notes/').orderByChild('Trash').equalTo(false)
         .on('value', (snapshot) => {
             callback(snapshot.val())
         })

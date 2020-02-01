@@ -34,7 +34,10 @@ export default class TopNavbar extends Component {
             onPress={() => this.setState({ view: !this.state.view })}
             style={{ right: 9 }}
           />
-          <Profile {...this.props} />
+          <View style={{marginRight: 10}}>
+            <Profile {...this.props} />
+          </View>
+
         </Appbar>
 
       </View>

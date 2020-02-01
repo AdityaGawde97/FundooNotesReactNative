@@ -612,6 +612,10 @@
         "source": "/home/admin10/.gradle/caches/transforms-2/files-2.1/b884ee12341edb0d559bcd44e10155b5/appcompat-1.1.0/res/drawable/btn_checkbox_checked_mtrl.xml"
     },
     {
+        "merged": "/home/admin10/Desktop/FundooNotes/android/app/build/intermediates/res/merged/debug/xml_provider_paths.xml.flat",
+        "source": "/home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/packaged_res/debug/xml/provider_paths.xml"
+    },
+    {
         "merged": "/home/admin10/Desktop/FundooNotes/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
         "source": "/home/admin10/.gradle/caches/transforms-2/files-2.1/6acdfb42d09274ab522a09d2effe077a/core-1.1.0/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
     },
@@ -1642,6 +1646,10 @@
     {
         "merged": "/home/admin10/Desktop/FundooNotes/android/app/build/intermediates/res/merged/debug/color-v23_abc_tint_default.xml.flat",
         "source": "/home/admin10/.gradle/caches/transforms-2/files-2.1/b884ee12341edb0d559bcd44e10155b5/appcompat-1.1.0/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/home/admin10/Desktop/FundooNotes/android/app/build/intermediates/res/merged/debug/layout_list_item.xml.flat",
+        "source": "/home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/packaged_res/debug/layout/list_item.xml"
     },
     {
         "merged": "/home/admin10/Desktop/FundooNotes/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
