@@ -100,7 +100,7 @@ export function fetchLabeledNotes(uid, labelId, callback) {
         })
 }
 
-export function fetchNotesWithLabels(uid, callback) {
+export function fetchAllNotes(uid, callback) {
     firebase.database().ref('/users/' + uid + '/Notes/').orderByChild('Trash').equalTo(false)
         .on('value', (snapshot) => {
             callback(snapshot.val())

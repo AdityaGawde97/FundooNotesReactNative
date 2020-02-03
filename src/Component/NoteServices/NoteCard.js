@@ -13,7 +13,8 @@ function NoteCard(props) {
                 styles4.noteCard,
                 {
                     backgroundColor: item.BgColor,
-                    borderWidth: item.BgColor === '#ffffff' ? 1 : 0
+                    borderWidth: item.BgColor === '#ffffff' ? 1 : 0,
+                    width: props.view ? '45%' : 'auto'
                 }
             ]
         }

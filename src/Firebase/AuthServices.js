@@ -31,7 +31,7 @@ export function registerUser(firstName, lastName, email, password, thenCallback)
 export function loginUser(email, password, thenCallback, catchCallback) {
     console.log(email)
     console.log(password)
-    firebase.auth().signInWithEmailAndPassword(email, password).then(async(success) => {
+    firebase.auth().signInWithEmailAndPassword(email, password).then(async (success) => {
         await AsyncStorage.setItem('isAuth', 'true')
         await AsyncStorage.setItem('uid', success.user.uid)
         thenCallback()
@@ -60,11 +60,25 @@ export function forgotPassword(email, thenCallback, catchCallback) {
 
 }
 
-export function signOut(callback){
-    firebase.auth().signOut().then(()=>{
+export function signOut(callback) {
+    firebase.auth().signOut().then(() => {
         callback()
     })
-    .catch()
+        .catch()
+}
+
+export function storeProfileImage(imgSource) {
+    const uid = firebase.auth().currentUser.uid
+    firebase.database().ref('/users/' + uid + '/PersonalData/').update({
+        ProfileImage: imgSource
+    })
+}
+
+export function fetchUserData(uid, callback) {
+    firebase.database().ref('/users/' + uid + '/PersonalData/')
+        .on('value', snapshot => {
+            callback(snapshot.val())
+        })
 }
 
 

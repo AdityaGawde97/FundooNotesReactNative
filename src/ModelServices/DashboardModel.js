@@ -160,6 +160,22 @@ class DashboardModel {
         })
     }
 
+    getAllNotes(uid, callback) {
+        let notes = []
+        DatabaseServices.fetchAllNotes(uid, (snap) => {
+            if (snap !== null && snap !== undefined) {
+                Object.getOwnPropertyNames(snap).map((key) => {
+                    if (snap[key].Archive === false) {
+                        snap[key].noteId = key;
+                        notes.push(snap[key])
+                    }
+
+                });
+            }
+        })
+        callback(notes)
+    }
+
     async getLabeledNotes(uid, labelId, callback) {
         let noteIdArray = []
         let notes = []
@@ -172,7 +188,7 @@ class DashboardModel {
 
         })
         if (noteIdArray !== null) {
-            DatabaseServices.fetchNotesWithLabels(uid, (snapObj) => {
+            DatabaseServices.fetchAllNotes(uid, (snapObj) => {
                 if (snapObj !== null && snapObj !== undefined) {
                     Object.getOwnPropertyNames(snapObj).map((key) => {
                         if ((noteIdArray).includes(key)) {

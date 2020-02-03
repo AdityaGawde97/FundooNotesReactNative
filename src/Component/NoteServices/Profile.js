@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, AsyncStorage } from 'react-native';
+import { View, PermissionsAndroid, AsyncStorage, Image } from 'react-native';
 import { Dialog, Avatar, Button } from 'material-bread';
-import { signOut } from '../../Firebase/AuthServices';
+import { signOut, fetchUserData } from '../../Firebase/AuthServices';
 import ImagePicker from 'react-native-image-picker'
-import { requestImagePermission } from '../../Permissions/AndroidPermission'
+import * as Permissions from '../../Permissions/AndroidPermission'
+import { storeProfileImage } from '../../Firebase/AuthServices'
+import { Title, Paragraph } from 'react-native-paper';
 
 const options = {
     title: 'Select Avatar',
-    customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
     storageOptions: {
         skipBackup: true,
-        path: 'images',
+        noData: true
     },
 };
 
@@ -19,30 +20,36 @@ export default class Profile extends Component {
         super(props);
         this.state = {
             visible: false,
-            avatarSource: null
+            image: null,
+            userObj: props.navigation.getParam('userObj', null),
         };
     }
 
+    uploadProfileImage = async () => {
+        const grantCam = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CAMERA)
+        const grantRead = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE)
+        const grantWrite = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE)
+        if (grantCam && grantRead && grantWrite) {
+            this.selectImage()
+        }
+        else {
+            await Permissions.requestCameraPermission()
+            await Permissions.requestExternalStoragePermission()
+            this.uploadProfileImage()
+        }
+    }
+
     selectImage = () => {
-        ImagePicker.showImagePicker(options, (response) => {
+        ImagePicker.showImagePicker(options, async (response) => {
             console.log('Response = ', response);
 
-            if (response.didCancel) {
-                console.log('User cancelled image picker');
-            } else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-            } else if (response.customButton) {
-                console.log('User tapped custom button: ', response.customButton);
-            } else {
-                const source = { uri: response.uri };
-
-                // You can also display the image using data:
-                // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-
-                this.setState({
-                    avatarSource: source,
-                });
+            if (response.uri) {
+                await this.setState({
+                    image: response
+                })
+                storeProfileImage(response.uri)
             }
+
         });
     }
 
@@ -56,46 +63,75 @@ export default class Profile extends Component {
         return colorArray[random];
     }
 
+    componentDidMount = () => {
+        fetchUserData(this.props.uid, async (snap) => {
+            this.setState({
+                userObj: snap
+            })
+        })
+    }
+
     render() {
 
         return (
             <>
+
+
                 <Avatar
-                    type="text"
-                    content="A"
+                    type={this.state.userObj === null || this.state.userObj.ProfileImage === undefined ? "text" : 'image'}
+                    content={this.state.userObj !== null && (this.state.userObj.FirstName).charAt(0)}
                     contentColor={'white'}
                     size={35}
-                    color={'#eb4949'}
+                    //color={'#eb4949'}
+                    color={this.randomColor()}
+                    size={35}
+                    image={this.state.userObj.ProfileImage !== undefined && <Image source={{ uri: this.state.userObj.ProfileImage }} />}
                     onPress={() => this.setState({ visible: !this.state.visible })}
                 />
+
+
                 <Dialog
                     visible={this.state.visible}
                     onTouchOutside={() => this.setState({ visible: false })}
                     style={
                         {
                             width: 400,
-                            height: 200
+                            padding: 10,
                         }
                     }
                 >
                     <Avatar
-                        type={this.state.avatarSource === null ? "text" : 'image'}
-                        content="A"
+                        type={this.state.avtarSrc === null || this.state.userObj.ProfileImage === undefined ? "text" : 'image'}
+                        content={this.state.userObj !== null && (this.state.userObj.FirstName).charAt(0)}
                         contentColor={'white'}
-                        size={80}
-                        color={'#eb4949'}
+                        size={100}
+                        color={this.randomColor()}
+                        image={this.state.userObj.ProfileImage !== undefined && <Image source={{ uri: this.state.userObj.ProfileImage }} />}
                         style={
                             {
                                 alignSelf: 'center',
                             }
                         }
-                        onPress={requestImagePermission}
+                        onPress={this.uploadProfileImage}
                     />
+
+                    {
+                        this.state.userObj !== null &&
+                        <View style={{ alignItems: 'center' }}>
+                            <Title>
+                                {this.state.userObj.FirstName + ' ' + this.state.userObj.LastName}
+                            </Title>
+                            <Paragraph>
+                                {this.state.userObj.EmailId}
+                            </Paragraph>
+                        </View>
+                    }
+
                     <View
                         style={{
                             justifyContent: 'space-between',
                             flexDirection: 'row',
-                            top: 50
+                            paddingVertical: 20
                         }}
                     >
                         <Button

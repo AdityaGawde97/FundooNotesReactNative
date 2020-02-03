@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, FlatList } from 'react-native';
 import { styles3 } from '../../../Css/MainScreens.style';
-import OtherTopbar from '../Dashboard/OtherTopbar';
+import Topbar from '../Dashboard/Topbar';
 import AnimatedLoader from "react-native-animated-loader";
 import NoteCard from '../../NoteServices/NoteCard';
 import model from '../../../ModelServices/DashboardModel';
@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 class Archive extends Component {
     constructor(props) {
         super(props);
-
+        this.page = props.navigation.getParam('page')
         this.state = {
             load: true,
             notes: []
@@ -29,7 +29,7 @@ class Archive extends Component {
     render() {
         return (
             <View style={styles3.container}>
-                <OtherTopbar {...this.props} page={'Archive'} />
+                <Topbar {...this.props} page={this.page} />
                 <AnimatedLoader
                     visible={this.state.load}
                     overlayColor="rgba(255,255,255,0.75)"

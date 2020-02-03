@@ -53,8 +53,8 @@ export const styles4 = StyleSheet.create({
         borderColor: 'lightgray',
         borderRadius: 10,
         elevation: 0,
-        paddingBottom: 10
-        // width: '45%'
+        paddingBottom: 10,
+    
     },
 
     dateTimeView: {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, ScrollView, FlatList } from 'react-native';
 import { styles3 } from '../../../Css/MainScreens.style';
-import OtherTopbar from '../Dashboard/OtherTopbar';
+import Topbar from '../Dashboard/Topbar';
 import Bottombar from '../Dashboard/BottomTabBar'
 import AnimatedLoader from "react-native-animated-loader";
 import { Title } from 'react-native-paper';
@@ -12,6 +12,7 @@ import model from '../../../ModelServices/DashboardModel';
 class Reminder extends Component {
     constructor(props) {
         super(props);
+        this.page = props.navigation.getParam('page')
         this.state = {
             load: false,
             notes: []
@@ -31,7 +32,7 @@ class Reminder extends Component {
     render() {
         return (
             <View style={styles3.container}>
-                <OtherTopbar {...this.props} page={'Reminders'} />
+                <Topbar {...this.props} page={this.page} />
                 <AnimatedLoader
                     visible={this.state.load}
                     overlayColor="rgba(255,255,255,0.75)"
@@ -42,7 +43,7 @@ class Reminder extends Component {
                     }}
                     speed={1}
                 />
-                <View style={{ height: '90%'}}>
+                <View style={{ height: '90%' }}>
                     <ScrollView>
                         <View>
                             {

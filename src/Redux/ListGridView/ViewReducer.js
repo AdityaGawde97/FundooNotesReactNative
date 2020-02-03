@@ -1,21 +1,14 @@
-import { LIST_VIEW, GRID_VIEW } from "./ViewActionType";
-
 const initialState = {
     toggleView: false
 }
 
 const ViewReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LIST_VIEW : return {
+        case 'LIST_Grid_View': return {
             ...state,
-            toggleView: true
+            toggleView: !state.toggleView
         }
 
-        case GRID_VIEW : return {
-            ...state,
-            toggleView: false
-        }      
-    
         default: return state
     }
 };

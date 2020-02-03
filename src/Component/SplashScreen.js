@@ -4,26 +4,43 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import AsyncStorage from '@react-native-community/async-storage';
 import { connect } from "react-redux";
 import { storeUid } from '../Redux/UidStore/UidAction'
+import { fetchUserData } from '../Firebase/AuthServices';
+
 
 class SplashScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
+
         };
     }
 
+    getUserData = (uid, callback) => {
+        fetchUserData(uid, async (snap) => {
+            callback(snap)
+        })
+
+    }
+
     componentDidMount = async () => {
-        const uid = await AsyncStorage.getItem('uid')
-        this.props.storeUid(uid)
+
         setTimeout(
             async () => {
-                const uid = await AsyncStorage.getItem('uid')
                 let auth = await AsyncStorage.getItem('isAuth')
                 if (!auth) {
                     this.props.navigation.navigate('Auth')
                 }
                 else {
-                    this.props.navigation.navigate('Notes')
+                    const uid = await AsyncStorage.getItem('uid')
+                    this.props.storeUid(uid)
+                    this.getUserData(uid, (snap) => {
+                        this.props.navigation.navigate('Notes',
+                            {
+                                'page': 'Notes',
+                                'userObj': snap
+                            }
+                        )
+                    })
                 }
             }, 1000
         )

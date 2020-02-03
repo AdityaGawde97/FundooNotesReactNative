@@ -5,12 +5,13 @@ import AnimatedLoader from "react-native-animated-loader";
 import NoteCard from '../../NoteServices/NoteCard';
 import { connect } from 'react-redux';
 import model from '../../../ModelServices/DashboardModel';
-import OtherTopbar from '../Dashboard/OtherTopbar'
+import Topbar from '../Dashboard/Topbar'
+import { Provider } from 'react-native-paper';
 
 class Trash extends Component {
     constructor(props) {
         super(props);
-
+        this.page = props.navigation.getParam('page')
         this.state = {
             load: true,
             notes: []
@@ -22,14 +23,18 @@ class Trash extends Component {
         model.fetchArchiveOrTrashNotes(this.props.uid, 'Trash', (notes) => {
             this.setState({
                 notes: notes,
-            }, () => setTimeout(() => this.setState({ load: false }), 1000))
-        }, () => setTimeout(() => this.setState({ load: false }), 1000))
+                load: false
+            })
+        }, () => setTimeout(() => this.setState({ load: false }), 500))
     };
 
     render() {
         return (
             <View style={styles3.container}>
-                <OtherTopbar {...this.props} page={'Trash'} />
+                <Provider>
+                    <Topbar {...this.props} page={this.page} />
+                </Provider>
+
                 <AnimatedLoader
                     visible={this.state.load}
                     overlayColor="rgba(255,255,255,0.75)"

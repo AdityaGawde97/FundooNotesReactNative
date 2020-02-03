@@ -54,7 +54,7 @@ class ContentComponent extends Component {
                         <TouchableHighlight underlayColor={'lightgray'}
                             onPress={() => {
                                 this.changeTab(text)
-                                this.props.navigation.navigate(text)
+                                this.props.navigation.navigate(text, { 'page': text })
                             }}
                             style={[styles2.tab, { backgroundColor: tab === text ? '#feefc3' : '#fff' }]}
                         >
@@ -131,7 +131,7 @@ class ContentComponent extends Component {
                         <TouchableHighlight underlayColor={'lightgray'}
                             onPress={() => {
                                 this.changeTab(text)
-                                this.props.navigation.navigate(text)
+                                this.props.navigation.navigate(text, { 'page': text })
                             }}
                             style={[styles2.tab, { backgroundColor: tab === text ? '#feefc3' : '#fff' }]}
                         >

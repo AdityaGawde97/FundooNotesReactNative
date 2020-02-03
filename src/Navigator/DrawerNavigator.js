@@ -7,10 +7,12 @@ import CountChart from "../Component/MainScreens/DrawerPages/CountChart";
 import Trash from "../Component/MainScreens/DrawerPages/Trash"
 import ContentComponent from '../Component/MainScreens/Dashboard/ContentComponent';
 import Label from '../Component/MainScreens/DrawerPages/Label';
+import DisplayNotes from '../Component/MainScreens/DrawerPages/DisplayNotes';
 
 export const DrawerNavigator = createDrawerNavigator(
     {
         Notes: { screen: Notes },
+        DisplayNotes : { screen: DisplayNotes },
         Reminder: { screen: Reminder },
         Label: { screen: Label },
         Archive: { screen: Archive },

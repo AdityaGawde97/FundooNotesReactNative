@@ -53,7 +53,7 @@ export default class SignIn extends Component {
         if (this.validateForm()) {
             loginUser(this.state.email, this.state.password, () => {
                 setTimeout(()=>this.setState({ load: false }), 3000)
-                this.props.navigation.navigate('Notes')
+                this.props.navigation.navigate('Splash')
             }, (errors) => {
                 this.setState({
                     errors: errors

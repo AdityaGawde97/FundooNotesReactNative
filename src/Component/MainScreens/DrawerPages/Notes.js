@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, FlatList, ScrollView } from 'react-native';
-import Topbar from '../Dashboard/TopNavbar';
+import { View, FlatList, ScrollView, Text } from 'react-native';
+import Topbar from '../Dashboard/Topbar';
 import Bottombar from '../Dashboard/BottomTabBar'
 import { styles3 } from '../../../Css/MainScreens.style';
 import NoteCard from '../../NoteServices/NoteCard';
@@ -12,6 +12,7 @@ import model from "../../../ModelServices/DashboardModel"
 class Notes extends Component {
     constructor(props) {
         super(props);
+        this.page = props.navigation.getParam('page')
         this.state = {
             pinNotes: [],
             unpinNotes: [],
@@ -28,7 +29,7 @@ class Notes extends Component {
                 unpinNotes: unpinNotes,
                 load: false
             })
-        },()=>{
+        }, () => {
             setTimeout(() => this.setState({ load: false }), 1000)
         })
 
@@ -39,7 +40,7 @@ class Notes extends Component {
         return (
             <View style={styles3.container}>
 
-                <Topbar {...this.props} />
+                <Topbar {...this.props} page={this.page} />
 
                 <AnimatedLoader
                     visible={this.state.load}
@@ -71,9 +72,12 @@ class Notes extends Component {
                                                 Navigate={this.props}
                                                 page={'Notes'}
                                                 uid={this.props.uid}
+                                                view={this.props.view}
                                             />
                                         }
                                         keyExtractor={item => item.noteId}
+                                        numColumns={this.props.view ? 2 : 1}
+                                        key={this.props.view ? 2 : 1}
                                     />
                                 }
                             </View>
@@ -89,14 +93,17 @@ class Notes extends Component {
                                         data={this.state.unpinNotes}
                                         renderItem={
                                             ({ item }) => <NoteCard
+                                                key={item.noteId}
                                                 Item={item}
                                                 Navigate={this.props}
                                                 page={'Notes'}
                                                 uid={this.props.uid}
+                                                view={this.props.view}
                                             />
                                         }
+                                        numColumns={this.props.view ? 2 : 1}
+                                        key={this.props.view ? 2 : 1}
                                         keyExtractor={item => item.noteId}
-
                                     />
                                 }
 
@@ -116,7 +123,8 @@ class Notes extends Component {
 
 function mapStateToProps(state) {
     return {
-        uid: state.userID.uid
+        uid: state.userID.uid,
+        view: state.view.toggleView
     };
 }
 
