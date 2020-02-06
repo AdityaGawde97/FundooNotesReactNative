@@ -81,4 +81,3 @@ export function fetchUserData(uid, callback) {
         })
 }
 
-

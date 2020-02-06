@@ -7,6 +7,7 @@ import RBSheet from 'react-native-raw-bottom-sheet'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { List, ListItem } from 'material-bread';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Toast from '../../NativeModules/ToastModule'
 
 export default class TrashMoreOption extends Component {
     constructor(props) {
@@ -31,6 +32,7 @@ export default class TrashMoreOption extends Component {
                             />
                         }
                         onPress={async () => {
+                            Toast.show('Note restore', Toast.LONG)
                             await this.props.trashAndRestore(false)
                         }}
                     />

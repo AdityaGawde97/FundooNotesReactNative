@@ -13,7 +13,7 @@ class Archive extends Component {
         this.page = props.navigation.getParam('page')
         this.state = {
             load: true,
-            notes: []
+            notes: null
         };
     }
 
@@ -21,9 +21,15 @@ class Archive extends Component {
         this.setState({ load: true })
         model.fetchArchiveOrTrashNotes(this.props.uid, 'Archive', (notes) => {
             this.setState({
-                notes: notes
-            }, () => setTimeout(() => this.setState({ load: false }), 1000))
-        }, () => setTimeout(() => this.setState({ load: false }), 1000))
+                notes: notes,
+                load: false
+            })
+        }, (notes) => {
+            this.setState({
+                notes: notes,
+                load: false
+            })
+        })
     };
 
     render() {
@@ -44,7 +50,7 @@ class Archive extends Component {
                     <ScrollView>
                         <View>
                             {
-                                this.state.notes.length !== 0 &&
+                                this.state.notes !== null &&
                                 <FlatList
                                     data={this.state.notes}
                                     renderItem={

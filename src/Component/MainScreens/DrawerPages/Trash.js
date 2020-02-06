@@ -25,7 +25,12 @@ class Trash extends Component {
                 notes: notes,
                 load: false
             })
-        }, () => setTimeout(() => this.setState({ load: false }), 500))
+        }, (notes) => {
+            this.setState({
+                notes: notes,
+                load: false
+            })
+        })
     };
 
     render() {

@@ -32,7 +32,7 @@ export default function Topbar(props) {
                     titleStyle={props.page === 'Notes' ? styles2.topbarTitle : styles2.otherTitle}
                     onPress={() => props.navigation.navigate('Search', { 'uid': props.uid })}
                 />
-                {props.page !== 'Trash' ?
+                {props.page !== 'Trash' && props.page !== 'CountChart' ?
 
 
                     <>
@@ -61,21 +61,31 @@ export default function Topbar(props) {
                         }
 
                     </> :
-                    <Menu
-                        visible={state.visible}
-                        onDismiss={_closeMenu}
-                        anchor={
-                            <Appbar.Action
-                                color={'#797979'}
-                                size={25}
-                                icon={require('../../../Assets/more.png')}
-                                style={{ right: 0 }}
-                                onPress={_openMenu}
-                            />
-                        }
-                    >
-                        <Menu.Item onPress={_closeMenu} title={'Empty trash'} />
-                    </Menu>
+
+                    props.page !== 'CountChart' ?
+
+                        <Menu
+                            visible={state.visible}
+                            onDismiss={_closeMenu}
+                            anchor={
+                                <Appbar.Action
+                                    color={'#797979'}
+                                    size={25}
+                                    icon={require('../../../Assets/more.png')}
+                                    style={{ right: 0 }}
+                                    onPress={_openMenu}
+                                />
+                            }
+                        >
+                            <Menu.Item onPress={_closeMenu} title={'Empty trash'} />
+                        </Menu> :
+                        <Appbar.Action
+                            color={'#797979'}
+                            size={25}
+                            icon={'refresh'}
+                            style={{ right: 0 }}
+                            onPress={props.refreshComponent}
+                        />
                 }
                 {
                     props.page === 'Notes' &&

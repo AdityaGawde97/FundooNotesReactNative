@@ -14,7 +14,7 @@ class ContentComponent extends Component {
         super(props);
         this.state = {
             tab: "Notes",
-            labelData: []
+            labelData: null
         };
     }
 
@@ -80,7 +80,7 @@ class ContentComponent extends Component {
                     ))
                 }
 
-                {this.state.labelData.length === 0 ?
+                {this.state.labelData === null ?
                     <Divider /> :
                     <Text
                         style={{ color: globalStyle.inherit, paddingLeft: 30 }}
@@ -88,6 +88,7 @@ class ContentComponent extends Component {
                 }
 
                 {
+                    this.state.labelData !== null &&
                     (this.state.labelData).map((text, index) => (
                         <TouchableHighlight underlayColor={'lightgray'}
                             onPress={() => {
@@ -161,8 +162,11 @@ class ContentComponent extends Component {
                 <Divider />
 
                 <TouchableHighlight underlayColor={'lightgray'}
-                    onPress={() => this.props.navigation.navigate('CountChart')}
-                    style={styles2.tab}
+                    onPress={() => {
+                        this.changeTab('CountChart')
+                        this.props.navigation.navigate('CountChart', { 'page': 'CountChart' })
+                    }}
+                    style={[styles2.tab, { backgroundColor: tab === 'CountChart' ? '#feefc3' : '#fff' }]}
                 >
                     <View style={styles2.row}>
                         <Feather color={globalStyle.inherit} size={globalStyle.drawerIconSize} name="pie-chart" />
@@ -177,7 +181,7 @@ class ContentComponent extends Component {
                         <TouchableHighlight underlayColor={'lightgray'}
                             onPress={() => {
                                 this.changeTab(text)
-                                this.props.navigation.navigate(text)
+                                this.props.navigation.navigate('DraggableList')
                             }}
                             style={[styles2.tab, { backgroundColor: tab === text ? '#feefc3' : '#fff' }]}
                         >

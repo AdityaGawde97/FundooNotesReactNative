@@ -8,16 +8,18 @@ import Trash from "../Component/MainScreens/DrawerPages/Trash"
 import ContentComponent from '../Component/MainScreens/Dashboard/ContentComponent';
 import Label from '../Component/MainScreens/DrawerPages/Label';
 import DisplayNotes from '../Component/MainScreens/DrawerPages/DisplayNotes';
+import DraggableList from '../Component/MainScreens/DrawerPages/DraggableList';
 
 export const DrawerNavigator = createDrawerNavigator(
     {
         Notes: { screen: Notes },
-        DisplayNotes : { screen: DisplayNotes },
+        DisplayNotes: { screen: DisplayNotes },
         Reminder: { screen: Reminder },
         Label: { screen: Label },
         Archive: { screen: Archive },
         CountChart: { screen: CountChart },
-        Trash: { screen: Trash }
+        Trash: { screen: Trash },
+        DraggableList: { screen: DraggableList }
     },
     {
         initialRouteName: 'Notes',

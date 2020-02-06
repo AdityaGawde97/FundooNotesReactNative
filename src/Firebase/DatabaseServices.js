@@ -1,5 +1,7 @@
 import firebase from './Firebase'
 
+
+
 export function setNote(uid, noteObj, callback) {
     firebase.database().ref('/users/' + uid + '/Notes/').push(noteObj).then((success) => {
         callback(success.key);
@@ -38,6 +40,7 @@ export function getArchiveOrTrashNotes(uid, child, callback) {
 export function trashAndRestoreNotes(uid, noteId, trash, callback) {
     firebase.database().ref('/users/' + uid + '/Notes/' + noteId + '/').update({
         Trash: trash,
+        Pin: false
     }).then((success) => {
         callback();
     })
@@ -101,9 +104,18 @@ export function fetchLabeledNotes(uid, labelId, callback) {
 }
 
 export function fetchAllNotes(uid, callback) {
-    firebase.database().ref('/users/' + uid + '/Notes/').orderByChild('Trash').equalTo(false)
+    firebase.database().ref('/users/' + uid + '/Notes/')
         .on('value', (snapshot) => {
             callback(snapshot.val())
         })
+}
+
+export function updateArchive(uid, noteId, callback) {
+    firebase.database().ref('/users/' + uid + '/Notes/' + noteId + '/')
+        .update({
+            Archive: true,
+            Pin: false
+        })
+        .then(success => callback())
 }
 

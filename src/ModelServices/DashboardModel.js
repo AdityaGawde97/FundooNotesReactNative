@@ -63,7 +63,7 @@ class DashboardModel {
                 ifCallback(notes.reverse())
             }
             else {
-                elseCallback();
+                elseCallback(null);
             }
         })
     }
@@ -104,6 +104,10 @@ class DashboardModel {
         DatabaseServices.trashAndRestoreNotes(uid, noteId, trash, callback)
     }
 
+    archivedTheNote(uid, noteId, callback) {
+        DatabaseServices.updateArchive(uid, noteId, callback)
+    }
+
     deleteForever(uid, noteId, callback) {
         DatabaseServices.deleteForeverFromFirebase(uid, noteId, callback)
     }
@@ -122,6 +126,9 @@ class DashboardModel {
                     labels.push(labelsData[key])
                 });
                 callback(labels.reverse())
+            }
+            else {
+                callback(null)
             }
         })
     }
@@ -165,11 +172,8 @@ class DashboardModel {
         DatabaseServices.fetchAllNotes(uid, (snap) => {
             if (snap !== null && snap !== undefined) {
                 Object.getOwnPropertyNames(snap).map((key) => {
-                    if (snap[key].Archive === false) {
-                        snap[key].noteId = key;
-                        notes.push(snap[key])
-                    }
-
+                    snap[key].noteId = key;
+                    notes.push(snap[key])
                 });
             }
         })
@@ -208,3 +212,4 @@ class DashboardModel {
 const model = new DashboardModel()
 
 export default model
+

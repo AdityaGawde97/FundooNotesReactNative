@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1580465413051" clover="3.2.0">
-  <project timestamp="1580465413051" name="All files">
-    <metrics statements="136" coveredstatements="82" conditionals="42" coveredconditionals="23" methods="48" coveredmethods="22" elements="226" coveredelements="127" complexity="0" loc="136" ncloc="136" packages="3" files="7" classes="7"/>
+<coverage generated="1580817872827" clover="3.2.0">
+  <project timestamp="1580817872827" name="All files">
+    <metrics statements="140" coveredstatements="82" conditionals="42" coveredconditionals="23" methods="51" coveredmethods="22" elements="233" coveredelements="127" complexity="0" loc="140" ncloc="140" packages="3" files="7" classes="7"/>
     <package name="Component.Authentication">
       <metrics statements="106" coveredstatements="79" conditionals="38" coveredconditionals="23" methods="34" coveredmethods="22"/>
       <file name="SignIn.js" path="/home/admin10/Desktop/FundooNotes/src/Component/Authentication/SignIn.js">
@@ -131,9 +131,9 @@
       </file>
     </package>
     <package name="Firebase">
-      <metrics statements="29" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="14" coveredmethods="0"/>
+      <metrics statements="33" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="17" coveredmethods="0"/>
       <file name="AuthServices.js" path="/home/admin10/Desktop/FundooNotes/src/Firebase/AuthServices.js">
-        <metrics statements="27" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="14" coveredmethods="0"/>
+        <metrics statements="31" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="17" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
         <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="9" count="0" type="stmt"/>
@@ -161,6 +161,10 @@
         <line num="58" count="0" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
       </file>
       <file name="Firebase.js" path="/home/admin10/Desktop/FundooNotes/src/Firebase/Firebase.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>

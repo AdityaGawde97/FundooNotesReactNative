@@ -143,6 +143,7 @@
     <orderEntry type="module" module-name="react-native-vector-icons" />
     <orderEntry type="module" module-name="@react-native-community_datetimepicker" />
     <orderEntry type="module" module-name="@react-native-community_masked-view" />
+    <orderEntry type="module" module-name="react-native-push-notification" />
     <orderEntry type="module" module-name="react-native-safe-area-context" />
   </component>
 </module>

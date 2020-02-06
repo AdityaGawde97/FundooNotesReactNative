@@ -10,6 +10,7 @@ import SetReminder from './SetReminder';
 import { Chip, Icon } from 'material-bread';
 import TrashMoreOption from './TrashMoreOption';
 import model from '../../ModelServices/DashboardModel';
+import Toast from '../../NativeModules/ToastModule'
 
 export default class NoteCreator extends Component {
     constructor(props) {
@@ -38,6 +39,9 @@ export default class NoteCreator extends Component {
     pushNoteData = () => {
         if (this.Item === null) {
             if (this.state.title !== '' || this.state.note !== '') {
+                if (this.state.archive === true) {
+                    this.setState({ pin: false })
+                }
                 model.createNote(this.uid, this.state,
                     (noteId) => {
                         let labelsArray = this.props.navigation.getParam('selectedLabel', null)
@@ -46,17 +50,20 @@ export default class NoteCreator extends Component {
                                 model.addLabel(this.uid, noteId, data.labelId, data.label)
                             })
                         }
+                        Toast.show('Note created successfully', Toast.LONG)
                         this.props.navigation.navigate(this.page)
                     }
                 )
             }
             else {
+                Toast.show('Empty note discarded', Toast.LONG)
                 this.props.navigation.navigate(this.page)
             }
         }
         else {
             model.editNote(this.uid, this.Item.noteId, this.state,
                 () => {
+                    Toast.show('Note edited successfully', Toast.LONG)
                     this.props.navigation.navigate(this.page)
                 }
             )
@@ -72,6 +79,27 @@ export default class NoteCreator extends Component {
         else {
             this.props.navigation.navigate(this.page)
         }
+    }
+
+    archivedAndUnarchived = () => {
+        this.setState({
+            archive: !this.state.archive,
+        }, () => {
+            if (this.Item !== null) {
+                if (this.state.archive === true) {
+                    model.archivedTheNote(this.uid, this.Item.noteId,
+                        () => {
+                            if (this.Item.Pin) {
+                                Toast.show('Note archived and unpinned', Toast.LONG)
+                            }
+                            else {
+                                Toast.show('Note archived', Toast.LONG)
+                            }
+                            this.props.navigation.navigate(this.page)
+                        })
+                }
+            }
+        })
     }
 
     render() {
@@ -111,7 +139,7 @@ export default class NoteCreator extends Component {
                         }
                         size={globalStyle.noteIconSize}
                         color={globalStyle.inherit}
-                        onPress={() => this.setState({ archive: !this.state.archive })}
+                        onPress={this.archivedAndUnarchived}
                         style={{ display: this.page === 'Trash' ? 'none' : 'flex' }}
                     />
                 </Appbar>
@@ -180,7 +208,7 @@ export default class NoteCreator extends Component {
                                     }
                                     {
                                         labelsArray !== null &&
-                                        (labelsArray).map((data)=>(
+                                        (labelsArray).map((data) => (
                                             <Chip
                                                 text={data.label}
                                                 style={styles4.chipStyle}
@@ -268,6 +296,7 @@ export default class NoteCreator extends Component {
                                 noteId={this.Item.noteId}
                                 trashAndRestore={this.trashAndRestore}
                                 deleteForever={() => {
+                                    Toast.show('Note deleted forever', Toast.LONG)
                                     model.deleteForever(this.uid, this.Item.noteId, () => {
                                         this.props.navigation.navigate(this.page)
                                     })

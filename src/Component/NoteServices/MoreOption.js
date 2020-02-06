@@ -10,6 +10,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Feather from 'react-native-vector-icons/Feather'
 import AntIcon from 'react-native-vector-icons/AntDesign'
 import ColorPalette from 'react-native-color-palette'
+import Toast from '../../NativeModules/ToastModule'
 
 export default class MoreOption extends Component {
     constructor(props) {
@@ -34,6 +35,7 @@ export default class MoreOption extends Component {
                             />
                         }
                         onPress={() => {
+                            Toast.show('Note trash', Toast.LONG)
                             this.props.trashAndRestore(true)
                         }}
                     />

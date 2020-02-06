@@ -13,7 +13,7 @@ class EditLabels extends Component {
         this.state = {
             btnState: false,
             labelName: '',
-            labelData: []
+            labelData: null
         };
     }
 
@@ -67,11 +67,14 @@ class EditLabels extends Component {
                             }}
                         />
                     </View>
-                    <FlatList
-                        data={this.state.labelData}
-                        renderItem={({ item }) => <LabelList {...item} uid={this.props.uid} />}
-                        keyExtractor={item => item.labelId}
-                    />
+                    {
+                        this.state.labelData !== null &&
+                        <FlatList
+                            data={this.state.labelData}
+                            renderItem={({ item }) => <LabelList {...item} uid={this.props.uid} />}
+                            keyExtractor={item => item.labelId}
+                        />
+                    }
                 </View>
 
 

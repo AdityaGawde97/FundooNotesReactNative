@@ -78,6 +78,7 @@ class Notes extends Component {
                                         keyExtractor={item => item.noteId}
                                         numColumns={this.props.view ? 2 : 1}
                                         key={this.props.view ? 2 : 1}
+                                       
                                     />
                                 }
                             </View>

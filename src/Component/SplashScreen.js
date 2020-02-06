@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import { storeUid } from '../Redux/UidStore/UidAction'
 import { fetchUserData } from '../Firebase/AuthServices';
 
-
 class SplashScreen extends Component {
     constructor(props) {
         super(props);
@@ -17,7 +16,7 @@ class SplashScreen extends Component {
 
     getUserData = (uid, callback) => {
         fetchUserData(uid, async (snap) => {
-            callback(snap)
+            await callback(snap)
         })
 
     }
@@ -32,6 +31,7 @@ class SplashScreen extends Component {
                 }
                 else {
                     const uid = await AsyncStorage.getItem('uid')
+                    console.log(uid)
                     this.props.storeUid(uid)
                     this.getUserData(uid, (snap) => {
                         this.props.navigation.navigate('Notes',
@@ -88,5 +88,6 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-
 export default connect(null, mapDispatchToProps)(SplashScreen)
+
+
