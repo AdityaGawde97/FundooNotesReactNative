@@ -47,55 +47,58 @@ class CountChart extends Component {
                     notesCount['trash'] = notesCount['trash'] + 1;
                 }
             })
-
-            this.setState({ notesCount: notesCount },
-                () => {
-                    const data = [
-                        {
-                            name: 'All notes',
-                            count: this.state.notesCount.allNotes,
-                            population: 21500000,
-                            color: 'rgba(131, 167, 234, 1)',
-                            legendFontColor: '#7F7F7F',
-                            legendFontSize: 15,
-                        },
-                        {
-                            name: 'Pin notes',
-                            count: this.state.notesCount.pinNotes,
-                            population: 21500000,
-                            color: '#F00',
-                            legendFontColor: '#7F7F7F',
-                            legendFontSize: 15,
-                        },
-                        {
-                            name: 'Unpin notes',
-                            count: this.state.notesCount.unpinNotes,
-                            population: 21500000,
-                            color: 'lime',
-                            legendFontColor: '#7F7F7F',
-                            legendFontSize: 15,
-                        },
-                        {
-                            name: 'Archive notes',
-                            count: this.state.notesCount.archive,
-                            population: 21500000,
-                            color: 'salmon',
-                            legendFontColor: '#7F7F7F',
-                            legendFontSize: 15,
-                        },
-                        {
-                            name: 'Trash notes',
-                            count: this.state.notesCount.trash,
-                            population: 21500000,
-                            color: 'cyan',
-                            legendFontColor: '#7F7F7F',
-                            legendFontSize: 15,
-                        }
-                    ];
-                    this.setState({
-                        dataset: data
-                    })
-                })
+            this.setState({ notesCount: notesCount },()=>{
+                console.log("notesCount :",this.state.notesCount);
+                
+            })
+            // this.setState({ notesCount: notesCount },
+            //     () => {
+            //         const data = [
+            //             {
+            //                 name: 'All notes',
+            //                 count: this.state.notesCount.allNotes,
+            //                 population: 21500000,
+            //                 color: 'rgba(131, 167, 234, 1)',
+            //                 legendFontColor: '#7F7F7F',
+            //                 legendFontSize: 15,
+            //             },
+            //             {
+            //                 name: 'Pin notes',
+            //                 count: this.state.notesCount.pinNotes,
+            //                 population: 21500000,
+            //                 color: '#F00',
+            //                 legendFontColor: '#7F7F7F',
+            //                 legendFontSize: 15,
+            //             },
+            //             {
+            //                 name: 'Unpin notes',
+            //                 count: this.state.notesCount.unpinNotes,
+            //                 population: 21500000,
+            //                 color: 'lime',
+            //                 legendFontColor: '#7F7F7F',
+            //                 legendFontSize: 15,
+            //             },
+            //             {
+            //                 name: 'Archive notes',
+            //                 count: this.state.notesCount.archive,
+            //                 population: 21500000,
+            //                 color: 'salmon',
+            //                 legendFontColor: '#7F7F7F',
+            //                 legendFontSize: 15,
+            //             },
+            //             {
+            //                 name: 'Trash notes',
+            //                 count: this.state.notesCount.trash,
+            //                 population: 21500000,
+            //                 color: 'cyan',
+            //                 legendFontColor: '#7F7F7F',
+            //                 legendFontSize: 15,
+            //             }
+            //         ];
+            //         this.setState({
+            //             dataset: data
+            //         })
+            //     })
         })
     }
 
@@ -111,15 +114,53 @@ class CountChart extends Component {
 
     render() {
 
+        let data = [
+            {
+                name: 'All notes',
+                count: this.state.notesCount.allNotes,
+                color: 'rgba(131, 167, 234, 1)',
+                legendFontColor: '#7F7F7F',
+                legendFontSize: 15,
+            },
+            {
+                name: 'Pin notes',
+                count: this.state.notesCount.pinNotes,
+                color: '#F00',
+                legendFontColor: '#7F7F7F',
+                legendFontSize: 15,
+            },
+            {
+                name: 'Unpin notes',
+                count: this.state.notesCount.unpinNotes,
+                color: 'lime',
+                legendFontColor: '#7F7F7F',
+                legendFontSize: 15,
+            },
+            {
+                name: 'Archive notes',
+                count: this.state.notesCount.archive,
+                color: 'salmon',
+                legendFontColor: '#7F7F7F',
+                legendFontSize: 15,
+            },
+            {
+                name: 'Trash notes',
+                count: this.state.notesCount.trash,
+                color: 'cyan',
+                legendFontColor: '#7F7F7F',
+                legendFontSize: 15,
+            }
+        ];
+
         return (
             <View style={styles3.container}>
                 <Provider>
                     <Topbar {...this.props} page={this.page} refreshComponent={this.refreshComponent} />
                 </Provider>
                 <View style={{ height: '90%' }}>
-                    {this.state.dataset !== null &&
+               
                         <PieChart
-                            data={this.state.dataset}
+                            data={data}
                             width={Dimensions.get('window').width - 16}
                             height={220}
                             chartConfig={{
@@ -141,7 +182,7 @@ class CountChart extends Component {
                             paddingLeft="15"
                             absolute //for the absolute number remove if you want percentage
                         />
-                    }
+                    
                 </View>
                 <Button title={'click'}
                     onPress={

@@ -7,7 +7,7 @@ import SearchNotes from '../Component/NoteServices/SearchNotes'
 
 export const ServiceNavigator = createStackNavigator(
     {
-        NoteCreator: { screen: NoteCreator, navigationOptions: { headerShown: false } },
+        NoteCreator: { screen: NoteCreator, navigationOptions: { headerShown: false }, path: 'notecreator' },
         EditLabels: { screen: EditLabels, navigationOptions: { headerShown: false } },
         AddLabel: { screen: AddLabel, navigationOptions: { headerShown: false } },
         Search: { screen: SearchNotes, navigationOptions: { headerShown: false } }

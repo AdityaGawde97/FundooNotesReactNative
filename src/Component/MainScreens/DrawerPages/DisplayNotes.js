@@ -30,34 +30,60 @@ class DisplayNotes extends Component {
         }
     }
 
-    componentDidMount = () => {
-
-        this.setState({ load: true })
-        if (this.state.page === 'Notes') {
-            model.fetchNotes(this.props.uid, (pinNotes, unpinNotes) => {
-                this.setState({
-                    pinNotes: pinNotes,
-                    unpinNotes: unpinNotes,
-                    load: false
-                })
-            }, () => {
-                setTimeout(() => this.setState({ load: false }), 1000)
+    fetchNotesForNotespage = () => {
+        model.fetchNotes(this.props.uid, (pinNotes, unpinNotes) => {
+            this.setState({
+                pinNotes: pinNotes,
+                unpinNotes: unpinNotes,
+                load: false
             })
+        }, () => this.setState({ load: false }))
+    }
+
+    fetchNotesForReminderpage = () => {
+        model.fetchReminderNotes(this.props.uid, (notes) => {
+            this.setState({
+                unpinNotes: notes,
+                load: false
+            })
+        }, () => this.setState({ load: false }))
+    }
+
+    fetchNotesForArchiveOrTrashpage = () => {
+        model.fetchArchiveOrTrashNotes(this.props.uid, this.state.page, (notes) => {
+            this.setState({
+                unpinNotes: notes,
+                load: false
+            })
+        }, (notes) => this.setState({ load: false }))
+    }
+
+    fetchNotesAsPerPage = () => {
+        if (this.state.page === 'Notes') {
+            this.fetchNotesForNotespage();
+        }
+        else if (this.state.page === 'Reminder') {
+            this.fetchNotesForReminderpage();
         }
         else {
-            model.fetchReminderNotes(this.props.uid, (notes) => {
-                this.setState({
-                    unpinNotes: notes,
-                    load: false
-                })
-            }, () => setTimeout(() => this.setState({ load: false }), 500))
+            this.fetchNotesForArchiveOrTrashpage();
         }
+    }
 
-
+    componentDidMount = () => {
+        this.setState({ load: true })
+        this.fetchNotesAsPerPage();
     };
 
-    render() {
+    componentDidUpdate = (prevProps, prevState) => {
+        if (prevState.page !== this.state.page) {
+            this.setState({ load: true })
+            this.fetchNotesAsPerPage();
+        }
+    }
 
+    render() {
+        
         return (
             <View style={styles3.container}>
 

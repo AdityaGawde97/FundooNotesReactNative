@@ -37,6 +37,8 @@ const AddLabel = (props) => {
             setLabels(data)
         })
     }, [])
+    console.log(props.noteObj,'vxdhzgfcdgz');
+    
 
     return (
         <View style={[styles4.noteServiceContainer, { backgroundColor: '#fff', }]}>

@@ -26,6 +26,8 @@ import com.airbnb.android.react.lottie.LottiePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
+// react-native-mail
+import com.chirag.RNMail.RNMail;
 // react-native-push-notification
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 // react-native-reanimated
@@ -89,6 +91,7 @@ public class PackageList {
       new LottiePackage(),
       new RNGestureHandlerPackage(),
       new ImagePickerPackage(),
+      new RNMail(),
       new ReactNativePushNotificationPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),

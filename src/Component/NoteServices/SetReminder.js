@@ -14,9 +14,9 @@ export default class SetReminder extends Component {
             visible: false,
             dateModel: false,
             timeModel: false,
-            dateField: moment().format('MMMM D'),
-            dateField2: moment().format(),
-            timeField: moment().add(2, 'h').format('h:m a')
+            dateField: new Date(),
+            timeField: new Date(moment().add(2, 'h')),
+    
         };
     }
 
@@ -25,14 +25,13 @@ export default class SetReminder extends Component {
     }
 
     render() {
-
+        
         const renderDateModel = (
             <DateTimePicker
                 isVisible={this.state.dateModel}
                 mode='date'
                 onConfirm={(date) => this.setState({
-                    dateField: moment(date).format("MMMM D"),
-                    dateField2: moment(date).format(),
+                    dateField: date,
                     dateModel: false
                 })}
                 onCancel={() => this.setState({ dateModel: false })}
@@ -44,7 +43,7 @@ export default class SetReminder extends Component {
                 isVisible={this.state.timeModel}
                 mode='time'
                 onConfirm={(time) => this.setState({
-                    timeField: moment(time).format("h:m a"),
+                    timeField: time,
                     timeModel: false
                 })}
                 onCancel={() => this.setState({ timeModel: false })}
@@ -72,7 +71,7 @@ export default class SetReminder extends Component {
                     >
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text style={{ fontSize: 16 }}>
-                                {this.state.dateField}
+                                {moment(this.state.dateField).format('MMMM D')}
                             </Text>
                             <Icon
                                 name='arrow-drop-down'
@@ -91,7 +90,7 @@ export default class SetReminder extends Component {
                     >
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text style={{ fontSize: 16 }}>
-                                {this.state.timeField}
+                                {moment(this.state.timeField).format('hh:mm a')}
                             </Text>
                             <Icon
                                 name='arrow-drop-down'
@@ -125,7 +124,7 @@ export default class SetReminder extends Component {
                             useInputCasing
                             onPress={
                                 () => {
-                                    this.props.getDateTime(this.state.dateField2, this.state.timeField)
+                                    this.props.getDateTime(this.state.dateField, this.state.timeField)
                                     this.closeDialog()
                                 }
                             }

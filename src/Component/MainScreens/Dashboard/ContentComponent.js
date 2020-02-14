@@ -53,8 +53,12 @@ class ContentComponent extends Component {
                     (['Notes', 'Reminder']).map((text, index) => (
                         <TouchableHighlight underlayColor={'lightgray'}
                             onPress={() => {
+                                this.props.navigation.closeDrawer()
+                                this.props.navigation.navigate('DisplayNotes', { 'page': text })
                                 this.changeTab(text)
-                                this.props.navigation.navigate(text, { 'page': text })
+                                //this.props.navigation.navigate(text, { 'page': text })
+
+
                             }}
                             style={[styles2.tab, { backgroundColor: tab === text ? '#feefc3' : '#fff' }]}
                         >
@@ -92,12 +96,13 @@ class ContentComponent extends Component {
                     (this.state.labelData).map((text, index) => (
                         <TouchableHighlight underlayColor={'lightgray'}
                             onPress={() => {
-                                this.changeTab(text.Label)
+                                this.props.navigation.closeDrawer()
                                 this.props.navigation.navigate('Label',
                                     {
                                         'page': text.Label,
                                         'labelId': text.labelId
                                     })
+                                this.changeTab(text.Label)
                             }}
                             style={[styles2.tab, { backgroundColor: tab === text.Label ? '#feefc3' : '#fff' }]}
                         >
@@ -131,8 +136,11 @@ class ContentComponent extends Component {
                     (['Archive', 'Trash']).map((text, index) => (
                         <TouchableHighlight underlayColor={'lightgray'}
                             onPress={() => {
+                                this.props.navigation.closeDrawer()
+                                this.props.navigation.navigate('DisplayNotes', { 'page': text })
                                 this.changeTab(text)
-                                this.props.navigation.navigate(text, { 'page': text })
+                                //this.props.navigation.navigate(text, { 'page': text })
+
                             }}
                             style={[styles2.tab, { backgroundColor: tab === text ? '#feefc3' : '#fff' }]}
                         >
@@ -164,6 +172,7 @@ class ContentComponent extends Component {
                 <TouchableHighlight underlayColor={'lightgray'}
                     onPress={() => {
                         this.changeTab('CountChart')
+                        this.props.navigation.closeDrawer()
                         this.props.navigation.navigate('CountChart', { 'page': 'CountChart' })
                     }}
                     style={[styles2.tab, { backgroundColor: tab === 'CountChart' ? '#feefc3' : '#fff' }]}

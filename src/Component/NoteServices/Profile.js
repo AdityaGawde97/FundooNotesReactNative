@@ -41,7 +41,7 @@ export default class Profile extends Component {
 
     selectImage = () => {
         ImagePicker.showImagePicker(options, async (response) => {
-            console.log('Response = ', response);
+            //console.log('Response = ', response);
 
             if (response.uri) {
                 await this.setState({
@@ -75,8 +75,6 @@ export default class Profile extends Component {
 
         return (
             <>
-
-
                 <Avatar
                     type={this.state.userObj === null || this.state.userObj.ProfileImage === undefined ? "text" : 'image'}
                     content={this.state.userObj !== null && (this.state.userObj.FirstName).charAt(0)}
@@ -101,7 +99,7 @@ export default class Profile extends Component {
                     }
                 >
                     <Avatar
-                        type={this.state.avtarSrc === null || this.state.userObj.ProfileImage === undefined ? "text" : 'image'}
+                        type={this.state.userObj === null || this.state.userObj.ProfileImage === undefined ? "text" : 'image'}
                         content={this.state.userObj !== null && (this.state.userObj.FirstName).charAt(0)}
                         contentColor={'white'}
                         size={100}
@@ -135,7 +133,7 @@ export default class Profile extends Component {
                         }}
                     >
                         <Button
-                            text={'cancel'}
+                            text={'Cancel'}
                             onPress={() => this.setState({ visible: false })}
                         />
                         <Button

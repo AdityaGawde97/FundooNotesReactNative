@@ -31,7 +31,7 @@ function SearchNotes(props) {
         setSearch(text)
         setNotes(notesArray)
     }
-
+    console.log(props)
     return (
         <View style={[styles4.noteServiceContainer, { backgroundColor: '#fff', }]}>
             <Appbar style={styles4.appBar}>
@@ -52,6 +52,7 @@ function SearchNotes(props) {
                     <ActivityIndicator size='large' color={'dodgerblue'} />
                 </View> :
 
+                search !== '' &&
                 <View>
                     <FlatList
                         data={notes}
@@ -59,7 +60,7 @@ function SearchNotes(props) {
                             ({ item }) => <NoteCard
                                 Item={item}
                                 Navigate={props}
-                                page={'Search'}
+                                page={'Notes'}
                                 uid={uid}
                             />
                         }

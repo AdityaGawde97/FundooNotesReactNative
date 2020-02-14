@@ -34,7 +34,7 @@ class SplashScreen extends Component {
                     console.log(uid)
                     this.props.storeUid(uid)
                     this.getUserData(uid, (snap) => {
-                        this.props.navigation.navigate('Notes',
+                        this.props.navigation.navigate('DisplayNotes',
                             {
                                 'page': 'Notes',
                                 'userObj': snap
@@ -79,7 +79,6 @@ class SplashScreen extends Component {
         );
     }
 }
-
 
 
 function mapDispatchToProps(dispatch) {

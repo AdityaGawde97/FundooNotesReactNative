@@ -18,13 +18,18 @@ function NoteCard(props) {
                 }
             ]
         }
-            onPress={() => props.Navigate.navigation.navigate('NoteCreator',
+            onPress={() => {
+                props.Navigate.navigation.navigate('NoteCreator',
                 {
                     'noteObj': item,
                     backToPage: props.page,
                     'uid': props.uid
                 }
-            )}
+            )
+            console.log('gregrehrhj')
+            console.log(item)
+        }
+        }
         >
             <Card.Content style={{ paddingVertical: 5 }}>
                 {
@@ -48,7 +53,7 @@ function NoteCard(props) {
                             style={styles4.chipStyle}
                             text={
                                 moment(item.ReminderDate).format('MMM D')
-                                + ', ' + item.ReminderTime
+                                + ', ' + moment(item.ReminderTime).format('hh:mm a')
                             }
                             chipStyle='outlined'
                             leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}

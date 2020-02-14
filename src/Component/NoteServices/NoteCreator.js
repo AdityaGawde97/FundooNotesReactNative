@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, Linking } from 'react-native';
 import { styles4 } from '../../Css/NoteService.style';
 import { Appbar } from 'react-native-paper';
 import { globalStyle } from '../../Css/GlobalStyle.style';
@@ -10,13 +10,16 @@ import SetReminder from './SetReminder';
 import { Chip, Icon } from 'material-bread';
 import TrashMoreOption from './TrashMoreOption';
 import model from '../../ModelServices/DashboardModel';
-import Toast from '../../NativeModules/ToastModule'
+import Toast from '../../NativeModules/ToastModule';
+import PushNotification from 'react-native-push-notification';
+import { not } from 'react-native-reanimated';
+//import Mailer from 'react-native-mail';
 
 export default class NoteCreator extends Component {
     constructor(props) {
         super(props);
-        this.Item = this.props.navigation.getParam('noteObj', null)
-        this.page = this.props.navigation.getParam('backToPage')
+        this.Item = props.navigation.getParam('noteObj', null)
+        this.page = props.navigation.getParam('backToPage')
         this.uid = props.navigation.getParam('uid')
         this.state = {
             bgColor: this.Item === null ? '#ffffff' : this.Item.BgColor,
@@ -27,6 +30,7 @@ export default class NoteCreator extends Component {
             trash: this.Item === null ? false : this.Item.Trash,
             dateField: this.Item === null ? null : this.Item.ReminderDate === undefined ? null : this.Item.ReminderDate,
             timeField: this.Item === null ? null : this.Item.ReminderTime === undefined ? null : this.Item.ReminderTime,
+            uniqueId: Date.now()
         };
     }
 
@@ -36,12 +40,27 @@ export default class NoteCreator extends Component {
         })
     }
 
-    pushNoteData = () => {
+    localNotification = () => {
+        if (this.state.dateField !== null && this.state.timeField !== null) {
+            let date = JSON.stringify(this.state.dateField).slice(1, 11)
+            let time = JSON.stringify(this.state.timeField).slice(11, 25)
+            let schedule = new Date(date + time)
+            PushNotification.localNotificationSchedule({
+                id: this.state.uniqueId,
+                message: this.state.title,
+                date: schedule
+            });
+        }
+    }
+
+    pushNoteData = async () => {
+        await this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
         if (this.Item === null) {
             if (this.state.title !== '' || this.state.note !== '') {
                 if (this.state.archive === true) {
                     this.setState({ pin: false })
                 }
+                
                 model.createNote(this.uid, this.state,
                     (noteId) => {
                         let labelsArray = this.props.navigation.getParam('selectedLabel', null)
@@ -51,20 +70,22 @@ export default class NoteCreator extends Component {
                             })
                         }
                         Toast.show('Note created successfully', Toast.LONG)
-                        this.props.navigation.navigate(this.page)
+                        this.localNotification()
+                        
                     }
                 )
             }
             else {
                 Toast.show('Empty note discarded', Toast.LONG)
-                this.props.navigation.navigate(this.page)
+                //this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
             }
         }
         else {
             model.editNote(this.uid, this.Item.noteId, this.state,
                 () => {
                     Toast.show('Note edited successfully', Toast.LONG)
-                    this.props.navigation.navigate(this.page)
+                    //this.localNotification()
+                    //this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
                 }
             )
         }
@@ -77,7 +98,7 @@ export default class NoteCreator extends Component {
             })
         }
         else {
-            this.props.navigation.navigate(this.page)
+            this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
         }
     }
 
@@ -95,12 +116,31 @@ export default class NoteCreator extends Component {
                             else {
                                 Toast.show('Note archived', Toast.LONG)
                             }
-                            this.props.navigation.navigate(this.page)
+                            this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
                         })
                 }
             }
         })
     }
+
+    // handleEmail = () => {
+    //     Mailer.mail({
+    //       subject: 'need help',
+    //       recipients: ['support@example.com'],
+    //       body: '<b>A Bold Body</b>',
+    //       isHTML: true,
+    //     }, (error, event) => {
+    //       Alert.alert(
+    //         error,
+    //         event,
+    //         [
+    //           {text: 'Ok', onPress: () => console.log('OK: Email Error Response')},
+    //           {text: 'Cancel', onPress: () => console.log('CANCEL: Email Error Response')}
+    //         ],
+    //         { cancelable: true }
+    //       )
+    //     });
+    //   }
 
     render() {
 
@@ -126,7 +166,7 @@ export default class NoteCreator extends Component {
                     <SetReminder
                         getDateTime={
                             (date, time) => this.setState({
-                                dateField: moment(date).format(),
+                                dateField: date,
                                 timeField: time
                             })
                         }
@@ -196,14 +236,18 @@ export default class NoteCreator extends Component {
                                             style={styles4.chipStyle}
                                             text={
                                                 moment(this.state.dateField).format('MMM D')
-                                                + ', ' + this.state.timeField
+                                                + ', ' + moment(this.state.timeField).format('hh:mm a')
                                             }
                                             chipStyle='outlined'
                                             leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
-                                            onDelete={() => this.setState({
-                                                dateField: null,
-                                                timeField: null
-                                            })}
+                                            onDelete={async () => {
+                                                await PushNotification.cancelLocalNotifications({ id: this.state.uniqueId });
+                                                this.setState({
+                                                    dateField: null,
+                                                    timeField: null
+                                                })
+                                            }
+                                            }
                                         />
                                     }
                                     {
@@ -235,7 +279,7 @@ export default class NoteCreator extends Component {
                                             style={styles4.chipStyle}
                                             text={
                                                 moment(this.state.dateField).format('MMM D')
-                                                + ', ' + this.state.timeField
+                                                + ', ' + moment(this.state.timeField).format('hh:mm a')
                                             }
                                             chipStyle='outlined'
                                             leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
@@ -266,6 +310,12 @@ export default class NoteCreator extends Component {
                         icon={require('../../Assets/AddBox.png')}
                         size={globalStyle.noteIconSize}
                         color={globalStyle.inherit}
+                        onPress={
+                            () => Linking.openURL(`mailto:?subject=Open Note&body=
+                            fundoonotes://service/noteservice/notecreator/${this.Item}
+                            
+                            `)
+                        }
                     />
                     <Appbar.Content
                         title={`Edited ${moment().format('LT')}`}

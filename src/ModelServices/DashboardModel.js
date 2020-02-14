@@ -175,9 +175,10 @@ class DashboardModel {
                     snap[key].noteId = key;
                     notes.push(snap[key])
                 });
+                callback(notes)
             }
         })
-        callback(notes)
+
     }
 
     async getLabeledNotes(uid, labelId, callback) {

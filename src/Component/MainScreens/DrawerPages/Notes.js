@@ -36,7 +36,7 @@ class Notes extends Component {
     };
 
     render() {
-
+ 
         return (
             <View style={styles3.container}>
 

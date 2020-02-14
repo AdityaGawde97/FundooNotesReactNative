@@ -53,6 +53,8 @@ target 'FundooNotes' do
 
   pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
+  pod 'react-native-mail', :path => '../node_modules/react-native-mail'
+
   target 'FundooNotesTests' do
     inherit! :search_paths
     # Pods for testing

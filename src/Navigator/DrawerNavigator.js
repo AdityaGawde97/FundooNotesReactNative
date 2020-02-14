@@ -12,8 +12,8 @@ import DraggableList from '../Component/MainScreens/DrawerPages/DraggableList';
 
 export const DrawerNavigator = createDrawerNavigator(
     {
-        Notes: { screen: Notes },
         DisplayNotes: { screen: DisplayNotes },
+        Notes: { screen: Notes },
         Reminder: { screen: Reminder },
         Label: { screen: Label },
         Archive: { screen: Archive },
@@ -22,7 +22,7 @@ export const DrawerNavigator = createDrawerNavigator(
         DraggableList: { screen: DraggableList }
     },
     {
-        initialRouteName: 'Notes',
+        initialRouteName: 'DisplayNotes',
         contentComponent: ContentComponent,
         drawerWidth: 330,
     }

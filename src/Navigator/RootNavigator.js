@@ -11,7 +11,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 const ServiceRoute = createStackNavigator(
     {
         Drawer: { screen: DrawerNavigator, navigationOptions: { headerShown: false } },
-        Service: { screen: ServiceNavigator, navigationOptions: { headerShown: false } }
+        Service: { screen: ServiceNavigator, navigationOptions: { headerShown: false }, path: 'noteservice' }
     },
     {
         initialRouteName: 'Drawer',
@@ -22,7 +22,7 @@ const SwitchNavigator = createAnimatedSwitchNavigator(
     {
         Splash: { screen: SplashScreen },
         Auth: { screen: StackNavigator },
-        Service: { screen: ServiceRoute }
+        Service: { screen: ServiceRoute, path: 'service' }
     },
     {
         initialRouteName: 'Splash',
