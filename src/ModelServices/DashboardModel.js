@@ -69,6 +69,8 @@ class DashboardModel {
     }
 
     createNote(uid, state, callback) {
+        console.log('time',state.dateField)
+        console.log('Date',state.timeField)
         DatabaseServices.setNote(uid,
             {
                 Title: state.title,
@@ -213,4 +215,3 @@ class DashboardModel {
 const model = new DashboardModel()
 
 export default model
-

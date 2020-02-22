@@ -15,11 +15,10 @@ class DisplayNotes extends Component {
         //this.page = props.navigation.getParam('page')
         this.state = {
             page: props.navigation.getParam('page'),
-            pinNotes: [],
-            notes: [],
-            unpinNotes: [],
-            reminderNotes: [],
-            load: false
+            pinNotes: null,
+            unpinNotes: null,
+            load: false,
+            view: false
         };
     }
 
@@ -70,6 +69,10 @@ class DisplayNotes extends Component {
         }
     }
 
+    toggleListAndGrid = () => {
+        this.setState({ view: !this.state.view })
+    }
+
     componentDidMount = () => {
         this.setState({ load: true })
         this.fetchNotesAsPerPage();
@@ -83,85 +86,107 @@ class DisplayNotes extends Component {
     }
 
     render() {
-        
+
+        const loader = (
+            <AnimatedLoader
+                visible={this.state.load}
+                overlayColor="transparent"
+                source={require("../../../Assets/loader.json")}
+                animationStyle={{
+                    width: 300,
+                    height: 300
+                }}
+                speed={1}
+            />
+        );
+
+        const renderPinNotes = (
+            <FlatList
+                data={this.state.pinNotes}
+                renderItem={
+                    ({ item }) => <NoteCard
+                        Item={item}
+                        Navigate={this.props}
+                        page={'Notes'}
+                        uid={this.props.uid}
+                        view={this.state.view}
+                    />
+                }
+                keyExtractor={item => item.noteId}
+                numColumns={!this.state.view ? 1 : 2}
+                key={!this.state.view ? 1 : 2}
+            />
+        );
+
+        const renderUnpinNotes = (
+            <FlatList
+                data={this.state.unpinNotes}
+                renderItem={
+                    ({ item }) => <NoteCard
+                        Item={item}
+                        Navigate={this.props}
+                        page={this.state.page}
+                        uid={this.props.uid}
+                        view={this.state.view}
+                    />
+                }
+                keyExtractor={item => item.noteId}
+                numColumns={!this.state.view ? 1 : 2}
+                key={!this.state.view ? 1 : 2}
+
+            />
+        );
+
         return (
             <View style={styles3.container}>
 
-                <Topbar {...this.props} page={this.state.page} />
-
-                <AnimatedLoader
-                    visible={this.state.load}
-                    overlayColor="rgba(255,255,255,0.75)"
-                    source={require("../../../Assets/loader.json")}
-                    animationStyle={{
-                        width: 300,
-                        height: 300
-                    }}
-                    speed={1}
+                <Topbar
+                    {...this.props}
+                    page={this.state.page}
+                    view={this.state.view}
+                    toggleListAndGrid={this.toggleListAndGrid}
                 />
+
+                {loader}
 
 
                 <View style={{ height: '80%' }}>
                     <ScrollView>
                         <View>
-                            <View>
-                                {
-                                    this.state.pinNotes.length !== 0 && this.state.page === 'Notes' &&
+                            {
+                                this.state.pinNotes !== null && this.state.page === 'Notes' &&
+                                <View>
                                     <Title style={[styles3.pinTitle, { marginTop: 0 }]}>PINNED</Title>
-                                }
-                                {
-                                    this.state.pinNotes.length !== 0 && this.state.page === 'Notes' &&
-                                    <FlatList
-                                        data={this.state.pinNotes}
-                                        renderItem={
-                                            ({ item }) => <NoteCard
-                                                Item={item}
-                                                Navigate={this.props}
-                                                page={'Notes'}
-                                                uid={this.props.uid}
-                                            />
-                                        }
-                                        keyExtractor={item => item.noteId}
-                                    />
-                                }
-                            </View>
-                            <View>
-                                {
-                                    this.state.pinNotes.length !== 0 &&
-                                    this.state.unpinNotes.length !== 0 &&
-                                    this.state.page === 'Notes' &&
-                                    <Title style={[styles3.pinTitle, { marginTop: 15, }]}>OTHERS</Title>
-                                }
-                                {
-                                    this.state.unpinNotes.length !== 0 &&
-                                    this.state.page === 'Reminder' &&
-                                    <Title style={styles3.pinTitle}>UPCOMING</Title>
-                                }
+                                    {renderPinNotes}
+                                </View>
 
-                                {
-                                    this.state.unpinNotes.length !== 0 &&
-                                    <FlatList
-                                        data={this.state.unpinNotes}
-                                        renderItem={
-                                            ({ item }) => <NoteCard
-                                                Item={item}
-                                                Navigate={this.props}
-                                                page={this.state.page}
-                                                uid={this.props.uid}
-                                            />
-                                        }
-                                        keyExtractor={item => item.noteId}
+                            }
 
-                                    />
-                                }
+                            {
+                                this.state.unpinNotes !== null &&
+                                <View>
+                                    {
+                                        this.state.pinNotes !== null &&
+                                        this.state.page === 'Notes' &&
+                                        <Title style={[styles3.pinTitle, { marginTop: 15, }]}>OTHERS</Title>
+                                    }
+                                    {
+                                        this.state.page === 'Reminder' &&
+                                        <Title style={styles3.pinTitle}>UPCOMING</Title>
+                                    }
+                                    {renderUnpinNotes}
+                                </View>
+                            }
 
-                            </View>
                         </View>
                     </ScrollView>
                 </View>
 
+                {
+                    this.state.page === 'Notes' &&
+                    <Bottombar {...this.props} page={this.state.page} />
+                }
 
-                <Bottombar {...this.props} page={this.state.page} />
 
             </View>
         );

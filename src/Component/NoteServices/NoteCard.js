@@ -20,16 +20,14 @@ function NoteCard(props) {
         }
             onPress={() => {
                 props.Navigate.navigation.navigate('NoteCreator',
-                {
-                    'noteObj': item,
-                    backToPage: props.page,
-                    'uid': props.uid
-                }
-            )
-            console.log('gregrehrhj')
-            console.log(item)
-        }
-        }
+                    {
+                        'noteObj': item,
+                        backToPage: props.page,
+                        'uid': props.uid
+                    }
+                )
+            }
+            }
         >
             <Card.Content style={{ paddingVertical: 5 }}>
                 {
@@ -44,6 +42,7 @@ function NoteCard(props) {
                             flexDirection: 'row',
                             flexWrap: 'wrap',
                             paddingLeft: 0,
+                            marginLeft: props.view ? -10 : 0
                         }
                     }
                 >

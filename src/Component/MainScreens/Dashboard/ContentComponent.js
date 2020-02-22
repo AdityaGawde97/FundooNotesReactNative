@@ -183,14 +183,30 @@ class ContentComponent extends Component {
                     </View>
                 </TouchableHighlight>
 
+                <TouchableHighlight underlayColor={'lightgray'}
+                    onPress={() => {
+                        this.changeTab('GoogleMap')
+                        this.props.navigation.closeDrawer()
+                        // this.props.navigation.navigate('FastImage', { 'page': 'GoogleMap' })
+                        this.props.navigation.navigate('FastImage')
+                    }}
+                    style={[styles2.tab, { backgroundColor: tab === 'GoogleMap' ? '#feefc3' : '#fff' }]}
+                >
+                    <View style={styles2.row}>
+                        <Feather color={globalStyle.inherit} size={globalStyle.drawerIconSize} name="map-pin" />
+                        <Text style={styles2.drawerItems}>Fast Image</Text>
+                    </View>
+                </TouchableHighlight>
+
                 <Divider />
 
                 {
-                    (['Settings', 'Help & feedback']).map((text, index) => (
+                    (['WebWorker', 'HeadlessJs', 'DnD', 'DraggableList', 'Settings', 'Help & feedback']).map((text, index) => (
                         <TouchableHighlight underlayColor={'lightgray'}
                             onPress={() => {
                                 this.changeTab(text)
-                                this.props.navigation.navigate('DraggableList')
+                                this.props.navigation.closeDrawer()
+                                this.props.navigation.navigate(text)
                             }}
                             style={[styles2.tab, { backgroundColor: tab === text ? '#feefc3' : '#fff' }]}
                         >

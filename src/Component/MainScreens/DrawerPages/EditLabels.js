@@ -33,7 +33,7 @@ class EditLabels extends Component {
                     <Appbar.BackAction
                         color={globalStyle.inherit}
                         size={globalStyle.size25}
-                        onPress={() => this.props.navigation.navigate('Notes')}
+                        onPress={() => this.props.navigation.goBack()}
                     />
                     <Appbar.Content
                         titleStyle={styles4.appbarTitle}

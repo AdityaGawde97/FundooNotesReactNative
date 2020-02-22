@@ -12,8 +12,7 @@ import TrashMoreOption from './TrashMoreOption';
 import model from '../../ModelServices/DashboardModel';
 import Toast from '../../NativeModules/ToastModule';
 import PushNotification from 'react-native-push-notification';
-import { not } from 'react-native-reanimated';
-//import Mailer from 'react-native-mail';
+import MediaOption from './MediaOption';
 
 export default class NoteCreator extends Component {
     constructor(props) {
@@ -30,7 +29,6 @@ export default class NoteCreator extends Component {
             trash: this.Item === null ? false : this.Item.Trash,
             dateField: this.Item === null ? null : this.Item.ReminderDate === undefined ? null : this.Item.ReminderDate,
             timeField: this.Item === null ? null : this.Item.ReminderTime === undefined ? null : this.Item.ReminderTime,
-            uniqueId: Date.now()
         };
     }
 
@@ -53,14 +51,15 @@ export default class NoteCreator extends Component {
         }
     }
 
-    pushNoteData = async () => {
-        await this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
+    pushNoteData = () => {
+        this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
         if (this.Item === null) {
             if (this.state.title !== '' || this.state.note !== '') {
                 if (this.state.archive === true) {
                     this.setState({ pin: false })
                 }
-                
+                console.log('time111 ', this.state.dateField)
+                console.log('Date111 ', this.state.timeField)
                 model.createNote(this.uid, this.state,
                     (noteId) => {
                         let labelsArray = this.props.navigation.getParam('selectedLabel', null)
@@ -71,13 +70,12 @@ export default class NoteCreator extends Component {
                         }
                         Toast.show('Note created successfully', Toast.LONG)
                         this.localNotification()
-                        
+
                     }
                 )
             }
             else {
                 Toast.show('Empty note discarded', Toast.LONG)
-                //this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
             }
         }
         else {
@@ -85,7 +83,6 @@ export default class NoteCreator extends Component {
                 () => {
                     Toast.show('Note edited successfully', Toast.LONG)
                     //this.localNotification()
-                    //this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
                 }
             )
         }
@@ -94,7 +91,7 @@ export default class NoteCreator extends Component {
     trashAndRestore = (trash) => {
         if (this.Item !== null) {
             model.trashOrRestore(this.uid, this.Item.noteId, trash, () => {
-                this.props.navigation.navigate(this.page)
+                this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
             })
         }
         else {
@@ -123,27 +120,8 @@ export default class NoteCreator extends Component {
         })
     }
 
-    // handleEmail = () => {
-    //     Mailer.mail({
-    //       subject: 'need help',
-    //       recipients: ['support@example.com'],
-    //       body: '<b>A Bold Body</b>',
-    //       isHTML: true,
-    //     }, (error, event) => {
-    //       Alert.alert(
-    //         error,
-    //         event,
-    //         [
-    //           {text: 'Ok', onPress: () => console.log('OK: Email Error Response')},
-    //           {text: 'Cancel', onPress: () => console.log('CANCEL: Email Error Response')}
-    //         ],
-    //         { cancelable: true }
-    //       )
-    //     });
-    //   }
-
     render() {
-
+        console.log(this.state.timeField)
         let labelsArray = this.props.navigation.getParam('selectedLabel', null)
 
         return (
@@ -241,7 +219,7 @@ export default class NoteCreator extends Component {
                                             chipStyle='outlined'
                                             leftIcon={<Icon name='alarm' size={20} color={globalStyle.inherit} />}
                                             onDelete={async () => {
-                                                await PushNotification.cancelLocalNotifications({ id: this.state.uniqueId });
+                                                //await PushNotification.cancelLocalNotifications({ id: this.state.uniqueId });
                                                 this.setState({
                                                     dateField: null,
                                                     timeField: null
@@ -306,7 +284,7 @@ export default class NoteCreator extends Component {
                     </View>
                 </View>
                 <Appbar style={{ backgroundColor: this.state.bgColor }}>
-                    <Appbar.Action
+                    {/* <Appbar.Action
                         icon={require('../../Assets/AddBox.png')}
                         size={globalStyle.noteIconSize}
                         color={globalStyle.inherit}
@@ -316,7 +294,8 @@ export default class NoteCreator extends Component {
                             
                             `)
                         }
-                    />
+                    /> */}
+                    <MediaOption />
                     <Appbar.Content
                         title={`Edited ${moment().format('LT')}`}
                         titleStyle={
@@ -348,7 +327,7 @@ export default class NoteCreator extends Component {
                                 deleteForever={() => {
                                     Toast.show('Note deleted forever', Toast.LONG)
                                     model.deleteForever(this.uid, this.Item.noteId, () => {
-                                        this.props.navigation.navigate(this.page)
+                                        this.props.navigation.navigate('DisplayNotes', { 'page': this.page })
                                     })
                                 }}
                             />

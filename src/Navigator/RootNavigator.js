@@ -6,15 +6,18 @@ import { DrawerNavigator } from './DrawerNavigator';
 import { Transition } from 'react-native-reanimated';
 import SplashScreen from '../Component/SplashScreen';
 import { ServiceNavigator } from './ServiceNavigator';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator, TransitionPresets } from 'react-navigation-stack';
 
 const ServiceRoute = createStackNavigator(
     {
-        Drawer: { screen: DrawerNavigator, navigationOptions: { headerShown: false } },
+        Drawer: { screen: DrawerNavigator, navigationOptions: { headerShown: false, } },
         Service: { screen: ServiceNavigator, navigationOptions: { headerShown: false }, path: 'noteservice' }
     },
     {
         initialRouteName: 'Drawer',
+        defaultNavigationOptions: {
+            ...TransitionPresets.SlideFromRightIOS
+        },
     }
 )
 

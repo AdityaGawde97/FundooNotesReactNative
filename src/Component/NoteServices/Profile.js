@@ -22,26 +22,32 @@ export default class Profile extends Component {
             visible: false,
             image: null,
             userObj: props.navigation.getParam('userObj', null),
+            imgSrc: null
         };
     }
 
     uploadProfileImage = async () => {
-        const grantCam = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CAMERA)
-        const grantRead = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE)
-        const grantWrite = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE)
+        // const grantCam = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CAMERA)
+        // const grantRead = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE)
+        // const grantWrite = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE)
+        // if (grantCam && grantRead && grantWrite) {
+        //     this.selectImage()
+        // }
+        // else {
+        //     await Permissions.requestCameraPermission()
+        //     await Permissions.requestExternalStoragePermission()
+        //     this.uploadProfileImage()
+        // }
+
+        const grantCam = await Permissions.requestCameraPermission()
+        const [grantRead, grantWrite] = await Permissions.requestExternalStoragePermission()
         if (grantCam && grantRead && grantWrite) {
             this.selectImage()
-        }
-        else {
-            await Permissions.requestCameraPermission()
-            await Permissions.requestExternalStoragePermission()
-            this.uploadProfileImage()
         }
     }
 
     selectImage = () => {
         ImagePicker.showImagePicker(options, async (response) => {
-            //console.log('Response = ', response);
 
             if (response.uri) {
                 await this.setState({
@@ -66,7 +72,8 @@ export default class Profile extends Component {
     componentDidMount = () => {
         fetchUserData(this.props.uid, async (snap) => {
             this.setState({
-                userObj: snap
+                userObj: snap,
+                imgSrc: snap.ProfileImage
             })
         })
     }
@@ -76,14 +83,12 @@ export default class Profile extends Component {
         return (
             <>
                 <Avatar
-                    type={this.state.userObj === null || this.state.userObj.ProfileImage === undefined ? "text" : 'image'}
-                    content={this.state.userObj !== null && (this.state.userObj.FirstName).charAt(0)}
+                    type={this.state.imgSrc === null ? "text" : 'image'}
+                    content={this.state.imgSrc !== null && (this.state.userObj.FirstName).charAt(0)}
                     contentColor={'white'}
                     size={35}
-                    //color={'#eb4949'}
                     color={this.randomColor()}
-                    size={35}
-                    image={this.state.userObj.ProfileImage !== undefined && <Image source={{ uri: this.state.userObj.ProfileImage }} />}
+                    image={this.state.imgSrc !== null && <Image source={{ uri: this.state.imgSrc }} />}
                     onPress={() => this.setState({ visible: !this.state.visible })}
                 />
 
@@ -99,12 +104,12 @@ export default class Profile extends Component {
                     }
                 >
                     <Avatar
-                        type={this.state.userObj === null || this.state.userObj.ProfileImage === undefined ? "text" : 'image'}
-                        content={this.state.userObj !== null && (this.state.userObj.FirstName).charAt(0)}
+                        type={this.state.imgSrc === null ? "text" : 'image'}
+                        content={this.state.imgSrc !== null && (this.state.userObj.FirstName).charAt(0)}
                         contentColor={'white'}
                         size={100}
                         color={this.randomColor()}
-                        image={this.state.userObj.ProfileImage !== undefined && <Image source={{ uri: this.state.userObj.ProfileImage }} />}
+                        image={this.state.imgSrc !== null && <Image source={{ uri: this.state.imgSrc }} />}
                         style={
                             {
                                 alignSelf: 'center',

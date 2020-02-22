@@ -3,8 +3,8 @@ import { View } from 'react-native';
 import { styles2 } from '../../../Css/Dashboard.style';
 import { Appbar, Menu } from 'react-native-paper';
 import Profile from '../../NoteServices/Profile';
-import { useSelector, useDispatch } from 'react-redux'
-import { toggleListView } from '../../../Redux/ListGridView/ViewAction'
+// import { useSelector, useDispatch } from 'react-redux'
+// import { toggleListView } from '../../../Redux/ListGridView/ViewAction'
 
 export default function Topbar(props) {
 
@@ -12,8 +12,9 @@ export default function Topbar(props) {
         visible: false
     });
 
-    const view = useSelector(state => state.view.toggleView)
-    const dispatch = useDispatch()
+    // const view = useSelector(state => state.view.toggleView)
+    const view = props.view
+    //const dispatch = useDispatch()
 
     _openMenu = () => setState({ visible: true });
 
@@ -55,7 +56,8 @@ export default function Topbar(props) {
                                     require('../../../Assets/list_view.png') :
                                     require('../../../Assets/grid_view.png')
                                 }
-                                onPress={() => dispatch(toggleListView())}
+                                //onPress={() => dispatch(toggleListView())}
+                                onPress={props.toggleListAndGrid}
                                 style={{ right: 9 }}
                             />
                         }

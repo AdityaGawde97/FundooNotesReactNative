@@ -3,8 +3,7 @@ import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import AsyncStorage from '@react-native-community/async-storage';
 import { connect } from "react-redux";
-import { storeUid } from '../Redux/UidStore/UidAction'
-import { fetchUserData } from '../Firebase/AuthServices';
+import { storeUid } from '../Redux/UidStore/UidAction';
 
 class SplashScreen extends Component {
     constructor(props) {
@@ -12,13 +11,6 @@ class SplashScreen extends Component {
         this.state = {
 
         };
-    }
-
-    getUserData = (uid, callback) => {
-        fetchUserData(uid, async (snap) => {
-            await callback(snap)
-        })
-
     }
 
     componentDidMount = async () => {
@@ -31,16 +23,12 @@ class SplashScreen extends Component {
                 }
                 else {
                     const uid = await AsyncStorage.getItem('uid')
-                    console.log(uid)
                     this.props.storeUid(uid)
-                    this.getUserData(uid, (snap) => {
                         this.props.navigation.navigate('DisplayNotes',
                             {
-                                'page': 'Notes',
-                                'userObj': snap
+                                'page': 'Notes'
                             }
                         )
-                    })
                 }
             }, 1000
         )

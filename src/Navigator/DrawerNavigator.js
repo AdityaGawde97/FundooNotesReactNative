@@ -1,25 +1,29 @@
 import React from 'react';
 import { createDrawerNavigator } from "react-navigation-drawer";
-import Notes from "../Component/MainScreens/DrawerPages/Notes";
-import Reminder from "../Component/MainScreens/DrawerPages/Reminder";
-import Archive from '../Component/MainScreens/DrawerPages/Archive';
-import CountChart from "../Component/MainScreens/DrawerPages/CountChart";
-import Trash from "../Component/MainScreens/DrawerPages/Trash"
-import ContentComponent from '../Component/MainScreens/Dashboard/ContentComponent';
 import Label from '../Component/MainScreens/DrawerPages/Label';
+import CountChart from "../Component/MainScreens/DrawerPages/CountChart";
+import EditLabels from '../Component/MainScreens/DrawerPages/EditLabels'
+import ContentComponent from '../Component/MainScreens/Dashboard/ContentComponent';
 import DisplayNotes from '../Component/MainScreens/DrawerPages/DisplayNotes';
 import DraggableList from '../Component/MainScreens/DrawerPages/DraggableList';
+import DnD from '../Component/MainScreens/DrawerPages/DnD';
+import GoogleMap from '../Component/MainScreens/DrawerPages/GoogleMap';
+import FastImageDemo from '../Component/MainScreens/DrawerPages/FastImageDemo';
+import WebWorker from '../Component/MainScreens/DrawerPages/WebWorker';
+import HeadlessJs from '../Component/MainScreens/DrawerPages/HeadlessJs';
 
 export const DrawerNavigator = createDrawerNavigator(
     {
         DisplayNotes: { screen: DisplayNotes },
-        Notes: { screen: Notes },
-        Reminder: { screen: Reminder },
         Label: { screen: Label },
-        Archive: { screen: Archive },
         CountChart: { screen: CountChart },
-        Trash: { screen: Trash },
-        DraggableList: { screen: DraggableList }
+        EditLabels: { screen: EditLabels },
+        DraggableList: { screen: DraggableList },
+        DnD: { screen: DnD },
+        GoogleMap: { screen: GoogleMap },
+        FastImage: { screen: FastImageDemo },
+        WebWorker: { screen: WebWorker },
+        //HeadlessJs: { screen: HeadlessJs }
     },
     {
         initialRouteName: 'DisplayNotes',

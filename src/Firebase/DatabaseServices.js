@@ -3,12 +3,14 @@ import firebase from './Firebase'
 
 
 export function setNote(uid, noteObj, callback) {
+    console.log(noteObj)
     firebase.database().ref('/users/' + uid + '/Notes/').push(noteObj).then((success) => {
         callback(success.key);
     })
 }
 
 export function updateNote(uid, noteId, noteObj, callback) {
+    console.log(noteObj)
     firebase.database().ref('/users/' + uid + '/Notes/' + noteId + '/').update(noteObj)
         .then((success) => {
             callback();

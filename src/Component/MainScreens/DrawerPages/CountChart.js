@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import Topbar from '../Dashboard/Topbar'
 import { Provider } from 'react-native-paper';
 import model from '../../../ModelServices/DashboardModel';
-import PushNotification from 'react-native-push-notification'
 
 class CountChart extends Component {
     constructor(props) {
@@ -51,54 +50,7 @@ class CountChart extends Component {
                 console.log("notesCount :",this.state.notesCount);
                 
             })
-            // this.setState({ notesCount: notesCount },
-            //     () => {
-            //         const data = [
-            //             {
-            //                 name: 'All notes',
-            //                 count: this.state.notesCount.allNotes,
-            //                 population: 21500000,
-            //                 color: 'rgba(131, 167, 234, 1)',
-            //                 legendFontColor: '#7F7F7F',
-            //                 legendFontSize: 15,
-            //             },
-            //             {
-            //                 name: 'Pin notes',
-            //                 count: this.state.notesCount.pinNotes,
-            //                 population: 21500000,
-            //                 color: '#F00',
-            //                 legendFontColor: '#7F7F7F',
-            //                 legendFontSize: 15,
-            //             },
-            //             {
-            //                 name: 'Unpin notes',
-            //                 count: this.state.notesCount.unpinNotes,
-            //                 population: 21500000,
-            //                 color: 'lime',
-            //                 legendFontColor: '#7F7F7F',
-            //                 legendFontSize: 15,
-            //             },
-            //             {
-            //                 name: 'Archive notes',
-            //                 count: this.state.notesCount.archive,
-            //                 population: 21500000,
-            //                 color: 'salmon',
-            //                 legendFontColor: '#7F7F7F',
-            //                 legendFontSize: 15,
-            //             },
-            //             {
-            //                 name: 'Trash notes',
-            //                 count: this.state.notesCount.trash,
-            //                 population: 21500000,
-            //                 color: 'cyan',
-            //                 legendFontColor: '#7F7F7F',
-            //                 legendFontSize: 15,
-            //             }
-            //         ];
-            //         this.setState({
-            //             dataset: data
-            //         })
-            //     })
+          
         })
     }
 
@@ -180,21 +132,11 @@ class CountChart extends Component {
                             accessor="count"
                             backgroundColor="transparent"
                             paddingLeft="15"
-                            absolute //for the absolute number remove if you want percentage
+                            absolute 
                         />
                     
                 </View>
-                <Button title={'click'}
-                    onPress={
-                        () => {
-                            PushNotification.localNotificationSchedule({
-                                //... You can use all the options from localNotifications
-                                message: "My Notification Message", // (required)
-                                date: new Date(Date.now() + 60 * 1000) // in 60 secs
-                            });
-                        }
-                    }
-                />
+                
 
             </View>
         );
