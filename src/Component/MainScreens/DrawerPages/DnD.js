@@ -180,7 +180,7 @@ export default class DnD extends Component {
                     }}
                     //{...(noPanResponder ? {} : this._panResponder.panHandlers)}
                     //onLongPress={()=>this.setState({longPress: true})}
-                    {...(!this.state.longPress && noPanResponder ? {} : this._panResponder.panHandlers)}
+                    //{...(!this.state.longPress && noPanResponder ? {} : this._panResponder.panHandlers)}
                 >
                     <View {...(noPanResponder ? {} : this._panResponder.panHandlers)}>
                         <Text style={{ fontSize: 28 }}>@</Text>
