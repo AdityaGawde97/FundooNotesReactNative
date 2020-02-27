@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { View, FlatList, ScrollView } from 'react-native';
+import { View, FlatList, ScrollView, ActivityIndicator, ProgressBarAndroid } from 'react-native';
 import Topbar from '../Dashboard/Topbar';
 import Bottombar from '../Dashboard/BottomTabBar'
 import { styles3 } from '../../../Css/MainScreens.style';
 import NoteCard from '../../NoteServices/NoteCard';
-import AnimatedLoader from "react-native-animated-loader";
+// import AnimatedLoader from "react-native-animated-loader";
 import { Title } from 'react-native-paper';
 import { connect } from "react-redux";
 import model from "../../../ModelServices/DashboardModel"
@@ -87,16 +87,24 @@ class DisplayNotes extends Component {
 
     render() {
 
+        // const loader = (
+        //     <AnimatedLoader
+        //         visible={this.state.load}
+        //         overlayColor="transparent"
+        //         source={require("../../../Assets/loader.json")}
+        //         animationStyle={{
+        //             width: 300,
+        //             height: 300
+        //         }}
+        //         speed={1}
+        //     />
+        // );
+
         const loader = (
-            <AnimatedLoader
-                visible={this.state.load}
-                overlayColor="transparent"
-                source={require("../../../Assets/loader.json")}
-                animationStyle={{
-                    width: 300,
-                    height: 300
-                }}
-                speed={1}
+            <ProgressBarAndroid
+                color={'dodgerblue'}
+                //animating={this.state.load}
+                style={{ flex: 1, width: 300, height: 300, alignSelf: 'center' }}
             />
         );
 
@@ -147,40 +155,41 @@ class DisplayNotes extends Component {
                     toggleListAndGrid={this.toggleListAndGrid}
                 />
 
-                {loader}
+                {this.state.load ? loader :
 
 
-                <View style={{ height: '80%' }}>
-                    <ScrollView>
-                        <View>
-                            {
-                                this.state.pinNotes !== null && this.state.page === 'Notes' &&
-                                <View>
-                                    <Title style={[styles3.pinTitle, { marginTop: 0 }]}>PINNED</Title>
-                                    {renderPinNotes}
-                                </View>
+                    <View style={{ height: '80%' }}>
+                        <ScrollView>
+                            <View>
+                                {
+                                    this.state.pinNotes !== null && this.state.page === 'Notes' &&
+                                    <View>
+                                        <Title style={[styles3.pinTitle, { marginTop: 0 }]}>PINNED</Title>
+                                        {renderPinNotes}
+                                    </View>
 
-                            }
+                                }
 
-                            {
-                                this.state.unpinNotes !== null &&
-                                <View>
-                                    {
-                                        this.state.pinNotes !== null &&
-                                        this.state.page === 'Notes' &&
-                                        <Title style={[styles3.pinTitle, { marginTop: 15, }]}>OTHERS</Title>
-                                    }
-                                    {
-                                        this.state.page === 'Reminder' &&
-                                        <Title style={styles3.pinTitle}>UPCOMING</Title>
-                                    }
-                                    {renderUnpinNotes}
-                                </View>
-                            }
+                                {
+                                    this.state.unpinNotes !== null &&
+                                    <View>
+                                        {
+                                            this.state.pinNotes !== null &&
+                                            this.state.page === 'Notes' &&
+                                            <Title style={[styles3.pinTitle, { marginTop: 15, }]}>OTHERS</Title>
+                                        }
+                                        {
+                                            this.state.page === 'Reminder' &&
+                                            <Title style={styles3.pinTitle}>UPCOMING</Title>
+                                        }
+                                        {renderUnpinNotes}
+                                    </View>
+                                }
 
-                        </View>
-                    </ScrollView>
-                </View>
+                            </View>
+                        </ScrollView>
+                    </View>
+                }
 
                 {
                     this.state.page === 'Notes' &&

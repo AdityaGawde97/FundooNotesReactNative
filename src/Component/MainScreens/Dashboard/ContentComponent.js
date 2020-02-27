@@ -201,12 +201,12 @@ class ContentComponent extends Component {
                 <Divider />
 
                 {
-                    (['WebWorker', 'HeadlessJs', 'DnD', 'DraggableList', 'Settings', 'Help & feedback']).map((text, index) => (
+                    (['PushApp', 'MyDrawer', 'WebWorker', 'DnD', 'DraggableList', 'Settings', 'Help & feedback']).map((text, index) => (
                         <TouchableHighlight underlayColor={'lightgray'}
                             onPress={() => {
                                 this.changeTab(text)
                                 this.props.navigation.closeDrawer()
-                                this.props.navigation.navigate(text)
+                                this.props.navigation.navigate(text,{ 'page': text })
                             }}
                             style={[styles2.tab, { backgroundColor: tab === text ? '#feefc3' : '#fff' }]}
                         >

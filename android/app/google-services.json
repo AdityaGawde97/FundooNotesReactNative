@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "440304323539",
+    "firebase_url": "https://fundoo-notes-b7e8e.firebaseio.com",
+    "project_id": "fundoo-notes-b7e8e",
+    "storage_bucket": "fundoo-notes-b7e8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440304323539:android:4d9b9ec519e763095d7d26",
+        "android_client_info": {
+          "package_name": "com.fundoonotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440304323539-8n5rilbdn63i3qpuaach00iu5pjhn11g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDedp9i_cdRdID29fpmSTdw1GEuDDJYD6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440304323539-8n5rilbdn63i3qpuaach00iu5pjhn11g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

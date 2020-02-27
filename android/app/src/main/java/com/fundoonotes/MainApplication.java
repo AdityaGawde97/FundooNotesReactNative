@@ -7,8 +7,6 @@ import com.facebook.react.ReactApplication;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
-import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
-import com.airbnb.android.react.lottie.LottiePackage;
 import com.swmansion.reanimated.ReanimatedPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.horcrux.svg.SvgPackage;

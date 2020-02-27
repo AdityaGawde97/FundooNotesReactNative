@@ -7,6 +7,7 @@ import { Transition } from 'react-native-reanimated';
 import SplashScreen from '../Component/SplashScreen';
 import { ServiceNavigator } from './ServiceNavigator';
 import { createStackNavigator, TransitionPresets } from 'react-navigation-stack';
+import LockScreen from '../Component/LockScreen';
 
 const ServiceRoute = createStackNavigator(
     {
@@ -23,9 +24,11 @@ const ServiceRoute = createStackNavigator(
 
 const SwitchNavigator = createAnimatedSwitchNavigator(
     {
+        
         Splash: { screen: SplashScreen },
         Auth: { screen: StackNavigator },
-        Service: { screen: ServiceRoute, path: 'service' }
+        Service: { screen: ServiceRoute, path: 'service' },
+        Lock: { screen: LockScreen }
     },
     {
         initialRouteName: 'Splash',

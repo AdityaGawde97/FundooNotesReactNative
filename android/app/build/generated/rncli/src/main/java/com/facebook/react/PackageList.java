@@ -20,14 +20,14 @@ import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 // @react-native-community/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
-// lottie-react-native
-import com.airbnb.android.react.lottie.LottiePackage;
 // react-native-fast-image
 import com.dylanvann.fastimage.FastImageViewPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
+// react-native-keychain
+import com.oblador.keychain.KeychainPackage;
 // react-native-maps
 import com.airbnb.android.react.maps.MapsPackage;
 // react-native-push-notification
@@ -90,10 +90,10 @@ public class PackageList {
       new AsyncStoragePackage(),
       new RNDateTimePickerPackage(),
       new RNCMaskedViewPackage(),
-      new LottiePackage(),
       new FastImageViewPackage(),
       new RNGestureHandlerPackage(),
       new ImagePickerPackage(),
+      new KeychainPackage(),
       new MapsPackage(),
       new ReactNativePushNotificationPackage(),
       new ReanimatedPackage(),

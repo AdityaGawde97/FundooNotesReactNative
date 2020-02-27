@@ -46,416 +46,419 @@
 25    <uses-permission android:name="android.permission.VIBRATE" />
 25-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:15:5-66
 25-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:15:22-63
-26    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- Required by older versions of Google Play services to create GCM registration tokens -->
+26    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 26-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:16:5-80
 26-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:16:22-78
-27    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- Include required permissions for Google Maps API to run. -->
-27-->[com.google.android.gms:play-services-gcm:17.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/b6ddfc00b32f56af8bb08401f2d0690d/play-services-gcm-17.0.0/AndroidManifest.xml:23:5-82
-27-->[com.google.android.gms:play-services-gcm:17.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/b6ddfc00b32f56af8bb08401f2d0690d/play-services-gcm-17.0.0/AndroidManifest.xml:23:22-79
-28    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-28-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/d61285e1883f2d634384a230ddb85463/jetified-play-services-maps-16.1.0/AndroidManifest.xml:23:5-79
-28-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/d61285e1883f2d634384a230ddb85463/jetified-play-services-maps-16.1.0/AndroidManifest.xml:23:22-76
-29
-30    <uses-feature
-30-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/d61285e1883f2d634384a230ddb85463/jetified-play-services-maps-16.1.0/AndroidManifest.xml:26:5-28:35
-31        android:glEsVersion="0x00020000"
-31-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/d61285e1883f2d634384a230ddb85463/jetified-play-services-maps-16.1.0/AndroidManifest.xml:27:9-41
-32        android:required="true" />
-32-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/d61285e1883f2d634384a230ddb85463/jetified-play-services-maps-16.1.0/AndroidManifest.xml:28:9-32
-33
-34    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- for android -->
-34-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:26:5-110
-34-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:26:22-107
-35    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
-36    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
-37    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
-38    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
-39    <!-- for Samsung -->
-40    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
-40-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:19:5-86
-40-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:19:22-83
-41    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
-41-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:20:5-87
-41-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:20:22-84
-42    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
-42-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:23:5-81
-42-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:23:22-78
-43    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
-43-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:24:5-83
-43-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:24:22-80
-44    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
-44-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:27:5-88
-44-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:27:22-85
-45    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
-45-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:28:5-92
-45-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:28:22-89
-46    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
-46-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:31:5-84
-46-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:31:22-81
-47    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
-47-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:34:5-83
-47-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:34:22-80
-48    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
-48-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:37:5-91
-48-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:37:22-88
-49    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
-49-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:38:5-92
-49-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:38:22-89
-50    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
-50-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:39:5-93
-50-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/18e4020e1fd305c9df510cf318cd7857/ShortcutBadger-1.1.8/AndroidManifest.xml:39:22-90
-51
-52    <application
-52-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:18:5-93:19
-53        android:name="com.fundoonotes.MainApplication"
-53-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:19:7-38
-54        android:allowBackup="false"
-54-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:23:7-34
-55        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-55-->[androidx.core:core:1.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6acdfb42d09274ab522a09d2effe077a/core-1.1.0/AndroidManifest.xml:24:18-86
-56        android:debuggable="true"
-57        android:icon="@mipmap/ic_launcher"
-57-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:21:7-41
-58        android:label="@string/app_name"
-58-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:20:7-39
-59        android:roundIcon="@mipmap/ic_launcher_round"
-59-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:22:7-52
-60        android:theme="@style/AppTheme"
-60-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:24:7-38
-61        android:usesCleartextTraffic="true" >
-61-->/home/admin10/Desktop/FundooNotes/android/app/src/debug/AndroidManifest.xml:7:18-53
-62        <activity
-62-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:25:7-41:18
-63            android:name="com.fundoonotes.MainActivity"
-63-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:26:9-37
-64            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-64-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:28:9-79
-65            android:label="@string/app_name"
-65-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:27:9-41
-66            android:launchMode="singleTask"
-66-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:30:11-42
-67            android:windowSoftInputMode="adjustResize" >
-67-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:29:9-51
-68            <intent-filter>
-68-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:31:9-34:25
-69                <action android:name="android.intent.action.MAIN" />
-69-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:32:13-65
-69-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:32:21-62
-70
-71                <category android:name="android.intent.category.LAUNCHER" />
-71-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:33:13-73
-71-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:33:23-70
-72            </intent-filter>
-73            <intent-filter>
-73-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:35:9-40:25
-74                <action android:name="android.intent.action.VIEW" />
-74-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:36:13-65
-74-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:36:21-62
-75
-76                <category android:name="android.intent.category.DEFAULT" />
-76-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:37:13-72
-76-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:37:23-69
-77                <category android:name="android.intent.category.BROWSABLE" />
-77-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:38:13-74
-77-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:38:23-71
-78
-79                <data android:scheme="fundoonotes" />
-79-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:39:13-50
-79-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:39:19-47
-80            </intent-filter>
-81        </activity>
-82        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-82-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:42:7-84
-82-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:42:17-81
-83
-84        <meta-data
-84-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:43:9-44:38
-85            android:name="com.dieam.reactnativepushnotification.notification_channel_name"
-85-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:43:21-99
-86            android:value="Itzz_mj" />
-86-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:44:13-36
-87        <meta-data
-87-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:45:9-46:68
-88            android:name="com.dieam.reactnativepushnotification.notification_channel_description"
-88-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:45:21-106
-89            android:value="YOUR NOTIFICATION CHANNEL DESCRIPTION" /> <!-- Change the resource name to your App's accent color - or any other color you want -->
-89-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:46:13-66
-90        <meta-data
-90-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:48:9-49:54
-91            android:name="com.dieam.reactnativepushnotification.notification_color"
-91-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:48:21-92
-92            android:resource="@android:color/white" /> <!-- < Only if you're using GCM or localNotificationSchedule() > -->
-92-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:49:13-52
-93        <receiver
-93-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:52:9-60:20
-94            android:name="com.google.android.gms.gcm.GcmReceiver"
-94-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:53:13-66
-95            android:exported="true"
-95-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:54:13-36
-96            android:permission="com.google.android.c2dm.permission.SEND" >
-96-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:55:13-73
-97            <intent-filter>
-97-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:56:13-59:29
-98                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-98-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:17-81
-98-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:25-78
-99
-100                <category android:name="com.fundoonotes" />
-100-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:58:17-60
-100-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:58:27-57
-101            </intent-filter>
-102        </receiver> <!-- < Only if you're using GCM or localNotificationSchedule() > -->
-103        <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher" />
-103-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:63:9-110
-103-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:63:19-107
-104        <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver" >
-104-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:64:9-68:20
-104-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:64:19-115
-105            <intent-filter>
-105-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:65:13-67:29
-106                <action android:name="android.intent.action.BOOT_COMPLETED" />
-106-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:66:17-79
-106-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:66:25-76
-107            </intent-filter>
-108        </receiver>
-109
-110        <service android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationRegistrationService" /> <!-- < Only if you're using GCM or localNotificationSchedule() > -->
-110-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:69:9-118
-110-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:69:18-116
-111        <service
-111-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:72:9-78:19
-112            android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerServiceGcm"
-112-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:73:13-110
-113            android:exported="false" >
-113-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:74:13-37
-114            <intent-filter>
-114-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:75:13-77:29
-115                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-115-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:17-81
-115-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:25-78
-116            </intent-filter>
-117        </service> <!-- </ Only if you're using GCM or localNotificationSchedule() > -->
-118        <!-- < Else > -->
-119        <service
-119-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:82:9-88:19
-120            android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService"
-120-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:83:13-107
-121            android:exported="false" >
-121-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:84:13-37
-122            <intent-filter>
-122-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:85:13-87:29
-123                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-123-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:86:17-78
-123-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:86:25-75
-124            </intent-filter>
-125        </service>
-126
-127        <meta-data
-127-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:89:9-91:70
-128            android:name="com.google.android.geo.API_KEY"
-128-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:90:13-58
-129            android:value="AIzaSyDurxgo5l4qbLJ8WShnvXeNr282BMUThks" />
-129-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:91:13-68
-130
-131        <provider
-131-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-18:20
-132            android:name="com.imagepicker.FileProvider"
-132-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-56
-133            android:authorities="com.fundoonotes.provider"
-133-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-60
-134            android:exported="false"
-134-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-37
-135            android:grantUriPermissions="true" >
-135-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-47
-136            <meta-data
-136-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-17:58
-137                android:name="android.support.FILE_PROVIDER_PATHS"
-137-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-67
-138                android:resource="@xml/provider_paths" />
-138-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-55
-139        </provider> <!-- Needs to be explicitly declared on P+ -->
-140        <uses-library
-140-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/d61285e1883f2d634384a230ddb85463/jetified-play-services-maps-16.1.0/AndroidManifest.xml:33:9-35:40
-141            android:name="org.apache.http.legacy"
-141-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/d61285e1883f2d634384a230ddb85463/jetified-play-services-maps-16.1.0/AndroidManifest.xml:34:13-50
-142            android:required="false" />
-142-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/d61285e1883f2d634384a230ddb85463/jetified-play-services-maps-16.1.0/AndroidManifest.xml:35:13-37
-143        <!--
-144             FirebaseMessagingService performs security checks at runtime,
-145             but set to not exported to explicitly avoid allowing another app to call it.
-146        -->
-147        <service
-147-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6df4615915f62dd53523d67107a7486a/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:28:9-34:19
-148            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-148-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6df4615915f62dd53523d67107a7486a/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:29:13-82
-149            android:exported="false" >
-149-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6df4615915f62dd53523d67107a7486a/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:30:13-37
-150            <intent-filter android:priority="-500" >
-150-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:85:13-87:29
-151                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-151-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:86:17-78
-151-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:86:25-75
-152            </intent-filter>
-153        </service>
-154        <service
-154-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6df4615915f62dd53523d67107a7486a/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:35:9-41:19
-155            android:name="com.google.firebase.components.ComponentDiscoveryService"
-155-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6df4615915f62dd53523d67107a7486a/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:36:13-84
-156            android:directBootAware="true"
-156-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/601da6cb9009caf2fdee7c8333d5ef37/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
-157            android:exported="false" >
-157-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6df4615915f62dd53523d67107a7486a/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:37:13-37
-158            <meta-data
-158-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6df4615915f62dd53523d67107a7486a/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:38:13-40:85
-159                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-159-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6df4615915f62dd53523d67107a7486a/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:39:17-119
-160                android:value="com.google.firebase.components.ComponentRegistrar" />
-160-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6df4615915f62dd53523d67107a7486a/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:40:17-82
-161            <meta-data
-161-->[com.google.firebase:firebase-measurement-connector-impl:15.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/762351633ab09d9a22c132b5449c88cb/jetified-firebase-measurement-connector-impl-15.0.0/AndroidManifest.xml:28:13-30:85
-162                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-162-->[com.google.firebase:firebase-measurement-connector-impl:15.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/762351633ab09d9a22c132b5449c88cb/jetified-firebase-measurement-connector-impl-15.0.0/AndroidManifest.xml:29:17-139
-163                android:value="com.google.firebase.components.ComponentRegistrar" />
-163-->[com.google.firebase:firebase-measurement-connector-impl:15.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/762351633ab09d9a22c132b5449c88cb/jetified-firebase-measurement-connector-impl-15.0.0/AndroidManifest.xml:30:17-82
-164            <meta-data
-164-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/6d45bf1db882054ce19d0a38daeceef4/firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
-165                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-165-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/6d45bf1db882054ce19d0a38daeceef4/firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
-166                android:value="com.google.firebase.components.ComponentRegistrar" />
-166-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/6d45bf1db882054ce19d0a38daeceef4/firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
-167            <meta-data
-167-->[com.google.firebase:firebase-datatransport:17.0.3] /home/admin10/.gradle/caches/transforms-2/files-2.1/2e1747e4e3b763ff82909c22a62d9541/firebase-datatransport-17.0.3/AndroidManifest.xml:28:13-30:85
-168                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-168-->[com.google.firebase:firebase-datatransport:17.0.3] /home/admin10/.gradle/caches/transforms-2/files-2.1/2e1747e4e3b763ff82909c22a62d9541/firebase-datatransport-17.0.3/AndroidManifest.xml:29:17-115
-169                android:value="com.google.firebase.components.ComponentRegistrar" />
-169-->[com.google.firebase:firebase-datatransport:17.0.3] /home/admin10/.gradle/caches/transforms-2/files-2.1/2e1747e4e3b763ff82909c22a62d9541/firebase-datatransport-17.0.3/AndroidManifest.xml:30:17-82
-170        </service>
-171
-172        <receiver
-172-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:29:9-33:20
-173            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-173-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:30:13-85
-174            android:enabled="true"
-174-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:31:13-35
-175            android:exported="false" >
-175-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:32:13-37
-176        </receiver>
-177        <receiver
-177-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:34:9-42:20
-178            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-178-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:35:13-100
-179            android:enabled="true"
-179-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:36:13-35
-180            android:exported="true"
-180-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:37:13-36
-181            android:permission="android.permission.INSTALL_PACKAGES" >
-181-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:38:13-69
-182            <intent-filter>
-182-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:39:13-41:29
-183                <action android:name="com.android.vending.INSTALL_REFERRER" />
-183-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:40:17-79
-183-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:40:25-76
-184            </intent-filter>
-185        </receiver>
-186
-187        <service
-187-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:44:9-47:40
-188            android:name="com.google.android.gms.measurement.AppMeasurementService"
-188-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:45:13-84
-189            android:enabled="true"
-189-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:46:13-35
-190            android:exported="false" />
-190-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:47:13-37
-191        <service
-191-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:48:9-52:72
-192            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-192-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:49:13-87
-193            android:enabled="true"
-193-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:50:13-35
-194            android:exported="false"
-194-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:51:13-37
-195            android:permission="android.permission.BIND_JOB_SERVICE" />
-195-->[com.google.firebase:firebase-analytics:15.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/f5e2af25dd182f84dc5fad1e405a61b7/jetified-firebase-analytics-15.0.2/AndroidManifest.xml:52:13-69
-196
-197        <receiver
-197-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/6d45bf1db882054ce19d0a38daeceef4/firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
-198            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-198-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/6d45bf1db882054ce19d0a38daeceef4/firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
-199            android:exported="true"
-199-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/6d45bf1db882054ce19d0a38daeceef4/firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
-200            android:permission="com.google.android.c2dm.permission.SEND" >
-200-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/6d45bf1db882054ce19d0a38daeceef4/firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
-201            <intent-filter>
-201-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:75:13-77:29
-202                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-202-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:17-81
-202-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:25-78
-203            </intent-filter>
-204        </receiver>
-205
-206        <activity
-206-->[com.google.android.gms:play-services-base:17.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/9d7b4e4c303e0fefd23cfacb669c9404/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-207            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-207-->[com.google.android.gms:play-services-base:17.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/9d7b4e4c303e0fefd23cfacb669c9404/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-208            android:exported="false"
-208-->[com.google.android.gms:play-services-base:17.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/9d7b4e4c303e0fefd23cfacb669c9404/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-209            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-209-->[com.google.android.gms:play-services-base:17.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/9d7b4e4c303e0fefd23cfacb669c9404/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
-210
-211        <meta-data
-211-->[com.google.maps.android:android-maps-utils:0.5] /home/admin10/.gradle/caches/transforms-2/files-2.1/d2b705bc67f2a5532a8b7b1276e65d12/jetified-android-maps-utils-0.5/AndroidManifest.xml:8:9-10:69
-212            android:name="com.google.android.gms.version"
-212-->[com.google.maps.android:android-maps-utils:0.5] /home/admin10/.gradle/caches/transforms-2/files-2.1/d2b705bc67f2a5532a8b7b1276e65d12/jetified-android-maps-utils-0.5/AndroidManifest.xml:9:13-58
-213            android:value="@integer/google_play_services_version" />
-213-->[com.google.maps.android:android-maps-utils:0.5] /home/admin10/.gradle/caches/transforms-2/files-2.1/d2b705bc67f2a5532a8b7b1276e65d12/jetified-android-maps-utils-0.5/AndroidManifest.xml:10:13-66
-214
-215        <service
-215-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/e3450717a8fdf30803973779871057a0/transport-backend-cct-2.2.0/AndroidManifest.xml:29:9-35:19
-216            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-216-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/e3450717a8fdf30803973779871057a0/transport-backend-cct-2.2.0/AndroidManifest.xml:30:13-103
-217            android:exported="false" >
-217-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/e3450717a8fdf30803973779871057a0/transport-backend-cct-2.2.0/AndroidManifest.xml:31:13-37
-218            <meta-data
-218-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/e3450717a8fdf30803973779871057a0/transport-backend-cct-2.2.0/AndroidManifest.xml:32:13-34:39
-219                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-219-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/e3450717a8fdf30803973779871057a0/transport-backend-cct-2.2.0/AndroidManifest.xml:33:17-94
-220                android:value="cct" />
-220-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/e3450717a8fdf30803973779871057a0/transport-backend-cct-2.2.0/AndroidManifest.xml:34:17-36
-221        </service>
-222        <service
-222-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6c557e9dba51799e83b43a185b5e9e39/transport-runtime-2.2.0/AndroidManifest.xml:26:9-30:19
-223            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-223-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6c557e9dba51799e83b43a185b5e9e39/transport-runtime-2.2.0/AndroidManifest.xml:27:13-117
-224            android:exported="false"
-224-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6c557e9dba51799e83b43a185b5e9e39/transport-runtime-2.2.0/AndroidManifest.xml:28:13-37
-225            android:permission="android.permission.BIND_JOB_SERVICE" >
-225-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6c557e9dba51799e83b43a185b5e9e39/transport-runtime-2.2.0/AndroidManifest.xml:29:13-69
-226        </service>
-227
-228        <receiver
-228-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6c557e9dba51799e83b43a185b5e9e39/transport-runtime-2.2.0/AndroidManifest.xml:32:9-34:40
-229            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-229-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6c557e9dba51799e83b43a185b5e9e39/transport-runtime-2.2.0/AndroidManifest.xml:33:13-132
-230            android:exported="false" />
-230-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/6c557e9dba51799e83b43a185b5e9e39/transport-runtime-2.2.0/AndroidManifest.xml:34:13-37
-231
-232        <meta-data
-232-->[com.github.bumptech.glide:okhttp3-integration:4.9.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/aa9167b01455ee88e1a7d972c1c42427/jetified-okhttp3-integration-4.9.0/AndroidManifest.xml:11:9-13:43
-233            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
-233-->[com.github.bumptech.glide:okhttp3-integration:4.9.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/aa9167b01455ee88e1a7d972c1c42427/jetified-okhttp3-integration-4.9.0/AndroidManifest.xml:12:13-84
-234            android:value="GlideModule" />
-234-->[com.github.bumptech.glide:okhttp3-integration:4.9.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/aa9167b01455ee88e1a7d972c1c42427/jetified-okhttp3-integration-4.9.0/AndroidManifest.xml:13:13-40
-235
-236        <provider
-236-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/601da6cb9009caf2fdee7c8333d5ef37/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
-237            android:name="com.google.firebase.provider.FirebaseInitProvider"
-237-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/601da6cb9009caf2fdee7c8333d5ef37/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
-238            android:authorities="com.fundoonotes.firebaseinitprovider"
-238-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/601da6cb9009caf2fdee7c8333d5ef37/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
-239            android:exported="false"
-239-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/601da6cb9009caf2fdee7c8333d5ef37/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
-240            android:initOrder="100" />
-240-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/601da6cb9009caf2fdee7c8333d5ef37/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
-241    </application>
-242
-243</manifest>
+27    <uses-permission android:name="android.permission.USE_FINGERPRINT" /> <!-- Required by older versions of Google Play services to create GCM registration tokens -->
+27-->[:react-native-keychain] /home/admin10/Desktop/FundooNotes/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-74
+27-->[:react-native-keychain] /home/admin10/Desktop/FundooNotes/node_modules/react-native-keychain/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-71
+28    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- Include required permissions for Google Maps API to run. -->
+28-->[com.google.android.gms:play-services-gcm:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/cb3a9b57ee113b066c76593cffa5275e/jetified-play-services-gcm-16.1.0/AndroidManifest.xml:23:5-82
+28-->[com.google.android.gms:play-services-gcm:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/cb3a9b57ee113b066c76593cffa5275e/jetified-play-services-gcm-16.1.0/AndroidManifest.xml:23:22-79
+29    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+29-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/60ac43d4956249876e6bc70392bda45d/jetified-play-services-maps-16.1.0/AndroidManifest.xml:23:5-79
+29-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/60ac43d4956249876e6bc70392bda45d/jetified-play-services-maps-16.1.0/AndroidManifest.xml:23:22-76
+30
+31    <uses-feature
+31-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/60ac43d4956249876e6bc70392bda45d/jetified-play-services-maps-16.1.0/AndroidManifest.xml:26:5-28:35
+32        android:glEsVersion="0x00020000"
+32-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/60ac43d4956249876e6bc70392bda45d/jetified-play-services-maps-16.1.0/AndroidManifest.xml:27:9-41
+33        android:required="true" />
+33-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/60ac43d4956249876e6bc70392bda45d/jetified-play-services-maps-16.1.0/AndroidManifest.xml:28:9-32
+34
+35    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- for android -->
+35-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:26:5-110
+35-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:26:22-107
+36    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
+37    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
+38    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
+39    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
+40    <!-- for Samsung -->
+41    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+41-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:19:5-86
+41-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:19:22-83
+42    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
+42-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:20:5-87
+42-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:20:22-84
+43    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+43-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:23:5-81
+43-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:23:22-78
+44    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
+44-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:24:5-83
+44-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:24:22-80
+45    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+45-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:27:5-88
+45-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:27:22-85
+46    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
+46-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:28:5-92
+46-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:28:22-89
+47    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
+47-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:31:5-84
+47-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:31:22-81
+48    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
+48-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:34:5-83
+48-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:34:22-80
+49    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+49-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:37:5-91
+49-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:37:22-88
+50    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+50-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:38:5-92
+50-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:38:22-89
+51    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
+51-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:39:5-93
+51-->[me.leolin:ShortcutBadger:1.1.8] /home/admin10/.gradle/caches/transforms-2/files-2.1/6f2ad2372f4549af2310078a6c1352aa/ShortcutBadger-1.1.8/AndroidManifest.xml:39:22-90
+52
+53    <application
+53-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:18:5-93:19
+54        android:name="com.fundoonotes.MainApplication"
+54-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:19:7-38
+55        android:allowBackup="false"
+55-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:23:7-34
+56        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+56-->[androidx.core:core:1.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/db1770fa2718df2c7cb90163822a5a7c/core-1.1.0/AndroidManifest.xml:24:18-86
+57        android:debuggable="true"
+58        android:icon="@mipmap/ic_launcher"
+58-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:21:7-41
+59        android:label="@string/app_name"
+59-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:20:7-39
+60        android:roundIcon="@mipmap/ic_launcher_round"
+60-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:22:7-52
+61        android:theme="@style/AppTheme"
+61-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:24:7-38
+62        android:usesCleartextTraffic="true" >
+62-->/home/admin10/Desktop/FundooNotes/android/app/src/debug/AndroidManifest.xml:7:18-53
+63        <activity
+63-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:25:7-41:18
+64            android:name="com.fundoonotes.MainActivity"
+64-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:26:9-37
+65            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+65-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:28:9-79
+66            android:label="@string/app_name"
+66-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:27:9-41
+67            android:launchMode="singleTask"
+67-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:30:11-42
+68            android:windowSoftInputMode="adjustResize" >
+68-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:29:9-51
+69            <intent-filter>
+69-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:31:9-34:25
+70                <action android:name="android.intent.action.MAIN" />
+70-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:32:13-65
+70-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:32:21-62
+71
+72                <category android:name="android.intent.category.LAUNCHER" />
+72-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:33:13-73
+72-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:33:23-70
+73            </intent-filter>
+74            <intent-filter>
+74-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:35:9-40:25
+75                <action android:name="android.intent.action.VIEW" />
+75-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:36:13-65
+75-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:36:21-62
+76
+77                <category android:name="android.intent.category.DEFAULT" />
+77-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:37:13-72
+77-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:37:23-69
+78                <category android:name="android.intent.category.BROWSABLE" />
+78-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:38:13-74
+78-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:38:23-71
+79
+80                <data android:scheme="fundoonotes" />
+80-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:39:13-50
+80-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:39:19-47
+81            </intent-filter>
+82        </activity>
+83        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+83-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:42:7-84
+83-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:42:17-81
+84
+85        <meta-data
+85-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:43:9-44:38
+86            android:name="com.dieam.reactnativepushnotification.notification_channel_name"
+86-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:43:21-99
+87            android:value="Itzz_mj" />
+87-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:44:13-36
+88        <meta-data
+88-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:45:9-46:68
+89            android:name="com.dieam.reactnativepushnotification.notification_channel_description"
+89-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:45:21-106
+90            android:value="YOUR NOTIFICATION CHANNEL DESCRIPTION" /> <!-- Change the resource name to your App's accent color - or any other color you want -->
+90-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:46:13-66
+91        <meta-data
+91-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:48:9-49:54
+92            android:name="com.dieam.reactnativepushnotification.notification_color"
+92-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:48:21-92
+93            android:resource="@android:color/white" /> <!-- < Only if you're using GCM or localNotificationSchedule() > -->
+93-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:49:13-52
+94        <receiver
+94-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:52:9-60:20
+95            android:name="com.google.android.gms.gcm.GcmReceiver"
+95-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:53:13-66
+96            android:exported="true"
+96-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:54:13-36
+97            android:permission="com.google.android.c2dm.permission.SEND" >
+97-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:55:13-73
+98            <intent-filter>
+98-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:56:13-59:29
+99                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+99-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:17-81
+99-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:25-78
+100
+101                <category android:name="com.fundoonotes" />
+101-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:58:17-60
+101-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:58:27-57
+102            </intent-filter>
+103        </receiver> <!-- < Only if you're using GCM or localNotificationSchedule() > -->
+104        <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher" />
+104-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:63:9-110
+104-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:63:19-107
+105        <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver" >
+105-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:64:9-68:20
+105-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:64:19-115
+106            <intent-filter>
+106-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:65:13-67:29
+107                <action android:name="android.intent.action.BOOT_COMPLETED" />
+107-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:66:17-79
+107-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:66:25-76
+108            </intent-filter>
+109        </receiver>
+110
+111        <service android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationRegistrationService" /> <!-- < Only if you're using GCM or localNotificationSchedule() > -->
+111-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:69:9-118
+111-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:69:18-116
+112        <service
+112-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:72:9-78:19
+113            android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerServiceGcm"
+113-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:73:13-110
+114            android:exported="false" >
+114-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:74:13-37
+115            <intent-filter>
+115-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:75:13-77:29
+116                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+116-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:17-81
+116-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:25-78
+117            </intent-filter>
+118        </service> <!-- </ Only if you're using GCM or localNotificationSchedule() > -->
+119        <!-- < Else > -->
+120        <service
+120-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:82:9-88:19
+121            android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService"
+121-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:83:13-107
+122            android:exported="false" >
+122-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:84:13-37
+123            <intent-filter>
+123-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:85:13-87:29
+124                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+124-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:86:17-78
+124-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:86:25-75
+125            </intent-filter>
+126        </service>
+127
+128        <meta-data
+128-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:89:9-91:70
+129            android:name="com.google.android.geo.API_KEY"
+129-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:90:13-58
+130            android:value="AIzaSyDurxgo5l4qbLJ8WShnvXeNr282BMUThks" />
+130-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:91:13-68
+131
+132        <provider
+132-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-18:20
+133            android:name="com.imagepicker.FileProvider"
+133-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-56
+134            android:authorities="com.fundoonotes.provider"
+134-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-60
+135            android:exported="false"
+135-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-37
+136            android:grantUriPermissions="true" >
+136-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-47
+137            <meta-data
+137-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-17:58
+138                android:name="android.support.FILE_PROVIDER_PATHS"
+138-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-67
+139                android:resource="@xml/provider_paths" />
+139-->[:react-native-image-picker] /home/admin10/Desktop/FundooNotes/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-55
+140        </provider> <!-- Needs to be explicitly declared on P+ -->
+141        <uses-library
+141-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/60ac43d4956249876e6bc70392bda45d/jetified-play-services-maps-16.1.0/AndroidManifest.xml:33:9-35:40
+142            android:name="org.apache.http.legacy"
+142-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/60ac43d4956249876e6bc70392bda45d/jetified-play-services-maps-16.1.0/AndroidManifest.xml:34:13-50
+143            android:required="false" />
+143-->[com.google.android.gms:play-services-maps:16.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/60ac43d4956249876e6bc70392bda45d/jetified-play-services-maps-16.1.0/AndroidManifest.xml:35:13-37
+144        <!--
+145             FirebaseMessagingService performs security checks at runtime,
+146             but set to not exported to explicitly avoid allowing another app to call it.
+147        -->
+148        <service
+148-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/3a2e4abf119506377d9ce7e35a8f03f3/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:28:9-34:19
+149            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+149-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/3a2e4abf119506377d9ce7e35a8f03f3/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:29:13-82
+150            android:exported="false" >
+150-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/3a2e4abf119506377d9ce7e35a8f03f3/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:30:13-37
+151            <intent-filter android:priority="-500" >
+151-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:85:13-87:29
+152                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+152-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:86:17-78
+152-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:86:25-75
+153            </intent-filter>
+154        </service>
+155        <service
+155-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/3a2e4abf119506377d9ce7e35a8f03f3/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:35:9-41:19
+156            android:name="com.google.firebase.components.ComponentDiscoveryService"
+156-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/3a2e4abf119506377d9ce7e35a8f03f3/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:36:13-84
+157            android:directBootAware="true"
+157-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8faba4e65c44ed5c7ddd4de7808a2e4f/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+158            android:exported="false" >
+158-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/3a2e4abf119506377d9ce7e35a8f03f3/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:37:13-37
+159            <meta-data
+159-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/3a2e4abf119506377d9ce7e35a8f03f3/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:38:13-40:85
+160                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+160-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/3a2e4abf119506377d9ce7e35a8f03f3/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:39:17-119
+161                android:value="com.google.firebase.components.ComponentRegistrar" />
+161-->[com.google.firebase:firebase-messaging:20.1.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/3a2e4abf119506377d9ce7e35a8f03f3/jetified-firebase-messaging-20.1.0/AndroidManifest.xml:40:17-82
+162            <meta-data
+162-->[com.google.firebase:firebase-measurement-connector-impl:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/7cc28d70f5c6267acd0f50d2b05dc170/jetified-firebase-measurement-connector-impl-16.0.0/AndroidManifest.xml:28:13-30:85
+163                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+163-->[com.google.firebase:firebase-measurement-connector-impl:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/7cc28d70f5c6267acd0f50d2b05dc170/jetified-firebase-measurement-connector-impl-16.0.0/AndroidManifest.xml:29:17-139
+164                android:value="com.google.firebase.components.ComponentRegistrar" />
+164-->[com.google.firebase:firebase-measurement-connector-impl:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/7cc28d70f5c6267acd0f50d2b05dc170/jetified-firebase-measurement-connector-impl-16.0.0/AndroidManifest.xml:30:17-82
+165            <meta-data
+165-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/218876ea9bf61e839cb84ccb1ab63d93/firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
+166                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+166-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/218876ea9bf61e839cb84ccb1ab63d93/firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
+167                android:value="com.google.firebase.components.ComponentRegistrar" />
+167-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/218876ea9bf61e839cb84ccb1ab63d93/firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
+168            <meta-data
+168-->[com.google.firebase:firebase-datatransport:17.0.3] /home/admin10/.gradle/caches/transforms-2/files-2.1/08c5169f4dde7d226469c68fad10ebd1/firebase-datatransport-17.0.3/AndroidManifest.xml:28:13-30:85
+169                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+169-->[com.google.firebase:firebase-datatransport:17.0.3] /home/admin10/.gradle/caches/transforms-2/files-2.1/08c5169f4dde7d226469c68fad10ebd1/firebase-datatransport-17.0.3/AndroidManifest.xml:29:17-115
+170                android:value="com.google.firebase.components.ComponentRegistrar" />
+170-->[com.google.firebase:firebase-datatransport:17.0.3] /home/admin10/.gradle/caches/transforms-2/files-2.1/08c5169f4dde7d226469c68fad10ebd1/firebase-datatransport-17.0.3/AndroidManifest.xml:30:17-82
+171        </service>
+172
+173        <receiver
+173-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:29:9-33:20
+174            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+174-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:30:13-85
+175            android:enabled="true"
+175-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:31:13-35
+176            android:exported="false" >
+176-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:32:13-37
+177        </receiver>
+178        <receiver
+178-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:34:9-42:20
+179            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+179-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:35:13-100
+180            android:enabled="true"
+180-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:36:13-35
+181            android:exported="true"
+181-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:37:13-36
+182            android:permission="android.permission.INSTALL_PACKAGES" >
+182-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:38:13-69
+183            <intent-filter>
+183-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:39:13-41:29
+184                <action android:name="com.android.vending.INSTALL_REFERRER" />
+184-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:40:17-79
+184-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:40:25-76
+185            </intent-filter>
+186        </receiver>
+187
+188        <service
+188-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:44:9-47:40
+189            android:name="com.google.android.gms.measurement.AppMeasurementService"
+189-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:45:13-84
+190            android:enabled="true"
+190-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:46:13-35
+191            android:exported="false" />
+191-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:47:13-37
+192        <service
+192-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:48:9-52:72
+193            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+193-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:49:13-87
+194            android:enabled="true"
+194-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:50:13-35
+195            android:exported="false"
+195-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:51:13-37
+196            android:permission="android.permission.BIND_JOB_SERVICE" />
+196-->[com.google.firebase:firebase-analytics:16.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8cd61e8d3bbbd768bc3368d4a78bac97/jetified-firebase-analytics-16.0.0/AndroidManifest.xml:52:13-69
+197
+198        <receiver
+198-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/218876ea9bf61e839cb84ccb1ab63d93/firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
+199            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+199-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/218876ea9bf61e839cb84ccb1ab63d93/firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
+200            android:exported="true"
+200-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/218876ea9bf61e839cb84ccb1ab63d93/firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
+201            android:permission="com.google.android.c2dm.permission.SEND" >
+201-->[com.google.firebase:firebase-iid:20.0.2] /home/admin10/.gradle/caches/transforms-2/files-2.1/218876ea9bf61e839cb84ccb1ab63d93/firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
+202            <intent-filter>
+202-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:75:13-77:29
+203                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+203-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:17-81
+203-->/home/admin10/Desktop/FundooNotes/android/app/src/main/AndroidManifest.xml:57:25-78
+204            </intent-filter>
+205        </receiver>
+206
+207        <activity
+207-->[com.google.android.gms:play-services-base:17.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/985dad7f9d84aa88435525667b3a3f18/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+208            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+208-->[com.google.android.gms:play-services-base:17.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/985dad7f9d84aa88435525667b3a3f18/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+209            android:exported="false"
+209-->[com.google.android.gms:play-services-base:17.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/985dad7f9d84aa88435525667b3a3f18/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+210            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+210-->[com.google.android.gms:play-services-base:17.0.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/985dad7f9d84aa88435525667b3a3f18/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+211
+212        <meta-data
+212-->[com.google.maps.android:android-maps-utils:0.5] /home/admin10/.gradle/caches/transforms-2/files-2.1/294a25dbaad41f11b17364c874e794ef/jetified-android-maps-utils-0.5/AndroidManifest.xml:8:9-10:69
+213            android:name="com.google.android.gms.version"
+213-->[com.google.maps.android:android-maps-utils:0.5] /home/admin10/.gradle/caches/transforms-2/files-2.1/294a25dbaad41f11b17364c874e794ef/jetified-android-maps-utils-0.5/AndroidManifest.xml:9:13-58
+214            android:value="@integer/google_play_services_version" />
+214-->[com.google.maps.android:android-maps-utils:0.5] /home/admin10/.gradle/caches/transforms-2/files-2.1/294a25dbaad41f11b17364c874e794ef/jetified-android-maps-utils-0.5/AndroidManifest.xml:10:13-66
+215
+216        <provider
+216-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8faba4e65c44ed5c7ddd4de7808a2e4f/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+217            android:name="com.google.firebase.provider.FirebaseInitProvider"
+217-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8faba4e65c44ed5c7ddd4de7808a2e4f/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+218            android:authorities="com.fundoonotes.firebaseinitprovider"
+218-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8faba4e65c44ed5c7ddd4de7808a2e4f/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+219            android:exported="false"
+219-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8faba4e65c44ed5c7ddd4de7808a2e4f/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+220            android:initOrder="100" />
+220-->[com.google.firebase:firebase-common:19.3.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/8faba4e65c44ed5c7ddd4de7808a2e4f/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+221
+222        <meta-data
+222-->[com.github.bumptech.glide:okhttp3-integration:4.9.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/e00e87b11ff71899b646ca0f9149c915/jetified-okhttp3-integration-4.9.0/AndroidManifest.xml:11:9-13:43
+223            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
+223-->[com.github.bumptech.glide:okhttp3-integration:4.9.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/e00e87b11ff71899b646ca0f9149c915/jetified-okhttp3-integration-4.9.0/AndroidManifest.xml:12:13-84
+224            android:value="GlideModule" />
+224-->[com.github.bumptech.glide:okhttp3-integration:4.9.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/e00e87b11ff71899b646ca0f9149c915/jetified-okhttp3-integration-4.9.0/AndroidManifest.xml:13:13-40
+225
+226        <service
+226-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/b39698049cdbd3bb340cc03a55a61100/transport-backend-cct-2.2.0/AndroidManifest.xml:29:9-35:19
+227            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+227-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/b39698049cdbd3bb340cc03a55a61100/transport-backend-cct-2.2.0/AndroidManifest.xml:30:13-103
+228            android:exported="false" >
+228-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/b39698049cdbd3bb340cc03a55a61100/transport-backend-cct-2.2.0/AndroidManifest.xml:31:13-37
+229            <meta-data
+229-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/b39698049cdbd3bb340cc03a55a61100/transport-backend-cct-2.2.0/AndroidManifest.xml:32:13-34:39
+230                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+230-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/b39698049cdbd3bb340cc03a55a61100/transport-backend-cct-2.2.0/AndroidManifest.xml:33:17-94
+231                android:value="cct" />
+231-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/b39698049cdbd3bb340cc03a55a61100/transport-backend-cct-2.2.0/AndroidManifest.xml:34:17-36
+232        </service>
+233        <service
+233-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/2326c26d5d71743d59e237b0f1396bf4/transport-runtime-2.2.0/AndroidManifest.xml:26:9-30:19
+234            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+234-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/2326c26d5d71743d59e237b0f1396bf4/transport-runtime-2.2.0/AndroidManifest.xml:27:13-117
+235            android:exported="false"
+235-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/2326c26d5d71743d59e237b0f1396bf4/transport-runtime-2.2.0/AndroidManifest.xml:28:13-37
+236            android:permission="android.permission.BIND_JOB_SERVICE" >
+236-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/2326c26d5d71743d59e237b0f1396bf4/transport-runtime-2.2.0/AndroidManifest.xml:29:13-69
+237        </service>
+238
+239        <receiver
+239-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/2326c26d5d71743d59e237b0f1396bf4/transport-runtime-2.2.0/AndroidManifest.xml:32:9-34:40
+240            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+240-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/2326c26d5d71743d59e237b0f1396bf4/transport-runtime-2.2.0/AndroidManifest.xml:33:13-132
+241            android:exported="false" />
+241-->[com.google.android.datatransport:transport-runtime:2.2.0] /home/admin10/.gradle/caches/transforms-2/files-2.1/2326c26d5d71743d59e237b0f1396bf4/transport-runtime-2.2.0/AndroidManifest.xml:34:13-37
+242    </application>
+243
+244</manifest>

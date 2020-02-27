@@ -11,6 +11,10 @@ import GoogleMap from '../Component/MainScreens/DrawerPages/GoogleMap';
 import FastImageDemo from '../Component/MainScreens/DrawerPages/FastImageDemo';
 import WebWorker from '../Component/MainScreens/DrawerPages/WebWorker';
 import HeadlessJs from '../Component/MainScreens/DrawerPages/HeadlessJs';
+import MyDrawer from '../Component/MainScreens/Dashboard/MyDrawer';
+import PushApp from '../Component/MainScreens/DrawerPages/PushApp';
+import Sqlite from '../Component/MainScreens/DrawerPages/Sqlite';
+import Settings from '../Component/MainScreens/DrawerPages/Settings';
 
 export const DrawerNavigator = createDrawerNavigator(
     {
@@ -23,6 +27,10 @@ export const DrawerNavigator = createDrawerNavigator(
         GoogleMap: { screen: GoogleMap },
         FastImage: { screen: FastImageDemo },
         WebWorker: { screen: WebWorker },
+        MyDrawer: { screen: MyDrawer },
+        PushApp: { screen: PushApp },
+        Sqlite: { screen: Sqlite },
+        Settings: {screen:Settings}
         //HeadlessJs: { screen: HeadlessJs }
     },
     {

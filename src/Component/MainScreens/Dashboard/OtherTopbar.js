@@ -31,7 +31,7 @@ export default class OtherTopbar extends Component {
                             titleStyle={styles2.otherTitle}
                         />
                         {
-                            this.props.page !== 'Trash' ?
+                            this.props.page !== 'Trash' && this.props.page !== 'Settings' ?
                                 <>
                                     <Appbar.Action
                                         color={'#797979'}
@@ -51,6 +51,7 @@ export default class OtherTopbar extends Component {
                                     />
                                 </>
                                 :
+                                this.props.page !== 'Settings' &&
                                 <Menu
                                     visible={this.state.visible}
                                     onDismiss={this._closeMenu}

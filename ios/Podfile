@@ -47,15 +47,15 @@ target 'FundooNotes' do
 
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
 
-  pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
 
-  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
   pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
   pod 'react-native-mail', :path => '../node_modules/react-native-mail'
 
   pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
+
 
   target 'FundooNotesTests' do
     inherit! :search_paths

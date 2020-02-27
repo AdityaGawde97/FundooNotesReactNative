@@ -8,7 +8,7 @@ databaseURL: "https://fundoo-notes-b7e8e.firebaseio.com",
 projectId: "fundoo-notes-b7e8e",
 storageBucket: "fundoo-notes-b7e8e.appspot.com",
 messagingSenderId: "440304323539",
-appId: "1:440304323539:android:8aff7284978a04995d7d26"
+appId: "1:440304323539:android:4d9b9ec519e763095d7d26"
 };
 // web:3a215e7e20ac4c825d7d26:
 // Initialize Firebase

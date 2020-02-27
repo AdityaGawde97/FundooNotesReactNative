@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">440304323539-8n5rilbdn63i3qpuaach00iu5pjhn11g.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://fundoo-notes-b7e8e.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">440304323539</string>
+    <string name="google_api_key" translatable="false">AIzaSyDedp9i_cdRdID29fpmSTdw1GEuDDJYD6o</string>
+    <string name="google_app_id" translatable="false">1:440304323539:android:4d9b9ec519e763095d7d26</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDedp9i_cdRdID29fpmSTdw1GEuDDJYD6o</string>
+    <string name="google_storage_bucket" translatable="false">fundoo-notes-b7e8e.appspot.com</string>
+    <string name="project_id" translatable="false">fundoo-notes-b7e8e</string>
+</resources>
